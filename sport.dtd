@@ -13,7 +13,7 @@
 <!ELEMENT squadraTrasferta (#PCDATA)>
 
 <!-- quotaCalcio è composta da: vittoria casa (1), pareggio (x), vittoria trasferta (2) -->
-<!ELEMENT quotaCalcio (quota1, quotax, quotaa2> 
+<!ELEMENT quotaCalcio (quota1, quotax, quota2> 
 <!ELEMENT quota1 (#PCDATA)>
 <!ELEMENT quotax (#PCDATA)>
 <!ELEMENT quota2 (#PCDATA)>
