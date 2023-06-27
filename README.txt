@@ -26,7 +26,9 @@ Esistono varie tipologie di utenti:
 
 -	User: un semplice utente loggato che si sarà registrato in precedenza, questo potrà effettuare scommesse tramite una sezione apposita, visitare la sezione sulle informazioni generali riguardanti il sito e su come effettuare una scommessa, caricare il proprio conto virtuale (richiesta all’admin), consultare palinsesto e poterlo filtrare secondo le proprie preferenze, puntare su una determinata scommessa, accedere ad una sezione di riepilogo delle proprie scommesse ( una volta puntato non si può modificare ) e accedere ad un form in cui propone all’admin una scommessa.
 
--	Admin: utente con ruoli privilegiati (ci sono solo 2 admin), non può effettuare scommesse ma ha le stesse funzionalità dell’user. In più può consultare la tabella utenti, consultare il palinsesto e aggiungere nuove scommesse, consultare il form sopra descritto e decidere se aggiungere la scommessa proposta dall’user, infine può anche decidere di approvare una ricarica del conto virtuale degli Users.
+- Gestore: utente con ruoli privilegiati, consultare il palinsesto e aggiungere nuove scommesse, consultare il form e decidere se aggiungere la scommessa proposta dall'user, può consultare la tabella utenti (per capire bilancio scommesse), eliminare scommesse relative ad eventi non svolti (viene eliminata la scommessa e tutte le puntate, che pero' rimangono nel sistema).
+
+-	Admin: utente con ruoli privilegiati (ci sono solo 2 admin), non può effettuare scommesse ma ha le stesse funzionalità dell’user. Presenta tutti i privilegi del gestore e in più può decidere di approvare una ricarica del conto virtuale degli Users e disattivare alcuni utenti dalla tabella degli utenti.
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
@@ -53,15 +55,17 @@ Sul sito sono presenti varie sezioni:
 -	Inserimento scommessa: Sezione presente solo se si è Admin, qui si può decidere di aggiungere una determinata scommessa che sarà poi presente nel palinsesto, inoltre tutte le richieste effettuate tramite form appariranno qui.
 
 -	Forum: Sezione in cui è possibile scambiare messaggi tra utenti.
+
+-Informazioni generali: Sezione in cui è possibile consultare delle informazioni generali su come funziona il sito e su come poter scommettere.
 -----------------------------------------------------------------------------------------------------------------------------------
 
 Strutture dati
 
--Tabella utenti: ogni utente presenta 6 attributi: nome, cognome, data di nascita (per verificare che sia maggiorenne), username, password e tipologia (visitatore, user, admin).
+-Tabella utenti: ogni utente presenta 6 attributi: nome, cognome, data di nascita (per verificare che sia maggiorenne), username, password e tipologia (user, gestore, admin).
 
 - utenti.xml: Viene eseguito uno script (utenti.php?) che si collega al database e crea questo file xml, in cui è presentata la struttura dati degli utenti. La grammatica associata è definita dal file "utenti.dtd".
 
 - sport.xml: Viene eseguito uno script (sport.php?) che si collega al database e crea questo file xml, in cui è presentata la struttura dati dello sport. La grammatica assiociata è definita dal file “sport.dtd”.
 
 Un esempio di 3 scommesse di calcio, 3 di basket e 3 di tennis sono presenti nel file sport.xml
-Un esempio di 2 utenti "admin" e 2 utenti "user" sono presenti nel file utenti.xml
+Un esempio di 2 utenti "admin", 2 utenti "user" e 2 utenti "gestore" sono presenti nel file utenti.xml
