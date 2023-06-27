@@ -13,10 +13,10 @@
 <!ELEMENT squadraTrasferta (#PCDATA)>
 
 <!-- quotaCalcio è composta da: vittoria casa (1), pareggio (x), vittoria trasferta (2) -->
-<!ELEMENT quotaCalcio (1, x, 2> 
-<!ELEMENT 1 (#PCDATA)>
-<!ELEMENT x (#PCDATA)>
-<!ELEMENT 2 (#PCDATA)>
+<!ELEMENT quotaCalcio (quota1, quotax, quotaa2> 
+<!ELEMENT quota1 (#PCDATA)>
+<!ELEMENT quotax (#PCDATA)>
+<!ELEMENT quota2 (#PCDATA)>
 
 <!ELEMENT ora (#PCDATA)>
 
@@ -24,9 +24,7 @@
 <!ELEMENT basket (id, nome, quota, ora>
 
 <!-- quota è composta da: vittoria casa (1), vittoria trasferta (2), viene utilizzata anche per il tennis -->
-<!ELEMENT quota (1, 2> 
-<!ELEMENT 1 (#PCDATA)>
-<!ELEMENT 2 (#PCDATA)>
+<!ELEMENT quota (quota1, quota2> 
 
 <!-- Definisco le scommesse relative al Tennis -->
 <!ELEMENT tennis (id, nome, quota, ora>
