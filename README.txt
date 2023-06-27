@@ -61,4 +61,4 @@ Strutture dati
 
 - sport.xml: Viene eseguito uno script (sport.php) che si collega al database e crea questo file xml, in cui presenta la struttura dati dello sport. La grammatica assiociata è definita dal file “sport.dtd”.
 
-…
+Esempio di 3 scommesse di calcio, 3 di basket e 3 di tennis sono presenti nel file sport.xml
