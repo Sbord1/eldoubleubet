@@ -14,6 +14,10 @@
       			<quota2> 1.89 </quota2>
      		 </quotaCalcio>
     		<ora> 20:45 </ora>
+		<puntata>
+			<minima> 1 </minima>
+			<massima> 9999 <massima>
+		</puntata>
 	</calcio>
   	<calcio>
   		<id> 2 </id>
@@ -27,6 +31,10 @@
       			<quota2> 2.34 </quota2>
       		</quotaCalcio>
     		<ora> 20:45 </ora>
+		<puntata>
+			<minima> 1 </minima>
+			<massima> 9999 <massima>
+		</puntata>
 	</calcio>
  	 <calcio>
   		<id> 3 </id>
@@ -40,6 +48,10 @@
       			<quota2> 2.89 </quota2>
       		</quotaCalcio>
     		<ora> 20:45 </ora>
+		 <puntata>
+			<minima> 1 </minima>
+			<massima> 9999 <massima>
+		</puntata>
 	</calcio>
 	<basket>
   		<id> 1 </id>
@@ -52,6 +64,10 @@
       			<quota2> 1.49 </quota2>
       		</quota>
     		<ora> 22:00 </ora>
+		<puntata>
+			<minima> 1 </minima>
+			<massima> 9999 <massima>
+		</puntata>
 	</basket>
   	<basket>
   		<id> 2 </id>
@@ -64,6 +80,10 @@
       			<quota2> 1.89 </quota2>
       		</quota>
     		<ora> 22:00 </ora>
+		<puntata>
+			<minima> 1 </minima>
+			<massima> 9999 <massima>
+		</puntata>
 	</basket>
   	<basket>
   		<id> 3 </id>
@@ -76,6 +96,10 @@
       			<quota2> 1.85 </quota2>
       		</quota>
     		<ora> 20:45 </ora>
+		<puntata>
+			<minima> 1 </minima>
+			<massima> 9999 <massima>
+		</puntata>
 	</basket>
     	<tennis>
   		<id> 1 </id>
@@ -88,6 +112,10 @@
       			<quota2> 1.79 </quota2>
       		</quota>
     		<ora> 15:00 </ora>
+		<puntata>
+			<minima> 1 </minima>
+			<massima> 9999 <massima>
+		</puntata>
 	</tennis>
   	<tennis>
   		<id> 2 </id>
@@ -100,6 +128,10 @@
       			<quota2> 1.99 </quota2>
       		</quota>
     		<ora> 15:00 </ora>
+		<puntata>
+			<minima> 1 </minima>
+			<massima> 9999 <massima>
+		</puntata>
 	</tennis>
   	<tennis>
   		<id> 1 </id>
@@ -112,5 +144,9 @@
       			<quota2> 2.12 </quota2>
       		</quota>
     		<ora> 15:00 </ora>
+		<puntata>
+			<minima> 1 </minima>
+			<massima> 9999 <massima>
+		</puntata>
 	</tennis>
 </sport>
