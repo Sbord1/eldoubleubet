@@ -1,0 +1,50 @@
+<!-- Esempi di 2 utenti "admin" e 2 utenti "user" -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movies SYSTEM "utenti.dtd">
+
+<utenti>
+    <utente tipologia="admin">
+        <nome> Francesco </nome>
+        <cognome> Sbordone </cognome>
+        <dataNascita>
+            <anno> 2001 </anno>
+            <mese> 03 </mese>
+            <giorno> 20 </giorno>
+        </dataNascita>
+        <username> Sbord1 </username>
+        <password> Sbord1 </password> <!-- Non so se dobbiamo criptarla -->
+    </utente>
+    <utente tipologia="admin">
+        <nome> Riccardo </nome>
+        <cognome> Tuzzolino </cognome>
+        <dataNascita>
+            <anno> 2001 </anno>
+            <mese> 01 </mese>
+            <giorno> 18 </giorno>
+        </dataNascita>
+        <username> Tuzzo18 </username>
+        <password> Tuzzo18 </password> <!-- Non so se dobbiamo criptarla -->
+    </utente>
+  <utente tipologia="user">
+        <nome> Mario </nome>
+        <cognome> Rossi </cognome>
+        <dataNascita>
+            <anno> 2001 </anno>
+            <mese> 09 </mese>
+            <giorno> 03 </giorno>
+        </dataNascita>
+        <username> mario </username>
+        <password> mario </password> <!-- Non so se dobbiamo criptarla -->
+    </utente>
+  <utente tipologia="user">
+        <nome> Ciro </nome>
+        <cognome> Esposito </cognome>
+        <dataNascita>
+            <anno> 1999 </anno>
+            <mese> 02 </mese>
+            <giorno> 28 </giorno>
+        </dataNascita>
+        <username> Ciruzzo </username>
+        <password> Ciruzzo </password> <!-- Non so se dobbiamo criptarla -->
+    </utente>
+</utenti>
