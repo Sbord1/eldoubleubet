@@ -1,3 +1,4 @@
+<!-- Esempi di 3 partite di calcio, 3 di basket e 3 di tennis (manca l'ippica da capire) -->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE movies SYSTEM "sport.dtd">
 <sport>
