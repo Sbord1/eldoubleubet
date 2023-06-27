@@ -5,13 +5,13 @@
 
 
 <!-- Definisco le scommesse relative al calcio -->
-<!ELEMENT calcio (id, nome, quotaCalcio, ora>
+<!ELEMENT calcio (id, nome, quotaCalcio, ora, puntata>
 
 <!-- Definisco le scommesse relative al basket -->
-<!ELEMENT basket (id, nome, quota, ora>
+<!ELEMENT basket (id, nome, quota, ora, puntata>
 
 <!-- Definisco le scommesse relative al Tennis -->
-<!ELEMENT tennis (id, nome, quota, ora>
+<!ELEMENT tennis (id, nome, quota, ora, puntata>
 
 <!ELEMENT id (#PCDATA)>
 
@@ -30,5 +30,9 @@
 
 <!ELEMENT ora (#PCDATA)>
 
+<!-- puntata è composta da un valore minimo e un valore massimo di puntata -->
+<!ELEMENT puntata (minima, massima)>
+<!ELEMENT minima (#PCDATA)>
+<!ELEMENT massima (#PCDATA)>
 
 
