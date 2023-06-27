@@ -8,9 +8,9 @@
 			<squadraTrasferta> Inter </squadraTrasferta>
 		</nome>
 		<quotaCalcio>
-      <1> 2.12 </1>
-      <x> 3.55 </x>
-      <2> 1.89 </2>
+      <quota1> 2.12 </quota1>
+      <quotax> 3.55 </quotax>
+      <quota2> 1.89 </quota2>
       </quotaCalcio>
     <ora> 20:45 </ora>
 	</calcio>
@@ -21,9 +21,9 @@
 			<squadraTrasferta> Lazio </squadraTrasferta>
 		</nome>
 		<quotaCalcio>
-      <1> 1.45 </1>
-      <x> 3.12 </x>
-      <2> 2.34 </2>
+      <quota1> 1.45 </quota1>
+      <quotax> 3.12 </quotax>
+      <quota2> 2.34 </quota2>
       </quotaCalcio>
     <ora> 20:45 </ora>
 	</calcio>
@@ -34,9 +34,9 @@
 			<squadraTrasferta> Torino </squadraTrasferta>
 		</nome>
 		<quotaCalcio>
-      <1> 1.35 </1>
-      <x> 3.89 </x>
-      <2> 2.89 </2>
+      <quota1> 1.35 </quota1>
+      <quotax> 3.89 </quotax>
+      <quota2> 2.89 </quota2>
       </quotaCalcio>
     <ora> 20:45 </ora>
 	</calcio>
@@ -47,8 +47,8 @@
 			<squadraTrasferta> Milwaukee Bucks </squadraTrasferta>
 		</nome>
 		<quota>
-      <1> 2.35 </1>
-      <2> 1.49 </2>
+      <quota1> 2.35 </quota1>
+      <quota2> 1.49 </quota2>
       </quota>
     <ora> 22:00 </ora>
 	</basket>
@@ -59,8 +59,8 @@
 			<squadraTrasferta> Brooklyn Nets </squadraTrasferta>
 		</nome>
 		<quota>
-      <1> 1.75 </1>
-      <2> 1.89 </2>
+      <quota1> 1.75 </quota1>
+      <quota2> 1.89 </quota2>
       </quota>
     <ora> 22:00 </ora>
 	</basket>
@@ -71,8 +71,8 @@
 			<squadraTrasferta> Chicago Bulls </squadraTrasferta>
 		</nome>
 		<quota>
-      <1> 1.90 </1>
-      <2> 1.85 </2>
+      <quota1> 1.90 </quota1>
+      <quota2> 1.85 </quota2>
       </quota>
     <ora> 20:45 </ora>
 	</basket>
@@ -83,8 +83,8 @@
 			<squadraTrasferta> Djokovic N. </squadraTrasferta>
 		</nome>
 		<quota>
-      <1> 1.85 </1>
-      <2> 1.79 </2>
+      <quota1> 1.85 </quota1>
+      <quota2> 1.79 </quota2>
       </quota>
     <ora> 15:00 </ora>
 	</tennis>
@@ -95,8 +95,8 @@
 			<squadraTrasferta> Ruud C. </squadraTrasferta>
 		</nome>
 		<quota>
-      <1> 1.65 </1>
-      <2> 1.99 </2>
+      <quota1> 1.65 </quota1>
+      <quota2> 1.99 </quota2>
       </quota>
     <ora> 15:00 </ora>
 	</tennis>
@@ -107,8 +107,8 @@
 			<squadraTrasferta> Sinner J. </squadraTrasferta>
 		</nome>
 		<quota>
-      <1> 1.45 </1>
-      <2> 2.12 </2>
+      <quota1> 1.45 </quota1>
+      <quota2> 2.12 </quota2>
       </quota>
     <ora> 15:00 </ora>
 	</tennis>
