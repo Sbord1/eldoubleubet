@@ -3,8 +3,15 @@
 <!-- L'oggetto "sport" e' l'elemento radice del documento ed e' specificato come una sequenza di elementi "calcio, basket, tennis, ippica" (0 o piu') -->
 <!ELEMENT sport (calcio*, basket*, tennis*, ippica*)>
 
+
 <!-- Definisco le scommesse relative al calcio -->
 <!ELEMENT calcio (id, nome, quotaCalcio, ora>
+
+<!-- Definisco le scommesse relative al basket -->
+<!ELEMENT basket (id, nome, quota, ora>
+
+<!-- Definisco le scommesse relative al Tennis -->
+<!ELEMENT tennis (id, nome, quota, ora>
 
 <!ELEMENT id (#PCDATA)>
 
@@ -18,13 +25,10 @@
 <!ELEMENT quotax (#PCDATA)>
 <!ELEMENT quota2 (#PCDATA)>
 
-<!ELEMENT ora (#PCDATA)>
-
-<!-- Definisco le scommesse relative al basket -->
-<!ELEMENT basket (id, nome, quota, ora>
-
-<!-- quota è composta da: vittoria casa (1), vittoria trasferta (2), viene utilizzata anche per il tennis -->
+<!-- quota è composta da: vittoria casa (1), vittoria trasferta (2), viene utilizzata sia per il Basket sia per il Tennis -->
 <!ELEMENT quota (quota1, quota2> 
 
-<!-- Definisco le scommesse relative al Tennis -->
-<!ELEMENT tennis (id, nome, quota, ora>
+<!ELEMENT ora (#PCDATA)>
+
+
+
