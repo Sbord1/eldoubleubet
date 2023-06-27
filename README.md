@@ -4,7 +4,7 @@ Eldoubleubet è un sito di scommesse online in cui un utente può scommettere su
 
 Categorie di sport presenti:
 
--Calcio ⚽
--Basket 🏀
--Tennis 🎾
--Ippica 🏇
+- Calcio ⚽
+- Basket 🏀
+- Tennis 🎾
+- Ippica 🏇
