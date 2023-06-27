@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movies SYSTEM "sport.dtd">
+<sport>
+	<calcio>
+		<id> 1 </id>
+		<nome>
+			<squadraCasa> Milan </squadraCasa>
+			<squadraTrasferta> Inter </squadraTrasferta>
+		</nome>
+		<quotaCalcio>
+      <1> 2.12 </1>
+      <x> 3.55 </x>
+      <2> 1.89 </2>
+      </quotaCalcio>
+    <ora> 20:45 </ora>
+	</calcio>
+  <calcio>
+  		<id> 2 </id>
+		<nome>
+			<squadraCasa> Roma </squadraCasa>
+			<squadraTrasferta> Lazio </squadraTrasferta>
+		</nome>
+		<quotaCalcio>
+      <1> 1.45 </1>
+      <x> 3.12 </x>
+      <2> 2.34 </2>
+      </quotaCalcio>
+    <ora> 20:45 </ora>
+	</calcio>
+  <calcio>
+  		<id> 3 </id>
+		<nome>
+			<squadraCasa> Juventus </squadraCasa>
+			<squadraTrasferta> Torino </squadraTrasferta>
+		</nome>
+		<quotaCalcio>
+      <1> 1.35 </1>
+      <x> 3.89 </x>
+      <2> 2.89 </2>
+      </quotaCalcio>
+    <ora> 20:45 </ora>
+	</calcio>
+	<basket>
+  		<id> 1 </id>
+		<nome>
+			<squadraCasa> Boston Celtics </squadraCasa>
+			<squadraTrasferta> Milwaukee Bucks </squadraTrasferta>
+		</nome>
+		<quota>
+      <1> 2.35 </1>
+      <2> 1.49 </2>
+      </quota>
+    <ora> 22:00 </ora>
+	</basket>
+  <basket>
+  		<id> 2 </id>
+		<nome>
+			<squadraCasa> Philadelphia 76ers </squadraCasa>
+			<squadraTrasferta> Brooklyn Nets </squadraTrasferta>
+		</nome>
+		<quota>
+      <1> 1.75 </1>
+      <2> 1.89 </2>
+      </quota>
+    <ora> 22:00 </ora>
+	</basket>
+  <basket>
+  		<id> 3 </id>
+		<nome>
+			<squadraCasa> Toronto Raptors </squadraCasa>
+			<squadraTrasferta> Chicago Bulls </squadraTrasferta>
+		</nome>
+		<quota>
+      <1> 1.90 </1>
+      <2> 1.85 </2>
+      </quota>
+    <ora> 20:45 </ora>
+	</basket>
+    <tennis>
+  		<id> 1 </id>
+		<nome>
+			<squadraCasa> Alcaraz C. </squadraCasa>
+			<squadraTrasferta> Djokovic N. </squadraTrasferta>
+		</nome>
+		<quota>
+      <1> 1.85 </1>
+      <2> 1.79 </2>
+      </quota>
+    <ora> 15:00 </ora>
+	</tennis>
+  <tennis>
+  		<id> 2 </id>
+		<nome>
+			<squadraCasa> Medvedev D. </squadraCasa>
+			<squadraTrasferta> Ruud C. </squadraTrasferta>
+		</nome>
+		<quota>
+      <1> 1.65 </1>
+      <2> 1.99 </2>
+      </quota>
+    <ora> 15:00 </ora>
+	</tennis>
+  <tennis>
+  		<id> 1 </id>
+		<nome>
+			<squadraCasa> Rune H. </squadraCasa>
+			<squadraTrasferta> Sinner J. </squadraTrasferta>
+		</nome>
+		<quota>
+      <1> 1.45 </1>
+      <2> 2.12 </2>
+      </quota>
+    <ora> 15:00 </ora>
+	</tennis>
+</sport>
