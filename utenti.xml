@@ -47,4 +47,26 @@
         <username> Ciruzzo </username>
         <password> Ciruzzo </password> <!-- Non so se dobbiamo criptarla -->
     </utente>
+    <utente tipologia="gestore">
+        <nome> Tizio </nome>
+        <cognome> Gracco </cognome>
+        <dataNascita>
+            <anno> 1995 </anno>
+            <mese> 05 </mese>
+            <giorno> 30 </giorno>
+        </dataNascita>
+        <username> Tizio </username>
+        <password> Tizio </password> <!-- Non so se dobbiamo criptarla -->
+    </utente>
+    <utente tipologia="gestore">
+        <nome> Caio </nome>
+        <cognome> Gracco </cognome>
+        <dataNascita>
+            <anno> 1995 </anno>
+            <mese> 05 </mese>
+            <giorno> 30 </giorno>
+        </dataNascita>
+        <username> Caio </username>
+        <password> Caio </password> <!-- Non so se dobbiamo criptarla -->
+    </utente>
 </utenti>
