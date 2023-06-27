@@ -59,6 +59,9 @@ Strutture dati
 
 -Tabella utenti: ogni utente presenta 6 attributi: nome, cognome, data di nascita (per verificare che sia maggiorenne), username, password e tipologia (visitatore, user, admin).
 
-- sport.xml: Viene eseguito uno script (sport.php) che si collega al database e crea questo file xml, in cui presenta la struttura dati dello sport. La grammatica assiociata è definita dal file “sport.dtd”.
+- utenti.xml: Viene eseguito uno script (utenti.php?) che si collega al database e crea questo file xml, in cui è presentata la struttura dati degli utenti. La grammatica associata è definita dal file "utenti.dtd".
 
-Esempio di 3 scommesse di calcio, 3 di basket e 3 di tennis sono presenti nel file sport.xml
+- sport.xml: Viene eseguito uno script (sport.php?) che si collega al database e crea questo file xml, in cui è presentata la struttura dati dello sport. La grammatica assiociata è definita dal file “sport.dtd”.
+
+Un esempio di 3 scommesse di calcio, 3 di basket e 3 di tennis sono presenti nel file sport.xml
+Un esempio di 2 utenti "admin" e 2 utenti "user" sono presenti nel file utenti.xml
