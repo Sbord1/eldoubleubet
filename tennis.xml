@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE movies SYSTEM "tennis.dtd">
+<!-- Esempi di 3 partite di tennis -->
+<tennis>
+  		<id> 1 </id>
+		<nome>
+			<giocatoreCasa> Alcaraz C. </giocatoreCasa>
+			<giocatoreTrasferta> Djokovic N. </giocatoreTrasferta>
+		</nome>
+		<quotaTennis>
+      			<quota1> 1.85 </quota1>
+      			<quota2> 1.79 </quota2>
+    </quotaTennis>
+    	<ora>
+        <oraInizio> 15:00 </oraInizio>
+        <oraFine> 17:00 </oraFine>
+      </ora>
+  <data>
+    <giorno> 13 </giorno>
+    <mese> 02 </mese>
+    <anno> 2023 </anno>
+  </data>
+		<puntata>
+			<minima> 1 </minima>
+			<massima> 9999 <massima>
+		</puntata>
+  
+  		<id> 2 </id>
+		<nome>
+			<giocatoreCasa> Medvedev D. </giocatoreCasa>
+			<giocatoreTrasferta> Ruud C. </giocatoreTrasferta>
+		</nome>
+		<quotaTennis>
+      			<quota1> 1.65 </quota1>
+      			<quota2> 1.99 </quota2>
+      </quotaTennis>
+    		<ora>
+        <oraInizio> 15:00 </oraInizio>
+        <oraFine> 17:00 </oraFine>
+        </ora>
+  <data>
+    <giorno> 17 </giorno>
+    <mese> 04 </mese>
+    <anno> 2023 </anno>
+  </data>
+		<puntata>
+			<minima> 1 </minima>
+			<massima> 9999 <massima>
+		</puntata>
+  
+  		<id> 1 </id>
+		<nome>
+			<giocatoreCasa> Rune H. </giocatoreCasa>
+			<giocatoreTrasferta> Sinner J. </giocatoreTrasferta>
+		</nome>
+		<quotaTennis>
+      			<quota1> 1.45 </quota1>
+      			<quota2> 2.12 </quota2>
+      		</quotaTennis>
+    		<ora>
+        <oraInizio> 15:00 </oraInizio>
+        <oraFine> 17:00 </oraFine>
+        </ora>
+  <data>
+    <giorno> 23 </giorno>
+    <mese> 01 </mese>
+    <anno> 2023 </anno>
+  </data>
+		<puntata>
+			<minima> 1 </minima>
+			<massima> 9999 <massima>
+		</puntata>
+</tennis>
