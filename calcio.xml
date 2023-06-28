@@ -29,7 +29,7 @@
 		</data>
 		<puntata>
 			<minima> 1 </minima>
-			<massima> 9999 <massima>
+			<massima> 9999 </massima>
 		</puntata>
 	</scommessa>
 	<scommessa>
@@ -58,7 +58,7 @@
 		</data>
 		<puntata>
 			<minima> 1 </minima>
-			<massima> 9999 <massima>
+			<massima> 9999 </massima>
 		</puntata>
 	</scommessa>
 	<scommessa>
@@ -87,7 +87,7 @@
 		</data>
 		 <puntata>
 			<minima> 1 </minima>
-			<massima> 9999 <massima>
+			<massima> 9999 </massima>
 		</puntata>
 	</scommessa>
 </calcio>
