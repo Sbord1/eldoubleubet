@@ -13,6 +13,7 @@
         </dataNascita>
         <username> Sbord1 </username>
         <password> Sbord1 </password> <!-- Non so se dobbiamo criptarla -->
+        <account> attivo </account>
     </utente>
     <utente tipologia="admin">
         <nome> Riccardo </nome>
@@ -24,6 +25,7 @@
         </dataNascita>
         <username> Tuzzo18 </username>
         <password> Tuzzo18 </password> <!-- Non so se dobbiamo criptarla -->
+        <account> attivo </account>
     </utente>
     <utente tipologia="scommettitore">
         <nome> Mario </nome>
@@ -35,6 +37,7 @@
         </dataNascita>
         <username> mario </username>
         <password> mario </password> <!-- Non so se dobbiamo criptarla -->
+        <account> disattivo </account>
     </utente>
     <utente tipologia="scommettitore">
         <nome> Ciro </nome>
@@ -46,6 +49,7 @@
         </dataNascita>
         <username> Ciruzzo </username>
         <password> Ciruzzo </password> <!-- Non so se dobbiamo criptarla -->
+        <account> attivo </account>
     </utente>
     <utente tipologia="gestore">
         <nome> Tizio </nome>
@@ -57,6 +61,7 @@
         </dataNascita>
         <username> Tizio </username>
         <password> Tizio </password> <!-- Non so se dobbiamo criptarla -->
+        <account> attivo </account>
     </utente>
     <utente tipologia="gestore">
         <nome> Caio </nome>
@@ -68,5 +73,6 @@
         </dataNascita>
         <username> Caio </username>
         <password> Caio </password> <!-- Non so se dobbiamo criptarla -->
+        <account> attivo </account>
     </utente>
 </utenti>
