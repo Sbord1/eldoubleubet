@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE movies SYSTEM "utenti.dtd">
 
-<!-- Esempi di 2 utenti "admin", 2 utenti "user" e 2 utenti "gestore" -->
+<!-- Esempi di 2 utenti "admin", 2 utenti "scommettitore" e 2 utenti "gestore" -->
 <utenti>
     <utente tipologia="admin">
         <nome> Francesco </nome>
