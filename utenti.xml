@@ -25,7 +25,7 @@
         <username> Tuzzo18 </username>
         <password> Tuzzo18 </password> <!-- Non so se dobbiamo criptarla -->
     </utente>
-    <utente tipologia="user">
+    <utente tipologia="scommettitore">
         <nome> Mario </nome>
         <cognome> Rossi </cognome>
         <dataNascita>
@@ -36,7 +36,7 @@
         <username> mario </username>
         <password> mario </password> <!-- Non so se dobbiamo criptarla -->
     </utente>
-    <utente tipologia="user">
+    <utente tipologia="scommettitore">
         <nome> Ciro </nome>
         <cognome> Esposito </cognome>
         <dataNascita>
