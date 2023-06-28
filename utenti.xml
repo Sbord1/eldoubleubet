@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE movies SYSTEM "utenti.dtd">
+<!DOCTYPE utenti SYSTEM "utenti.dtd">
 
 <!-- Esempi di 2 utenti "admin", 2 utenti "scommettitore" e 2 utenti "gestore" -->
 <utenti>
