@@ -4,7 +4,7 @@
 <!ELEMENT utente (nome, cognome, dataNascita, username, password)>
 
 <!ATTLIST utente
-              tipologia (scommettitore | admin | gestore) #REQUIRED>
+              tipologia (scommettitore | admin | gestore) "scommettitore" #REQUIRED>
 
 <!ELEMENT nome (#PCDATA)>
 <!ELEMENT cognome (#PCDATA)>
