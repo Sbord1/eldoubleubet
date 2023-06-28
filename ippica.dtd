@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT ippica (scommessa*)>
+
+<!ELEMENT scommessa (id, data, ora, cavalli, distanza, puntata)>
+
+<!ELEMENT data (giorno, mese, anno)>
+
+<!ELEMENT ora (oraInizio, oraFine)>
+
+<!ELEMENT cavalli (cavallo*)>
+
+<!ELEMENT cavallo (nome, numero, quote)>
+
+<!ELEMENT quote (primo, secondo, terzo)>
+
+<!ELEMENT puntata (minima, massima)>
+
+<!ELEMENT id (#PCDATA)>
+
+<!ELEMENT giorno (#PCDATA)>
+
+<!ELEMENT mese (#PCDATA)>
+
+<!ELEMENT anno (#PCDATA)>
+
+<!ELEMENT oraInizio (#PCDATA)>
+
+<!ELEMENT oraFine (#PCDATA)>
+
+<!ELEMENT nome (#PCDATA)>
+
+<!ELEMENT numero (#PCDATA)>
+
+<!ELEMENT primo (#PCDATA)>
+
+<!ELEMENT secondo (#PCDATA)>
+
+<!ELEMENT terzo (#PCDATA)>
+
+<!ELEMENT distanza (#PCDATA)>
+
+<!ELEMENT minima (#PCDATA)>
+
+<!ELEMENT massima (#PCDATA)>
+
+
+
+
