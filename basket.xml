@@ -19,11 +19,11 @@
     	<data>
       		<giorno> 22 </giorno>
       		<mese> 07 </mese>
-      		<anno> 2021 <anno>
+      		<anno> 2021 </anno>
     	</data>
 	<puntata>
 		<minima> 1 </minima>
-		<massima> 9999 <massima>
+		<massima> 9999 </massima>
 	</puntata>
 </scommessa>
 <scommessa>
@@ -43,11 +43,11 @@
 	<data>
           	<giorno> 25 </giorno>
           	<mese> 09 </mese>
-          	<anno> 2011 <anno>
+          	<anno> 2011 </anno>
 	</data>
 	<puntata>
 		<minima> 1 </minima>
-		<massima> 9999 <massima>
+		<massima> 9999 </massima>
 	</puntata>
 </scommessa>
 <scommessa>
@@ -67,11 +67,11 @@
     	<data>
           	<giorno> 15 </giorno>
           	<mese> 03 </mese>
-          	<anno> 2023 <anno>
+          	<anno> 2023 </anno>
     	</data>
 	<puntata>
 		<minima> 1 </minima>
-		<massima> 9999 <massima>
+		<massima> 9999 </massima>
 	</puntata>
 </scommessa>
 </basket>
