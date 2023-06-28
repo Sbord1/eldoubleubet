@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chat SYSTEM "chat.dtd">
+
+<chat>
+
+    <message>
+        <sender>Alice</sender>
+        <receiver>Bob</receiver>
+        <text>Hello!</text>
+    </message>
+
+    <message>
+        <sender>Bob</sender>
+        <receiver>Alice</receiver>
+        <text>Hi Alice!</text>
+    </message>
+
+</chat>

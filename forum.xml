@@ -1,0 +1,13 @@
+<forum>
+
+    <message category="calcio">
+        <sender>Alice</sender>
+        <text>Belle partite di calcio</text>
+    </message>
+
+    <message category="tennis">
+        <sender>Bob</sender>
+        <text>Quando la prossima partita di Nadal?</text>
+    </message>
+
+</forum>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT chat (message*)>
+
+<!ELEMENT message (sender, receiver, text)>
+
+<!ELEMENT sender (#PCDATA)>
+<!ELEMENT receiver (#PCDATA)>
+<!ELEMENT text (#PCDATA)>
