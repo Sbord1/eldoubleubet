@@ -3,7 +3,7 @@
 
 <!-- Esempi di 2 utenti "admin", 2 utenti "scommettitore" e 2 utenti "gestore" -->
 <utenti>
-    <utente tipologia="admin">
+    <utente tipologia="admin" account="attivo">
         <nome> Francesco </nome>
         <cognome> Sbordone </cognome>
         <dataNascita>
@@ -13,9 +13,8 @@
         </dataNascita>
         <username> Sbord1 </username>
         <password> Sbord1 </password> <!-- Non so se dobbiamo criptarla -->
-        <account> attivo </account>
     </utente>
-    <utente tipologia="admin">
+    <utente tipologia="admin" account="attivo">
         <nome> Riccardo </nome>
         <cognome> Tuzzolino </cognome>
         <dataNascita>
@@ -25,9 +24,8 @@
         </dataNascita>
         <username> Tuzzo18 </username>
         <password> Tuzzo18 </password> <!-- Non so se dobbiamo criptarla -->
-        <account> attivo </account>
     </utente>
-    <utente tipologia="scommettitore">
+    <utente tipologia="scommettitore" account="attivo">
         <nome> Mario </nome>
         <cognome> Rossi </cognome>
         <dataNascita>
@@ -37,9 +35,8 @@
         </dataNascita>
         <username> mario </username>
         <password> mario </password> <!-- Non so se dobbiamo criptarla -->
-        <account> disattivo </account>
     </utente>
-    <utente tipologia="scommettitore">
+    <utente tipologia="scommettitore" account="disattivo">
         <nome> Ciro </nome>
         <cognome> Esposito </cognome>
         <dataNascita>
@@ -49,9 +46,8 @@
         </dataNascita>
         <username> Ciruzzo </username>
         <password> Ciruzzo </password> <!-- Non so se dobbiamo criptarla -->
-        <account> attivo </account>
     </utente>
-    <utente tipologia="gestore">
+    <utente tipologia="gestore" account="attivo">
         <nome> Tizio </nome>
         <cognome> Gracco </cognome>
         <dataNascita>
@@ -61,9 +57,8 @@
         </dataNascita>
         <username> Tizio </username>
         <password> Tizio </password> <!-- Non so se dobbiamo criptarla -->
-        <account> attivo </account>
     </utente>
-    <utente tipologia="gestore">
+    <utente tipologia="gestore" account="attivo">
         <nome> Caio </nome>
         <cognome> Gracco </cognome>
         <dataNascita>
@@ -73,6 +68,5 @@
         </dataNascita>
         <username> Caio </username>
         <password> Caio </password> <!-- Non so se dobbiamo criptarla -->
-        <account> attivo </account>
     </utente>
 </utenti>
