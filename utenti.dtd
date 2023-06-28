@@ -1,10 +1,11 @@
 <!-- L'oggetto "utenti" e' l'elemento radice del documento ed e' specificato come una sequenza di elementi "utente" (0 o piu') -->
 <!ELEMENT utenti (utente*)>
 
-<!ELEMENT utente (nome, cognome, dataNascita, username, password, account)>
+<!ELEMENT utente (nome, cognome, dataNascita, username, password)>
 
 <!ATTLIST utente
-              tipologia (scommettitore | admin | gestore) "scommettitore" #REQUIRED>
+              tipologia (scommettitore | admin | gestore) #REQUIRED
+              account (attivo | disattivo) #REQUIRED>
 
 <!ELEMENT nome (#PCDATA)>
 
@@ -19,5 +20,5 @@
 
 <!ELEMENT password (#PCDATA)>
 
-<!ELEMENT account ("attivo" | "disattivo")>
+
 
