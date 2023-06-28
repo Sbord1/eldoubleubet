@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Definisco le scommesse relative al calcio -->
-<!ELEMENT calcio (id, nome, quotaCalcio, ora, data, puntata>
+<!ELEMENT calcio (scommessa*)>
+<!ELEMENT scommessa (id, nome, quotaCalcio, ora, data, puntata)>
 
 <!ELEMENT id (#PCDATA)>
 
