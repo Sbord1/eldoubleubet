@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Definisco le scommesse relative al calcio -->
-<!ELEMENT calcio (id, nome, quotaCalcio, ora, puntata>
+<!ELEMENT calcio (id, nome, quotaCalcio, ora, data, puntata>
 
 <!ELEMENT id (#PCDATA)>
 
@@ -25,6 +25,11 @@ quotaGG è vinta quando entrambe le squadre segnano, analogamente per quotaNG è
 <!ELEMENT ora (oraInizio, oraFine)>
 <!ELEMENT oraInizio (#PCDATA)>
 <!ELEMENT oraFine (#PCDATA)>
+
+<!ELEMENT data (giorno, mese, anno)>
+<!ELEMENT giorno (#PCDATA)>
+<!ELEMENT mese (#PCDATA)>
+<!ELEMENT anno (#PCDATA)>
 
 <!-- puntata è composta da un valore minimo e un valore massimo di puntata -->
 <!ELEMENT puntata (minima, massima)>
