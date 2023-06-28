@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Definisco le scommesse relative al calcio -->
+<!ELEMENT calcio (id, nome, quotaCalcio, ora, puntata>
+
+<!ELEMENT id (#PCDATA)>
+
+<!ELEMENT nome (squadraCasa, squadraTrasferta)>
+<!ELEMENT squadraCasa (#PCDATA)>
+<!ELEMENT squadraTrasferta (#PCDATA)>
+
+<!-- quotaCalcio è composta da: vittoria casa (1), pareggio (x), vittoria trasferta (2),
+quotaUnder si riferisce ad Under 2.5 goal è vinta quando in totale le squadre segnano al più 2 goal analogamente per Over
+quotaGG è vinta quando entrambe le squadre segnano, analogamente per quotaNG è vinta quanto senza al più una squadra -->
+
+<!ELEMENT quotaCalcio (quota1, quotax, quota2, quotaUnder, quotaOver, quotaGG, quotaNG> 
+<!ELEMENT quota1 (#PCDATA)>
+<!ELEMENT quotax (#PCDATA)>
+<!ELEMENT quota2 (#PCDATA)>
+<!ELEMENT quotaUnder (#PCDATA)>
+<!ELEMENT quotaOver (#PCDATA)>
+<!ELEMENT quotaGG (#PCDATA)>
+<!ELEMENT quotaNG (#PCDATA)>
+
+<!ELEMENT ora (#PCDATA)>
+
+<!-- puntata è composta da un valore minimo e un valore massimo di puntata -->
+<!ELEMENT puntata (minima, massima)>
+<!ELEMENT minima (#PCDATA)>
+<!ELEMENT massima (#PCDATA)>
+
+
