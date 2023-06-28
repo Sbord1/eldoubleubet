@@ -22,7 +22,9 @@ quotaGG è vinta quando entrambe le squadre segnano, analogamente per quotaNG è
 <!ELEMENT quotaGG (#PCDATA)>
 <!ELEMENT quotaNG (#PCDATA)>
 
-<!ELEMENT ora (#PCDATA)>
+<!ELEMENT ora (oraInizio, oraFine)>
+<!ELEMENT oraInizio (#PCDATA)>
+<!ELEMENT oraFine (#PCDATA)>
 
 <!-- puntata è composta da un valore minimo e un valore massimo di puntata -->
 <!ELEMENT puntata (minima, massima)>
