@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE movies SYSTEM "calcio.dtd">
+<!DOCTYPE calcio SYSTEM "calcio.dtd">
 <!-- Esempi di 3 partite di calcio -->
 
 <calcio>
