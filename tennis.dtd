@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Definisco le scommesse relative al tennis -->
-<!ELEMENT tennis (id, nome, quotaTennis, ora, data, puntata>
+<!ELEMENT tennis (scommessa*)>
+<!ELEMENT scommessa (id, nome, quotaTennis, ora, data, puntata)>
 
 <!ELEMENT id (#PCDATA)>
 
