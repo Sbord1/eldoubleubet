@@ -2,72 +2,72 @@
 <!DOCTYPE movies SYSTEM "basket.dtd">
 <!-- Esempi di 3 partite di basket -->
 <basket>
-  	<id> 1 </id>
-		<nome>
-			<squadraCasa> Boston Celtics </squadraCasa>
-			<squadraTrasferta> Milwaukee Bucks </squadraTrasferta>
-		</nome>
-		<quotaBasket>
-      			<quota1> 2.35 </quota1>
-      			<quota2> 1.49 </quota2>
-    </quotaBasket>
-    		<ora> 
-          <oraInizio> 22:00 </oraInizio>
-          <oraFine> 23:30 </oraFine>
-        </ora>
-    <data>
-      <giorno> 22 </giorno>
-      <mese> 07 </mese>
-      <anno> 2021 <anno>
-    </data>
-		<puntata>
-			<minima> 1 </minima>
-			<massima> 9999 <massima>
-		</puntata>
+	<id> 1 </id>
+	<nome>
+		<squadraCasa> Boston Celtics </squadraCasa>
+		<squadraTrasferta> Milwaukee Bucks </squadraTrasferta>
+	</nome>
+	<quotaBasket>
+      		<quota1> 2.35 </quota1>
+      		<quota2> 1.49 </quota2>
+    	</quotaBasket>
+    	<ora> 
+          	<oraInizio> 22:00 </oraInizio>
+          	<oraFine> 23:30 </oraFine>
+   	</ora>
+    	<data>
+      		<giorno> 22 </giorno>
+      		<mese> 07 </mese>
+      		<anno> 2021 <anno>
+    	</data>
+	<puntata>
+		<minima> 1 </minima>
+		<massima> 9999 <massima>
+	</puntata>
 	
   	<id> 2 </id>
-		<nome>
-			<squadraCasa> Philadelphia 76ers </squadraCasa>
-			<squadraTrasferta> Brooklyn Nets </squadraTrasferta>
-		</nome>
-		<quotaBasket>
-      			<quota1> 1.75 </quota1>
-      			<quota2> 1.89 </quota2>
-    </quotaBasket>
-    <ora> 
-          <oraInizio> 22:00 </oraInizio>
-          <oraFine> 23:30 </oraFine>
-      </ora>
-    <data>
-          <giorno> 25 </giorno>
-          <mese> 09 </mese>
-          <anno> 2011 <anno>
-    </data>
-		<puntata>
-			<minima> 1 </minima>
-			<massima> 9999 <massima>
-		</puntata>
+	<nome>
+		<squadraCasa> Philadelphia 76ers </squadraCasa>
+		<squadraTrasferta> Brooklyn Nets </squadraTrasferta>
+	</nome>
+	<quotaBasket>
+      		<quota1> 1.75 </quota1>
+      		<quota2> 1.89 </quota2>
+    	</quotaBasket>
+    	<ora> 
+          	<oraInizio> 22:00 </oraInizio>
+          	<oraFine> 23:30 </oraFine>
+	</ora>
+	<data>
+          	<giorno> 25 </giorno>
+          	<mese> 09 </mese>
+          	<anno> 2011 <anno>
+	</data>
+	<puntata>
+		<minima> 1 </minima>
+		<massima> 9999 <massima>
+	</puntata>
 	
   	<id> 3 </id>
-		<nome>
-			<squadraCasa> Toronto Raptors </squadraCasa>
-			<squadraTrasferta> Chicago Bulls </squadraTrasferta>
-		</nome>
-		<quotaBasket>
-      			<quota1> 1.90 </quota1>
-      			<quota2> 1.85 </quota2>
-    </quotaBasket>
-    <ora> 
-          <oraInizio> 22:00 </oraInizio>
-          <oraFine> 23:30 </oraFine>
-    </ora>
-    <data>
-          <giorno> 15 </giorno>
-          <mese> 03 </mese>
-          <anno> 2023 <anno>
-    </data>
-		<puntata>
-			<minima> 1 </minima>
-			<massima> 9999 <massima>
-		</puntata>
+	<nome>
+		<squadraCasa> Toronto Raptors </squadraCasa>
+		<squadraTrasferta> Chicago Bulls </squadraTrasferta>
+	</nome>
+	<quotaBasket>
+      		<quota1> 1.90 </quota1>
+      		<quota2> 1.85 </quota2>
+    	</quotaBasket>
+    	<ora> 
+          	<oraInizio> 22:00 </oraInizio>
+          	<oraFine> 23:30 </oraFine>
+    	</ora>
+    	<data>
+          	<giorno> 15 </giorno>
+          	<mese> 03 </mese>
+          	<anno> 2023 <anno>
+    	</data>
+	<puntata>
+		<minima> 1 </minima>
+		<massima> 9999 <massima>
+	</puntata>
 </basket>
