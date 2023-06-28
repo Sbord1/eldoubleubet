@@ -2,6 +2,7 @@
 <!DOCTYPE movies SYSTEM "basket.dtd">
 <!-- Esempi di 3 partite di basket -->
 <basket>
+<scommessa>
 	<id> 1 </id>
 	<nome>
 		<squadraCasa> Boston Celtics </squadraCasa>
@@ -24,7 +25,8 @@
 		<minima> 1 </minima>
 		<massima> 9999 <massima>
 	</puntata>
-	
+</scommessa>
+<scommessa>
   	<id> 2 </id>
 	<nome>
 		<squadraCasa> Philadelphia 76ers </squadraCasa>
@@ -47,7 +49,8 @@
 		<minima> 1 </minima>
 		<massima> 9999 <massima>
 	</puntata>
-	
+</scommessa>
+<scommessa>
   	<id> 3 </id>
 	<nome>
 		<squadraCasa> Toronto Raptors </squadraCasa>
@@ -70,4 +73,5 @@
 		<minima> 1 </minima>
 		<massima> 9999 <massima>
 	</puntata>
+</scommessa>
 </basket>
