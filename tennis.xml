@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE movies SYSTEM "tennis.dtd">
+<!DOCTYPE tennis SYSTEM "tennis.dtd">
 <!-- Esempi di 3 partite di tennis -->
 <tennis>
  <scommessa>
