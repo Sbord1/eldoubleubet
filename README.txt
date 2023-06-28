@@ -15,7 +15,13 @@ Tecniche impiegate
 
 - Verifica della correttezza della forma (well-formed) e della validità del documento XML sia relativamente alla DTD che allo schema tramite l'applicazione XML Copy Editor.
 
+- Elementi block-level / in-line
 
+- Utilizzo di CSS inline ed external + selettori CSS
+
+- specifica colori #XXXXXX
+
+- positioning: position, top, left, float, ...
 -----------------------------------------------------------------------------------------------------------------------------------
 
 Spiegazione tipologie di utenti e funzionalità
@@ -34,7 +40,7 @@ Esistono varie tipologie di utenti:
 
 Casi d’uso
 
-Sul sito sono presenti varie sezioni:
+Sul sito sono presenti varie sezioni che fanno riferimento ad un file .css per lo styling:
 
 -	Sport: qui si può visualizzare le scommesse e le quote relative allo sport (ci possono essere diversi tipi di scommessa in base allo sport). C’è una       funzionalità che permette di filtrare le scommesse per (data di aggiunta, nome, quota).
 
@@ -56,12 +62,12 @@ Sul sito sono presenti varie sezioni:
 
 -	Forum: Sezione in cui è possibile scambiare messaggi tra utenti.
 
--Informazioni generali: Sezione in cui è possibile consultare delle informazioni generali su come funziona il sito e su come poter scommettere.
+- Informazioni generali: Sezione in cui è possibile consultare delle informazioni generali su come funziona il sito e su come poter scommettere.
 -----------------------------------------------------------------------------------------------------------------------------------
 
 Strutture dati
 
--Tabella utenti: ogni utente presenta 6 attributi: nome, cognome, data di nascita (per verificare che sia maggiorenne), username, password e tipologia (user, gestore, admin).
+- Tabella utenti: ogni utente presenta 6 attributi: nome, cognome, data di nascita (per verificare che sia maggiorenne), username, password e tipologia (user, gestore, admin).
 
 - utenti.xml: Viene eseguito uno script (utenti.php?) che si collega al database e crea questo file xml, in cui è presentata la struttura dati degli utenti. La grammatica associata è definita dal file "utenti.dtd".
 
