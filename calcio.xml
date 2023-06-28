@@ -2,7 +2,8 @@
 <!DOCTYPE movies SYSTEM "calcio.dtd">
 <!-- Esempi di 3 partite di calcio -->
 
-	<calcio>
+<calcio>
+	<scommessa>
 		<id> 1 </id>
 		<nome>
 			<squadraCasa> Milan </squadraCasa>
@@ -30,6 +31,8 @@
 			<minima> 1 </minima>
 			<massima> 9999 <massima>
 		</puntata>
+	</scommessa>
+	<scommessa>
   		<id> 2 </id>
 		<nome>
 			<squadraCasa> Roma </squadraCasa>
@@ -57,6 +60,8 @@
 			<minima> 1 </minima>
 			<massima> 9999 <massima>
 		</puntata>
+	</scommessa>
+	<scommessa>
   		<id> 3 </id>
 		<nome>
 			<squadraCasa> Juventus </squadraCasa>
@@ -84,5 +89,6 @@
 			<minima> 1 </minima>
 			<massima> 9999 <massima>
 		</puntata>
-	</calcio>
+	</scommessa>
+</calcio>
 	
