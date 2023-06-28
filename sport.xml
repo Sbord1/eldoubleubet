@@ -1,7 +1,7 @@
-<!-- Esempi di 3 partite di calcio, 3 di basket e 3 di tennis (manca l'ippica da capire) -->
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE movies SYSTEM "sport.dtd">
-<sport>
+<!DOCTYPE movies SYSTEM "calcio.dtd">
+<!-- Esempi di 3 partite di calcio -->
+
 	<calcio>
 		<id> 1 </id>
 		<nome>
@@ -12,14 +12,24 @@
       			<quota1> 2.12 </quota1>
       			<quotax> 3.55 </quotax>
       			<quota2> 1.89 </quota2>
+			<quotaUnder> 1.88 </quotaUnder>
+			<quotaOver> 1.74 </quotaOver>
+			<quotaGG> 1.55 </quotaGG>
+			<quotaNG> 1.85 </quotaNG>
      		 </quotaCalcio>
-    		<ora> 20:45 </ora>
+    		<ora>
+			<oraInizio> 20:45 </oraInizio>
+			<oraFine> 22:15 </oraFine>
+		</ora>
+		<data>
+			<giorno> 20 </giorno>
+			<mese> 03 </mese>
+			<anno> 2018 </anno>
+		</data>
 		<puntata>
 			<minima> 1 </minima>
 			<massima> 9999 <massima>
 		</puntata>
-	</calcio>
-  	<calcio>
   		<id> 2 </id>
 		<nome>
 			<squadraCasa> Roma </squadraCasa>
@@ -29,14 +39,24 @@
       			<quota1> 1.45 </quota1>
       			<quotax> 3.12 </quotax>
       			<quota2> 2.34 </quota2>
+			<quotaUnder> 1.48 </quotaUnder>
+			<quotaOver> 1.94 </quotaOver>
+			<quotaGG> 1.25 </quotaGG>
+			<quotaNG> 1.85 </quotaNG>
       		</quotaCalcio>
-    		<ora> 20:45 </ora>
+    		<ora> 
+			<oraInizio> 20:45 </oraInizio>
+			<oraFine> 22:15 </oraFine>
+		</ora>
+		<data>
+			<giorno> 25 </giorno>
+			<mese> 05 </mese>
+			<anno> 2022 </anno>
+		</data>
 		<puntata>
 			<minima> 1 </minima>
 			<massima> 9999 <massima>
 		</puntata>
-	</calcio>
- 	 <calcio>
   		<id> 3 </id>
 		<nome>
 			<squadraCasa> Juventus </squadraCasa>
@@ -46,107 +66,23 @@
      			<quota1> 1.35 </quota1>
       			<quotax> 3.89 </quotax>
       			<quota2> 2.89 </quota2>
+			<quotaUnder> 1.88 </quotaUnder>
+			<quotaOver> 1.34 </quotaOver>
+			<quotaGG> 1.95 </quotaGG>
+			<quotaNG> 1.25 </quotaNG>
       		</quotaCalcio>
-    		<ora> 20:45 </ora>
+    		<ora>
+			<oraInizio> 20:45 </oraInizio>
+			<oraFine> 22:15 </oraFine>
+		</ora>
+		<data>
+			<giorno> 25 </giorno>
+			<mese> 05 </mese>
+			<anno> 2022 </anno>
+		</data>
 		 <puntata>
 			<minima> 1 </minima>
 			<massima> 9999 <massima>
 		</puntata>
 	</calcio>
-	<basket>
-  		<id> 1 </id>
-		<nome>
-			<squadraCasa> Boston Celtics </squadraCasa>
-			<squadraTrasferta> Milwaukee Bucks </squadraTrasferta>
-		</nome>
-		<quota>
-      			<quota1> 2.35 </quota1>
-      			<quota2> 1.49 </quota2>
-      		</quota>
-    		<ora> 22:00 </ora>
-		<puntata>
-			<minima> 1 </minima>
-			<massima> 9999 <massima>
-		</puntata>
-	</basket>
-  	<basket>
-  		<id> 2 </id>
-		<nome>
-			<squadraCasa> Philadelphia 76ers </squadraCasa>
-			<squadraTrasferta> Brooklyn Nets </squadraTrasferta>
-		</nome>
-		<quota>
-      			<quota1> 1.75 </quota1>
-      			<quota2> 1.89 </quota2>
-      		</quota>
-    		<ora> 22:00 </ora>
-		<puntata>
-			<minima> 1 </minima>
-			<massima> 9999 <massima>
-		</puntata>
-	</basket>
-  	<basket>
-  		<id> 3 </id>
-		<nome>
-			<squadraCasa> Toronto Raptors </squadraCasa>
-			<squadraTrasferta> Chicago Bulls </squadraTrasferta>
-		</nome>
-		<quota>
-      			<quota1> 1.90 </quota1>
-      			<quota2> 1.85 </quota2>
-      		</quota>
-    		<ora> 20:45 </ora>
-		<puntata>
-			<minima> 1 </minima>
-			<massima> 9999 <massima>
-		</puntata>
-	</basket>
-    	<tennis>
-  		<id> 1 </id>
-		<nome>
-			<squadraCasa> Alcaraz C. </squadraCasa>
-			<squadraTrasferta> Djokovic N. </squadraTrasferta>
-		</nome>
-		<quota>
-      			<quota1> 1.85 </quota1>
-      			<quota2> 1.79 </quota2>
-      		</quota>
-    		<ora> 15:00 </ora>
-		<puntata>
-			<minima> 1 </minima>
-			<massima> 9999 <massima>
-		</puntata>
-	</tennis>
-  	<tennis>
-  		<id> 2 </id>
-		<nome>
-			<squadraCasa> Medvedev D. </squadraCasa>
-			<squadraTrasferta> Ruud C. </squadraTrasferta>
-		</nome>
-		<quota>
-      			<quota1> 1.65 </quota1>
-      			<quota2> 1.99 </quota2>
-      		</quota>
-    		<ora> 15:00 </ora>
-		<puntata>
-			<minima> 1 </minima>
-			<massima> 9999 <massima>
-		</puntata>
-	</tennis>
-  	<tennis>
-  		<id> 1 </id>
-		<nome>
-			<squadraCasa> Rune H. </squadraCasa>
-			<squadraTrasferta> Sinner J. </squadraTrasferta>
-		</nome>
-		<quota>
-      			<quota1> 1.45 </quota1>
-      			<quota2> 2.12 </quota2>
-      		</quota>
-    		<ora> 15:00 </ora>
-		<puntata>
-			<minima> 1 </minima>
-			<massima> 9999 <massima>
-		</puntata>
-	</tennis>
-</sport>
+	
