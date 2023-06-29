@@ -2,7 +2,7 @@
 
 <!-- Definisco le scommesse relative al basket -->
 <!ELEMENT basket (scommessa*)>
-<!ELEMENT scommessa (id, nome, quotaBasket, ora, data, puntata)>
+<!ELEMENT scommessa (id, nome, quotaBasket, ora, data, puntata, risultato)>
 
 <!ELEMENT id (#PCDATA)>
 
@@ -29,5 +29,7 @@
 <!ELEMENT puntata (minima, massima)>
 <!ELEMENT minima (#PCDATA)>
 <!ELEMENT massima (#PCDATA)>
+
+<!ELEMENT risultato (#PCDATA)>
 
 
