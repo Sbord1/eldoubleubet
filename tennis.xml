@@ -25,6 +25,10 @@
 		<minima> 1 </minima>
 		<massima> 9999 </massima>
 	</puntata>
+	 <risultato>
+		 <puntiGiocatoreCasa> 1 </puntiGiocatoreCasa>
+		 <puntiGiocatoreTrasferta> 3 </puntiGiocatoreTrasferta>
+	 </risultato>
 </scommessa>
 <scommessa>
   	<id> 2 </id>
@@ -49,6 +53,10 @@
 		<minima> 1 </minima>
 		<massima> 9999 </massima>
 	</puntata>
+	<risultato>
+		 <puntiGiocatoreCasa> 3 </puntiGiocatoreCasa>
+		 <puntiGiocatoreTrasferta> 2 </puntiGiocatoreTrasferta>
+	 </risultato>
 </scommessa>
 <scommessa>
   	<id> 1 </id>
@@ -73,5 +81,9 @@
 		<minima> 1 </minima>
 		<massima> 9999 </massima>
 	</puntata>
+	<risultato>
+		 <puntiGiocatoreCasa> 2 </puntiGiocatoreCasa>
+		 <puntiGiocatoreTrasferta> 3 </puntiGiocatoreTrasferta>
+	 </risultato>
 </scommessa>
 </tennis>
