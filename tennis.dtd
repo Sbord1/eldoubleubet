@@ -2,7 +2,7 @@
 
 <!-- Definisco le scommesse relative al tennis -->
 <!ELEMENT tennis (scommessa*)>
-<!ELEMENT scommessa (id, nome, quotaTennis, ora, data, puntata)>
+<!ELEMENT scommessa (id, nome, quotaTennis, ora, data, puntata, risultato)>
 
 <!ELEMENT id (#PCDATA)>
 
@@ -30,4 +30,5 @@
 <!ELEMENT minima (#PCDATA)>
 <!ELEMENT massima (#PCDATA)>
 
+<!ELEMENT risultato (#PCDATA)>
 
