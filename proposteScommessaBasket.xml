@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE proposteScommessaBasket SYSTEM "proposteScommessaBasket.dtd">
 <!-- Esempio di 1 proposta di scommessa per il basket dall' utente sbord1  -->
-<basket>
-<scommessa>
+<proposteScommessaBasket>
+<propostaScommessa>
 	<id> 10 </id>
 	<nome>
 		    <squadraCasa> Miami Heat </squadraCasa>
@@ -26,5 +26,5 @@
 		    <massima> 9999 </massima>
 	</puntata>
   <utente> sbord1 </utente>
-</scommessa>
-</basket>
+</propostaScommessa>
+</proposteScommessaBasket>
