@@ -6,11 +6,23 @@
     <message category="calcio">
         <sender>Alice</sender>
         <text>Belle partite di calcio</text>
+        <data>
+            <giorno>11</giorno>
+            <mese>03</mese>
+            <anno>2023</anno>
+        </data>
+        <ora>19:00</ora>
     </message>
 
     <message category="tennis">
         <sender>Bob</sender>
         <text>Quando la prossima partita di Nadal?</text>
+        <data>
+            <giorno>12</giorno>
+            <mese>03</mese>
+            <anno>2023</anno>
+        </data>
+        <ora>19:05</ora>
     </message>
 
 </forum>
