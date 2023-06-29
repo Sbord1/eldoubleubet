@@ -2,7 +2,7 @@
 
 <!ELEMENT forum (message*)>
 
-<!ELEMENT message (sender, text)>
+<!ELEMENT message (sender, text, data, ora)>
 
 <!ATTLIST message
             category (calcio | tennis | basket | ippica) #REQUIRED>
@@ -10,3 +10,14 @@
 <!ELEMENT sender (#PCDATA)>
 
 <!ELEMENT text (#PCDATA)>
+
+<!ELEMENT data (giorno, mese, anno)>
+
+<!ELEMENT giorno (#PCDATA)>
+
+<!ELEMENT mese (#PCDATA)>
+
+<!ELEMENT anno (#PCDATA)>
+
+<!ELEMENT ora (#PCDATA)>
+
