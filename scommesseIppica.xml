@@ -6,7 +6,7 @@
 <scommesseIppica>
 
     <!-- "eliminata" indica se la scommessa e' stata eliminata dal gestore (0 se non eliminata, altrimenti 1)-->
-    <scommessa eliminata="0">
+    <scommessa eliminato="0">
         <id>1</id>
         <scommettitore>matteo</scommettitore>
         <risultato>
@@ -17,7 +17,7 @@
         <puntata>5</puntata>
     </scommessa>
 
-    <scommessa eliminata="0">
+    <scommessa eliminato="0">
         <id>1</id>
         <scommettitore>andrea</scommettitore>
         <risultato>
