@@ -30,7 +30,7 @@
 <!ELEMENT minima (#PCDATA)>
 <!ELEMENT massima (#PCDATA)>
 
-<!ELEMENT risultato (puntiSquadraCasa, puntiSquadraTrasferta)>
-<!ELEMENT puntiSquadraCasa (#PCDATA)>
-<!ELEMENT puntiSquadraTrasferta (#PCDATA)>
+<!ELEMENT risultato (puntiGiocatoreCasa, puntiGiocatoreTrasferta)>
+<!ELEMENT puntiGiocatoreCasa (#PCDATA)>
+<!ELEMENT puntiGiocatoreTrasferta (#PCDATA)>
 
