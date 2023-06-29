@@ -12,9 +12,11 @@
 
 <!ELEMENT cavallo (nome, numero, quote)>
 
-<!ELEMENT quote (primo, secondo, terzo)>
+<!ELEMENT quote (quota1, quota2, quota3)>
 
 <!ELEMENT puntata (minima, massima)>
+
+<!ELEMENT risultato (primo, secondo, terzo)>
 
 <!ELEMENT id (#PCDATA)>
 
@@ -32,11 +34,11 @@
 
 <!ELEMENT numero (#PCDATA)>
 
-<!ELEMENT primo (#PCDATA)>
+<!ELEMENT quota1 (#PCDATA)>
 
-<!ELEMENT secondo (#PCDATA)>
+<!ELEMENT quota2 (#PCDATA)>
 
-<!ELEMENT terzo (#PCDATA)>
+<!ELEMENT quota3 (#PCDATA)>
 
 <!ELEMENT distanza (#PCDATA)>
 
@@ -44,6 +46,12 @@
 
 <!ELEMENT massima (#PCDATA)>
 
-<!ELEMENT risultato (#PCDATA)>
+<!ELEMENT primo (#PCDATA)>
+
+<!ELEMENT secondo (#PCDATA)>
+
+<!ELEMENT terzo (#PCDATA)>
+
+
 
 
