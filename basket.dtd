@@ -30,6 +30,8 @@
 <!ELEMENT minima (#PCDATA)>
 <!ELEMENT massima (#PCDATA)>
 
-<!ELEMENT risultato (#PCDATA)>
+<!ELEMENT risultato (puntiSquadraCasa, puntiSquadraTrasferta)>
+<!ELEMENT puntiSquadraCasa (#PCDATA)>
+<!ELEMENT puntiSquadraTrasferta (#PCDATA)>
 
 
