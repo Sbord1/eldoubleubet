@@ -2,8 +2,18 @@
 
 <!ELEMENT chat (message*)>
 
-<!ELEMENT message (sender, receiver, text)>
+<!ELEMENT message (sender, receiver, text, data, ora)>
 
 <!ELEMENT sender (#PCDATA)>
 <!ELEMENT receiver (#PCDATA)>
 <!ELEMENT text (#PCDATA)>
+
+<!ELEMENT data (giorno, mese, anno)>
+
+<!ELEMENT giorno (#PCDATA)>
+
+<!ELEMENT mese (#PCDATA)>
+
+<!ELEMENT anno (#PCDATA)>
+
+<!ELEMENT ora (#PCDATA)>
