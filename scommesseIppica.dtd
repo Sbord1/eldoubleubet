@@ -5,7 +5,7 @@
 <!ELEMENT scommessa (id, scommettitore, risultato, puntata)>
 
 <!ATTLIST scommessa
-            eliminata (0 | 1) "0">
+            eliminato (0 | 1) "0">
 
 <!ELEMENT risultato (primo, secondo, terzo)>
 
