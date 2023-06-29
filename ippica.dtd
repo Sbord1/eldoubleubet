@@ -2,7 +2,7 @@
 
 <!ELEMENT ippica (scommessa*)>
 
-<!ELEMENT scommessa (id, data, ora, cavalli, distanza, puntata)>
+<!ELEMENT scommessa (id, data, ora, cavalli, distanza, puntata, risultato)>
 
 <!ELEMENT data (giorno, mese, anno)>
 
@@ -44,6 +44,6 @@
 
 <!ELEMENT massima (#PCDATA)>
 
-
+<!ELEMENT risultato (#PCDATA)>
 
 
