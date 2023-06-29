@@ -12,7 +12,7 @@
 
 <!-- quotaTennis è composta da: vittoria casa (1), vittoria trasferta (2) -->
 
-<!ELEMENT quotaTennis (quota1, quota2> 
+<!ELEMENT quotaTennis (quota1, quota2)> 
 <!ELEMENT quota1 (#PCDATA)>
 <!ELEMENT quota2 (#PCDATA)>
 
