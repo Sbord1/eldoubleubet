@@ -14,7 +14,7 @@
 quotaUnder si riferisce ad Under 2.5 goal è vinta quando in totale le squadre segnano al più 2 goal analogamente per Over
 quotaGG è vinta quando entrambe le squadre segnano, analogamente per quotaNG è vinta quanto senza al più una squadra -->
 
-<!ELEMENT quotaCalcio (quota1, quotax, quota2, quotaUnder, quotaOver, quotaGG, quotaNG> 
+<!ELEMENT quotaCalcio (quota1, quotax, quota2, quotaUnder, quotaOver, quotaGG, quotaNG)> 
 <!ELEMENT quota1 (#PCDATA)>
 <!ELEMENT quotax (#PCDATA)>
 <!ELEMENT quota2 (#PCDATA)>
