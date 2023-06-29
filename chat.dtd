@@ -2,8 +2,9 @@
 
 <!ELEMENT chat (message*)>
 
-<!ELEMENT message (sender, receiver, text, data, ora)>
+<!ELEMENT message (id, sender, receiver, text, data, ora)>
 
+<!ELEMENT id (#PCDATA)>
 <!ELEMENT sender (#PCDATA)>
 <!ELEMENT receiver (#PCDATA)>
 <!ELEMENT text (#PCDATA)>
