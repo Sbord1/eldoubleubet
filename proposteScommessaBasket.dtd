@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Definisco le scommesse relative al basket -->
-<!ELEMENT proposteBasket (scommessa*)>
-<!ELEMENT scommessa (id, nome, quotaBasket, ora, data, puntata, utente)>
+<!ELEMENT proposteScommessaBasket (propostaScommessa*)>
+<!ELEMENT propostaScommessa (id, nome, quotaBasket, ora, data, puntata, utente)>
 
 <!ELEMENT id (#PCDATA)>
 
