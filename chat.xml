@@ -4,6 +4,7 @@
 <chat>
 
     <message>
+        <id>1</id>
         <sender>Alice</sender>
         <receiver>Bob</receiver>
         <text>Hello!</text>
@@ -16,6 +17,7 @@
     </message>
 
     <message>
+        <id>2</id>
         <sender>Bob</sender>
         <receiver>Alice</receiver>
         <text>Hi Alice!</text>
