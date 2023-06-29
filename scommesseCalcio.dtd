@@ -5,13 +5,13 @@
 <!ELEMENT scommessa (id, scommettitore, risultato, puntata)>
 
 <!ATTLIST scommessa
-              eliminato ("1" | "0") "0" #REQUIRED> 
+              eliminato (1 | 0) "0"> 
 
 <!ELEMENT id (#PCDATA)>
 
 <!ELEMENT scommettitore (#PCDATA)>
 
-<-- elemento esito composto da "1","x","2" oppure vuoto, elemento goal composto da "si", "no" oppure vuoto, elemento under composto da "si", "no", oppure vuoto -->
+<!-- elemento esito composto da "1","x","2" oppure vuoto, elemento goal composto da "si", "no" oppure vuoto, elemento under composto da "si", "no", oppure vuoto -->
 <!ELEMENT risultato (esito, goal, under)>
 <!ELEMENT esito (#PCDATA)>
 <!ELEMENT goal (#PCDATA)>
