@@ -7,12 +7,24 @@
         <sender>Alice</sender>
         <receiver>Bob</receiver>
         <text>Hello!</text>
+        <data>
+            <giorno>11</giorno>
+            <mese>03</mese>
+            <anno>2023</anno>
+        </data>
+        <ora>19:00</ora>
     </message>
 
     <message>
         <sender>Bob</sender>
         <receiver>Alice</receiver>
         <text>Hi Alice!</text>
+        <data>
+            <giorno>11</giorno>
+            <mese>03</mese>
+            <anno>2023</anno>
+        </data>
+        <ora>19:01</ora>
     </message>
 
 </chat>
