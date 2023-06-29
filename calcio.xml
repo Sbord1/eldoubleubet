@@ -31,6 +31,10 @@
 			<minima> 1 </minima>
 			<massima> 9999 </massima>
 		</puntata>
+		<risultato>
+			<puntiSquadraCasa> 2 </puntiSquadraCasa>
+			<puntiSquadraTrasferta> 0 </puntiSquadraTrasferta>
+		</risultato>
 	</scommessa>
 	<scommessa>
   		<id> 2 </id>
@@ -60,6 +64,10 @@
 			<minima> 1 </minima>
 			<massima> 9999 </massima>
 		</puntata>
+		<risultato>
+			<puntiSquadraCasa> 1 </puntiSquadraCasa>
+			<puntiSquadraTrasferta> 1 </puntiSquadraTrasferta>
+		</risultato>
 	</scommessa>
 	<scommessa>
   		<id> 3 </id>
@@ -89,6 +97,10 @@
 			<minima> 1 </minima>
 			<massima> 9999 </massima>
 		</puntata>
+		<risultato>
+			<puntiSquadraCasa> 0 </puntiSquadraCasa>
+			<puntiSquadraTrasferta> 0 </puntiSquadraTrasferta>
+		</risultato>
 	</scommessa>
 </calcio>
 	
