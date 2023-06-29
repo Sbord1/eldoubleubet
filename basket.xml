@@ -25,6 +25,10 @@
 		<minima> 1 </minima>
 		<massima> 9999 </massima>
 	</puntata>
+	<risultato>
+		<puntiSquadraCasa> 29 </puntiSquadraCasa>
+		<puntiSquadraTrasferta> 45 </puntiSquadraTrasferta>
+	</risultato>
 </scommessa>
 <scommessa>
   	<id> 2 </id>
@@ -49,6 +53,10 @@
 		<minima> 1 </minima>
 		<massima> 9999 </massima>
 	</puntata>
+	<risultato>
+		<puntiSquadraCasa> 33 </puntiSquadraCasa>
+		<puntiSquadraTrasferta> 102 </puntiSquadraTrasferta>
+	</risultato>
 </scommessa>
 <scommessa>
   	<id> 3 </id>
@@ -73,5 +81,9 @@
 		<minima> 1 </minima>
 		<massima> 9999 </massima>
 	</puntata>
+	<risultato>
+		<puntiSquadraCasa> 66 </puntiSquadraCasa>
+		<puntiSquadraTrasferta> 75 </puntiSquadraTrasferta>
+	</risultato>
 </scommessa>
 </basket>
