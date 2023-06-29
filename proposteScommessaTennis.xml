@@ -2,8 +2,8 @@
 <!DOCTYPE proposteScommessaTennis SYSTEM "proposteScommessaTennis.dtd">
 <!-- Esempio di 1 proposta di partita di tennis dall'utente mario -->
 
-<tennis>
- <scommessa>
+<proposteScommessaTennis>
+ <proposteScommessa>
   	<id> 10 </id>
 	<nome>
 		<giocatoreCasa> Fritz T. </giocatoreCasa>
@@ -27,5 +27,5 @@
 		    <massima> 9999 </massima>
 	</puntata>
 	<utente> mario </utente>
-</scommessa>
-</tennis>
+</proposteScommessa>
+</proposteScommessaTennis>
