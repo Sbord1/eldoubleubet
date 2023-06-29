@@ -11,7 +11,7 @@
 
 <!ELEMENT scommettitore (#PCDATA)>
 
-<-- composto da "1","2"-->
+<!-- composto da "1","2"-->
 <!ELEMENT risultato (#PCDATA)>
 
 <!ELEMENT puntata (#PCDATA)>
