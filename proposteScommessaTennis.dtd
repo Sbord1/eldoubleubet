@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Definisco le scommesse relative al tennis -->
+<!ELEMENT tennis (scommessa*)>
+<!ELEMENT scommessa (id, nome, quotaTennis, ora, data, puntata, utente)>
+
+<!ELEMENT id (#PCDATA)>
+
+<!ELEMENT nome (giocatoreCasa, giocatoreTrasferta)>
+<!ELEMENT giocatoreCasa (#PCDATA)>
+<!ELEMENT giocatoreTrasferta (#PCDATA)>
+
+<!-- quotaTennis è composta da: vittoria casa (1), vittoria trasferta (2) -->
+
+<!ELEMENT quotaTennis (quota1, quota2> 
+<!ELEMENT quota1 (#PCDATA)>
+<!ELEMENT quota2 (#PCDATA)>
+
+<!ELEMENT ora (oraInizio, oraFine)>
+<!ELEMENT oraInizio (#PCDATA)>
+<!ELEMENT oraFine (#PCDATA)>
+
+<!ELEMENT data (giorno, mese, anno)>
+<!ELEMENT giorno (#PCDATA)>
+<!ELEMENT mese (#PCDATA)>
+<!ELEMENT anno (#PCDATA)>
+
+<!-- puntata è composta da un valore minimo e un valore massimo di puntata -->
+<!ELEMENT puntata (minima, massima)>
+<!ELEMENT minima (#PCDATA)>
+<!ELEMENT massima (#PCDATA)>
+
+<!ELEMENT utente (#PCDATA)>
