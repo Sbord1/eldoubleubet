@@ -2,7 +2,7 @@
 
 <!-- Definisco le scommesse relative al calcio -->
 <!ELEMENT calcio (scommessa*)>
-<!ELEMENT scommessa (id, nome, quotaCalcio, ora, data, puntata)>
+<!ELEMENT scommessa (id, nome, quotaCalcio, ora, data, puntata, risultato)>
 
 <!ELEMENT id (#PCDATA)>
 
@@ -37,4 +37,4 @@ quotaGG è vinta quando entrambe le squadre segnano, analogamente per quotaNG è
 <!ELEMENT minima (#PCDATA)>
 <!ELEMENT massima (#PCDATA)>
 
-
+<!ELEMENT risultato (#PCDATA)>
