@@ -2,8 +2,8 @@
 <!DOCTYPE proposteScommessaCalcio SYSTEM "proposteScommessaCalcio.dtd">
 <!-- Esempi di 1 proposta di partita di calcio dall'utente tuzzo18 -->
 
-<calcio>
-	<scommessa>
+<proposteScommessaCalcio>
+	<proposteScommessa>
 		<id> 10 </id>
 		<nome>
 			<squadraCasa> Palermo </squadraCasa>
@@ -32,5 +32,5 @@
 			      <massima> 9999 </massima>
 		</puntata>
 		<utente> tuzzo18 </utente>
-	</scommessa>
-</calcio>
+	</proposteScommessa>
+</proposteScommessaCalcio>
