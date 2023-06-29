@@ -5,7 +5,7 @@
 <!ELEMENT scommessa (id, scommettitore, risultato, puntata)>
 
 <!ATTLIST scommessa
-              eliminato ("1" | "0") "0" #REQUIRED> 
+              eliminato (1 | 0) "0"> 
 
 <!ELEMENT id (#PCDATA)>
 
