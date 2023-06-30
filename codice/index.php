@@ -67,11 +67,11 @@
                 <tr>
                     <td>
                         <a href="index.php">
-                            <img src="loghi/movieCamera.png" alt="camera logo" height="80"/>
+                            <img src="loghi/movieCamera.png" alt="logo" height="80"/>
                         </a>
                     </td>
                     <td> 
-                        <h1>Videoteca Online</h1>
+                        <h1>Eldoubleubet</h1>
                     </td>
                 </tr>
             </tbody>
@@ -107,35 +107,16 @@
 
                         </p>
                         <hr />
-                        <p> Su questo sito troverai tutti i film disponibili nel nostro store suddivisi per categoria. </p>
+                        <p> Su questo sito troverai un palinsesto di scommesse suddivise per sport </p>
                         <hr />
-                        <p> Per ognuno, cliccando sulla copertina, potrai visualizzare la pagina wikipedia relativa. </p>
+                        <p> Per ognuno, cliccando potrai piazzare una scommessa Gioca responsabilmente!. </p>
                         <hr />
-                        <p> Per acquistare un film aggiungilo al carrello e procedi al pagamento. </p>
+                        <p> Per saperne di più su come funziona il sito web, dirigit nella sezione "Info Generali". </p>
                     </td>
                 </tr>
             </tbody>
         </table>
 
-        <h2 style="text-align: center;">Ultimi arrivi</h2>
-
-        <table style="margin-left: auto; margin-right: auto; border-spacing: 10px;">
-            <tbody>
-                <tr>
-                    <td style="border-style: solid;">
-                        <img src="locandine/wargames.jpg" alt="wargames poster" height="250" />
-                    </td>
-
-                    <td style="border-style: solid;">
-                        <img src="locandine/storico/theimitationgame.jpg" alt="the imitation game poster" height="250" />
-                    </td>
-
-                    <td style="border-style: solid;">
-                        <img src="locandine/thriller/thehatefuleight.jpg" alt="the hateful eight poster" height="250" />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
 
         <p style="background-color: lightyellow; text-align: center;">
             <a href="">Italiano</a>
