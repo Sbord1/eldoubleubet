@@ -1,3 +1,4 @@
 Ho cercato di usare i codici vecchi e riadattarli, bisogna creare nuovi file php e cambiare immagini.
 
-Ho caricato calcio.php che è da finire. I file funzionano sul mio pc però forse se li scarichi da qui potrebbero dare problemi perchè stanno nella cartella codice, non so.
+Ho caricato calcio.php che è da finire, il codice non è stupendo vedi tu se hai qualche idea nel caso.
+I file funzionano sul mio pc però forse se li scarichi da qui potrebbero dare problemi perchè stanno nella cartella codice, non so.
