@@ -1,0 +1,1 @@
+Ho cercato di usare i codici vecchi e riadattarli, bisogna creare nuovi file php e cambiare immagini.
