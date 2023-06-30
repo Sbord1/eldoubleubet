@@ -1,1 +1,3 @@
 Ho cercato di usare i codici vecchi e riadattarli, bisogna creare nuovi file php e cambiare immagini.
+
+Ho caricato calcio.php che è da finire.
