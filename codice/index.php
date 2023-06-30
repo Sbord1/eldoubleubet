@@ -67,7 +67,7 @@
                 <tr>
                     <td>
                         <a href="index.php">
-                            <img src="loghi/movieCamera.png" alt="logo" height="80"/>
+                            <img src="loghi/soccer.png" alt="logo" height="80"/>
                         </a>
                     </td>
                     <td> 
