@@ -16,28 +16,41 @@
 
     <head>
         <title>Logout - Eldoubleubet</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+                margin: 0;
+                padding: 0;
+            }
+            
+            header {
+                background-color: #333333;
+                padding: 10px;
+            }
+        </style>
     </head>
 
-    <body style="background-color: lightyellow;">
+    <body>
 
-        <table style="margin-left: auto; margin-right: auto;">
-            <tbody>
-                <tr>
-                    <td>
-                        <img src="loghi/soccer.png" alt="logo" height="80"/>
-                    </td>
-                    <td> 
-                        <h1>Eldoubleubet</h1>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <header>
+            <div>
+                <table style="margin-left: auto; margin-right: auto;">
+                    <tbody>
+                        <tr>
+                            <td><img src="loghi/logo.png" alt="Logo del sito" width="128px" height="auto" /></td>
+                            <td><h1 style="color: white;">ELDOUBLEUBET</h1></td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>            
+        </header>
 
         <h3 style="text-align: center;">
             <hr />
             Grazie della visita! Torna a trovarci.
             <hr />
-            <a href="index.php" alt="Home">Homepage</a>
+            <a href="inizio.php" alt="Home">Homepage</a>
         </h3>
 
     </body>
