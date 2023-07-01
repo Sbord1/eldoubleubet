@@ -6,37 +6,20 @@ if (!isset($_SESSION['tipologia'])) { //no login
     // escaping from interspersed.php
 ?>
 
-    <!-- Se il login non e' stato effettuato (siamo un semplice visitatore) allora stampiamo il menu senza il carrello! -->
-    <table border="1" cellpadding="5" style="border-color: black; margin-left: auto; margin-right: auto;">
-        <tbody>
-            <tr>
-                <td style="background-color: lightgray;">
-                    <a href="index.php">Home</a>
-                </td>
-
-                <td style="background-color: lightgray;">
-                    <a href="infoGenerali.php">Info Generali</a>
-                </td>
-
-                <td style="background-color: lightgray;">
-                    <a href="calcio.php">Calcio</a>
-                </td>
-
-                <td style="background-color: lightgray;">
-                    <a href="basket.php">Basket</a>
-                </td>
-
-                <td style="background-color: lightgray;">
-                    <a href="tennis.php">Tennis</a>
-                </td>
-
-                <td style="background-color: lightgray;">
-                    <a href="ippica.php">Ippica</a>
-                </td>
-                  
-            </tr>    
-        </tbody>
-</table>
+    <!-- Se il login non e' stato effettuato (siamo un semplice visitatore) allora stampiamo il menu' per l'utente visitatore -->
+    <nav>
+      <ul>
+        <li><a href="infoGenerali.php">Info Generali</a></li>
+        |
+        <li><a href="#">Calcio</a></li>
+        |
+        <li><a href="#">Basket</a></li>
+        |
+        <li><a href="#">Tennis</a></li>
+        |
+        <li><a href="#">Ippica</a></li>
+      </ul>
+    </nav>
 
 <?php
 
@@ -45,203 +28,101 @@ if (!isset($_SESSION['tipologia'])) { //no login
 // Il login e' stato effettuato
 else {
 
-    // Un utente puo' essere di 2 tipi: user (cliente) oppure admin (amministratore)
+    // Un utente puo' essere di 3 tipi: scommettitore, admin oppure gestore
 
     switch($_SESSION['tipologia']) {
 
-        // Utente cliente loggato --> mostriamo il carrello nel menu
+        // Utente scommettitore loggato --> mostriamo il menu' relativo all'utente scommettitore
         case "scommettitore":
 
 ?>
-        <table border="1" cellpadding="5" style="border-color: black; margin-left: auto; margin-right: auto;">
-            <tbody>
-                <tr>
-                    <td style="background-color: lightgray;">
-                        <a href="index.php">Home</a>
-                    </td>
 
-                    <td style="background-color: lightgray;">
-                        <a href="infoGenerali.php">Info generali</a>
-                    </td>
-
-                    <td style="background-color: lightgray;">
-                        <a href="calcio.php">Calcio</a>
-                    </td>
-
-                    <td style="background-color: lightgray;">
-                        <a href="basket.php">Basket</a>
-                    </td>
-
-                    <td style="background-color: lightgray;">
-                        <a href="tennis.php">Tennis</a>
-                    </td>
-
-                    <td style="background-color: lightgray;">
-                        <a href="ippica.php">Ippica</a>
-                    </td>
-
-                    <td style="background-color: lightgray;">
-                        <a href="conto.php">Conto</a>
-                    </td>
-                    
-                    <td style="background-color: lightgray;">
-                        <a href="riepilogo.php">Riepilogo</a>
-                    </td>
-                    
-                    <td style="background-color: lightgray;">
-                        <a href="proposta.php">Proposta</a>
-                    </td>
-                    
-                    <td style="background-color: lightgray;">
-                        <a href="chat.php">Chat</a>
-                    </td>
-                    
-                    <td style="background-color: lightgray;">
-                        <a href="forum.php">Forum</a>
-                    </td>
-                    
-                    <td style="background-color: white;">
-                        <a href="zonaPagamenti.php">
-                            <img src="loghi/cartLogo.png" alt="cart logo" height="20" />
-                        </a>
-                    </td>
-                    
-
-                </tr>    
-            </tbody>
-        </table>
+    <nav>
+      <ul>
+        <li><a href="infoGenerali.php">Info Generali</a></li>
+        |
+        <li><a href="#">Calcio</a></li>
+        |
+        <li><a href="#">Basket</a></li>
+        |
+        <li><a href="#">Tennis</a></li>
+        |
+        <li><a href="#">Ippica</a></li>
+        |
+        <li><a href="#">Conto</a></li>
+        |
+        <li><a href="#">Riepilogo</a></li>
+        |
+        <li><a href="#">Proponi scommessa</a></li>
+        |
+        <li><a href="#">Chat</a></li>
+        |
+        <li><a href="#">Forum</a></li>
+      </ul>
+    </nav>
 
 <?php
         break;
     
-        // Utente amministratore loggato
-        // --> mostriamo nel menu il bottone per aggiungere film e quello per vedere la lista di utenti registrati al sito
+        // Utente gestore loggato
         case "gestore":
 ?>
 	
-        <table border="1" cellpadding="5" style="border-color: black; margin-left: auto; margin-right: auto;">
-            <tbody>
-                <tr>
-                    <td style="background-color: lightgray;">
-                        <a href="index.php">Home</a>
-                    </td>
-
-                    <td style="background-color: lightgray;">
-                    	<a href="calcio.php"> Calcio </a>
-
-                    </td>
-
-                    <td style="background-color: lightgray;">
-                        <a href="basket.php">Basket</a>
-                        
-                    </td>
-
-                    <td style="background-color: lightgray;">
-                        <a href="tennis.php">Tennis</a>
-                    </td>
-
-                    <td style="background-color: lightgray;">
-                        <a href="ippica.php">ippica</a>
-                    </td>
-
-                    <td style="background-color: lightgreen;">
-                        <a href="index.php">Richieste accredito</a>
-                    </td>
-
-                    <td style="background-color: lightgreen;">
-                        <a href="index.php">Approva scommesse</a>
-                    </td>
-                    
-                    <td style="background-color: lightgreen;">
-                        <a href="riepilogo.php">Riepilogo</a>
-                    </td>
-                    
-                    <td style="background-color: lightgreen;">
-                        <a href="index.php">Inserisci risultati</a>
-                    </td>
-
-                    <!--
-                    <td style="background-color: white;">
-                        <a href="zonaPagamenti.php">
-                            <img src="loghi/cartLogo.png" alt="cart logo" height="20" />
-                        </a>
-                    </td>
-                    -->
-
-                </tr>    
-            </tbody>
-        </table>
-</form>
+    <nav>
+      <ul>
+        <li><a href="#">Calcio</a></li>
+        |
+        <li><a href="#">Basket</a></li>
+        |
+        <li><a href="#">Tennis</a></li>
+        |
+        <li><a href="#">Ippica</a></li>
+        |
+        <li><a href="#">Richieste accredito</a></li>
+        |
+        <li><a href="#">Approva scommesse</a></li>
+        |
+        <li><a href="#">Proponi scommessa</a></li>
+        |
+        <li><a href="#">Riepilogo</a></li>
+        |
+        <li><a href="#">Inserisci risultati</a></li>
+      </ul>
+    </nav>
 
 <?php
         break;
     
         // Utente amministratore loggato
-        // --> mostriamo nel menu il bottone per aggiungere film e quello per vedere la lista di utenti registrati al sito
         case "admin":
 ?>
-	
-        <table border="1" cellpadding="5" style="border-color: black; margin-left: auto; margin-right: auto;">
-            <tbody>
-                <tr>
-                    <td style="background-color: lightgray;">
-                        <a href="index.php">Home</a>
-                    </td>
 
-                    <td style="background-color: lightgray;">
-                    	<a href="calcio.php"> Calcio </a>
+    <nav>
+      <ul>
+        <li><a href="#">Calcio</a></li>
+        |
+        <li><a href="#">Basket</a></li>
+        |
+        <li><a href="#">Tennis</a></li>
+        |
+        <li><a href="#">Ippica</a></li>
+        |
+        <li><a href="#">Richieste accredito</a></li>
+        |
+        <li><a href="#">Approva scommesse</a></li>
+        |
+        <li><a href="#">Riepilogo</a></li>
+        |
+        <li><a href="#">Inserisci risultati</a></li>
+        |
+        <li><a href="listaUtenti.php">Account</a></li>
+      </ul>
+    </nav>
 
-                    </td>
-
-                    <td style="background-color: lightgray;">
-                        <a href="basket.php">Basket</a>
-                        
-                    </td>
-
-                    <td style="background-color: lightgray;">
-                        <a href="tennis.php">Tennis</a>
-                    </td>
-
-                    <td style="background-color: lightgray;">
-                        <a href="ippica.php">ippica</a>
-                    </td>
-
-                    <td style="background-color: lightgreen;">
-                        <a href="index.php">Richieste accredito</a>
-                    </td>
-
-                    <td style="background-color: lightgreen;">
-                        <a href="index.php">Approva scommesse</a>
-                    </td>
-                    
-                    <td style="background-color: lightgreen;">
-                        <a href="riepilogo.php">Riepilogo</a>
-                    </td>
-                    
-                    <td style="background-color: lightgreen;">
-                        <a href="index.php">Inserisci risultati</a>
-                    </td>
-                    
-                    <td style="background-color: lightgreen;">
-                        <a href="index.php">Account</a>
-                    </td>
-
-                    <!--
-                    <td style="background-color: white;">
-                        <a href="zonaPagamenti.php">
-                            <img src="loghi/cartLogo.png" alt="cart logo" height="20" />
-                        </a>
-                    </td>
-                    -->
-
-                </tr>    
-            </tbody>
-        </table>
-</form>
 <?php
         break;
 
-    // If no match is found
+        // If no match is found
         default:
 ?>
         <p>Errore nel sistema!</p>
