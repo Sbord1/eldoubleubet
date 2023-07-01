@@ -2,7 +2,6 @@
 
 	require_once("./connection.php");
 	
-//print_r($_POST);
 
 	if (isset($_POST['invio']) && $_POST['invio']=="Aggiungi" && $_POST['nome'] && $_POST['password']) {
 		
@@ -13,32 +12,33 @@
 		$maggiorenne = strtotime('-18 years', $now); //data di 18 anni fa
 		
 		if ($dataNascita > $maggiorenne){
-			echo ("Non sei maggiorenne!");
-            echo "<a href=\"inizio.php\" alt=\"Home\">Homepage</a>";
-            exit();
-		}	
+			echo "<h1> Non sei maggiorenne! </h1>";
+			}
+			
+		else{
+			// Query per l'aggiunta dell' utente
+			$sql= "INSERT INTO $DBuser_table
+			(nome, cognome, dataNascita, username, password, credito, tipologia, account)
+			VALUES
+			('{$_POST['nome']}', '{$_POST['cognome']}', '{$_POST['dataNascita']}','{$_POST['username']}','{$_POST['password']}', \"0\", \"scommettitore\", \"disattivo\")
+			";
 
-    // Query per l'aggiunta dell' utente
-    $sql= "INSERT INTO $DBuser_table
-	(nome, cognome, dataNascita, username, password, credito, tipologia, account)
-	VALUES
-	('{$_POST['nome']}', '{$_POST['cognome']}', '{$_POST['dataNascita']}','{$_POST['username']}','{$_POST['password']}', \"0\", \"scommettitore\", \"disattivo\")
-	";
+			// Il risultato della query va in $resultQ
+			if (!$resultQ = mysqli_query($mysqliConnection, $sql)) {
+				printf("Can't execute query.\n");
+			exit();
+			}
 
-    // Il risultato della query va in $resultQ
-    if (!$resultQ = mysqli_query($mysqliConnection, $sql)) {
-        printf("Can't execute query.\n");
-    exit();
-    }
-
-    
-    $_POST['invio']="j";
+	
+			$_POST['invio']="j";
+		}
 }
 
 // Chiudiamo la connessione, tanto il db non serve piu' in questo script
 	$mysqliConnection->close();
 
 ?>
+
 
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -93,7 +93,7 @@
             </p>
             
             <p style="text-align: center;">
-                Data di Nascita: <input type="text" name="dataNascita" size="30" value="gg-mm-aaaa">
+                Data di Nascita: <input type="date" size="30" name="dataNascita" required>
             </p>
             
             <p style="text-align: center;">
