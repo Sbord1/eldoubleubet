@@ -44,12 +44,7 @@ $mysqliConnection->close();
 
 ///////////////////////////////////////////////////////////////////////////////
 // e la riapriamo con il collegamento alla base di dati
-$mysqliConnection = new mysqli("localhost", "riccardo", "password", $db_name);
-// controllo della connessione
-if (mysqli_errno($mysqliConnection)) {
-    printf("Oops, abbiamo problemi con la connessione al db: %s\n", mysqli_error($mysqliConnection));
-    exit();
-}
+require_once("./connection.php");
 
 // Creazione tabella utenti
 $sqlQuery = "CREATE TABLE if not exists $DBuser_table (";
