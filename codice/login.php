@@ -2,7 +2,7 @@
 
 	require_once("./connection.php");
 
-  // Una volta che siamo nel db, verichiamo cosa e' stato passato come username e pwd e facciamo una query per controllare
+  // Una volta che siamo nel db, verifichiamo cosa e' stato passato come username e pwd e facciamo una query per controllare
   if (isset($_POST['invio'])) // abbiamo appena inviato dati attraverso la form di login
 
     if (empty($_POST['userName']) || empty($_POST['password'])) {
@@ -43,11 +43,10 @@
         $_SESSION['accessoPermesso']=1000;
         // Utilizziamo la query per estrarre il valore di tipologia
         $_SESSION['tipologia']=$row['tipologia'];
-        $_SESSION['carrello']=array();
         // N.B. userId, userName, password, sommeSpese e tipologia sono tutte colonne della tabella VOuser creata nel file mysql.VO1.php
         // --> per questo motivo l'array $row ha questi indici.
         // Ridirezionamento alla pagina iniziale index.php
-        header('Location: index.php');
+        header('Location: inizio.php');
         exit();
       }
       else
