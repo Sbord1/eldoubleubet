@@ -2,7 +2,6 @@
 
 	require_once("./connection.php");
 	
-//print_r($_POST);
 
 	if (isset($_POST['invio']) && $_POST['invio']=="Aggiungi" && $_POST['nome'] && $_POST['password']) {
 		
@@ -13,31 +12,26 @@
 		$maggiorenne = strtotime('-18 years', $now); //data di 18 anni fa
 		
 		if ($dataNascita > $maggiorenne){
-			echo ("non sei maggiorenne");
+			echo "<h1> Non sei maggiorenne! </h1>";
 			}
 			
-			//ho calcolato l'eta ma devo capire come non inserire in tabella
-			
-		
+		else{
+			// Query per l'aggiunta dell' utente
+			$sql= "INSERT INTO $DBuser_table
+			(nome, cognome, dataNascita, username, password, credito, tipologia, account)
+			VALUES
+			('{$_POST['nome']}', '{$_POST['cognome']}', '{$_POST['dataNascita']}','{$_POST['username']}','{$_POST['password']}', \"0\", \"scommettitore\", \"disattivo\")
+			";
+
+			// Il risultato della query va in $resultQ
+			if (!$resultQ = mysqli_query($mysqliConnection, $sql)) {
+				printf("Can't execute query.\n");
+			exit();
+			}
+
 	
-
-			
-
-    // Query per l'aggiunta dell' utente
-    $sql= "INSERT INTO $DBuser_table
-	(nome, cognome, dataNascita, username, password, credito, tipologia, account)
-	VALUES
-	('{$_POST['nome']}', '{$_POST['cognome']}', '{$_POST['dataNascita']}','{$_POST['username']}','{$_POST['password']}', \"0\", \"scommettitore\", \"disattivo\")
-	";
-
-    // Il risultato della query va in $resultQ
-    if (!$resultQ = mysqli_query($mysqliConnection, $sql)) {
-        printf("Can't execute query.\n");
-    exit();
-    }
-
-    
-    $_POST['invio']="j";
+			$_POST['invio']="j";
+		}
 }
 
 // Chiudiamo la connessione, tanto il db non serve piu' in questo script
@@ -61,7 +55,7 @@
                 <tr>
                     <td>
                         <a href="index.php".php">
-                            <img src="loghi/movieCamera.png" alt="camera logo" height="80"/>
+                            <img src="loghi/soccer.png" alt="logo" height="80"/>
                         </a>
                     </td>
                     <td> 
@@ -87,7 +81,7 @@
             </p>
             
             <p style="text-align: center;">
-                Data di Nascita: <input type="text" name="dataNascita" size="30" value="gg-mm-aaaa">
+                Data di Nascita: <input type="date" size="30" name="dataNascita" required>
             </p>
             
             <p style="text-align: center;">
