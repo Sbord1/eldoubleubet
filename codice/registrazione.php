@@ -2,6 +2,7 @@
 
 	require_once("./connection.php");
 	
+//print_r($_POST);
 
 	if (isset($_POST['invio']) && $_POST['invio']=="Aggiungi" && $_POST['nome'] && $_POST['password']) {
 		
@@ -12,26 +13,26 @@
 		$maggiorenne = strtotime('-18 years', $now); //data di 18 anni fa
 		
 		if ($dataNascita > $maggiorenne){
-			echo "<h1> Non sei maggiorenne! </h1>";
-			}
-			
-		else{
-			// Query per l'aggiunta dell' utente
-			$sql= "INSERT INTO $DBuser_table
-			(nome, cognome, dataNascita, username, password, credito, tipologia, account)
-			VALUES
-			('{$_POST['nome']}', '{$_POST['cognome']}', '{$_POST['dataNascita']}','{$_POST['username']}','{$_POST['password']}', \"0\", \"scommettitore\", \"disattivo\")
-			";
+			echo ("Non sei maggiorenne!");
+            echo "<a href=\"inizio.php\" alt=\"Home\">Homepage</a>";
+            exit();
+		}	
 
-			// Il risultato della query va in $resultQ
-			if (!$resultQ = mysqli_query($mysqliConnection, $sql)) {
-				printf("Can't execute query.\n");
-			exit();
-			}
+    // Query per l'aggiunta dell' utente
+    $sql= "INSERT INTO $DBuser_table
+	(nome, cognome, dataNascita, username, password, credito, tipologia, account)
+	VALUES
+	('{$_POST['nome']}', '{$_POST['cognome']}', '{$_POST['dataNascita']}','{$_POST['username']}','{$_POST['password']}', \"0\", \"scommettitore\", \"disattivo\")
+	";
 
-	
-			$_POST['invio']="j";
-		}
+    // Il risultato della query va in $resultQ
+    if (!$resultQ = mysqli_query($mysqliConnection, $sql)) {
+        printf("Can't execute query.\n");
+    exit();
+    }
+
+    
+    $_POST['invio']="j";
 }
 
 // Chiudiamo la connessione, tanto il db non serve piu' in questo script
@@ -46,24 +47,35 @@
 
     <head> 
     	<title>Registrazione</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+                margin: 0;
+                padding: 0;
+            }
+            
+            header {
+                background-color: #333333;
+                padding: 10px;
+            }
+        </style>
     </head>
 
-    <body style="background-color: lightyellow;">
+    <body>
 
-        <table style="margin-left: auto; margin-right: auto;">
-            <tbody>
-                <tr>
-                    <td>
-                        <a href="index.php".php">
-                            <img src="loghi/soccer.png" alt="logo" height="80"/>
-                        </a>
-                    </td>
-                    <td> 
-                        <h1>Eldoubleubet</h1>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <header>
+            <div>
+                <table style="margin-left: auto; margin-right: auto;">
+                    <tbody>
+                        <tr>
+                            <td><img src="loghi/logo.png" alt="Logo del sito" width="128px" height="auto" /></td>
+                            <td><h1 style="color: white;">ELDOUBLEUBET</h1></td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>            
+        </header>
 
         <hr />
 
@@ -81,7 +93,7 @@
             </p>
             
             <p style="text-align: center;">
-                Data di Nascita: <input type="date" size="30" name="dataNascita" required>
+                Data di Nascita: <input type="text" name="dataNascita" size="30" value="gg-mm-aaaa">
             </p>
             
             <p style="text-align: center;">
@@ -100,7 +112,7 @@
             <hr />
 
             <h3 style="text-align: center;">
-                <a href="index.php" alt="Home">Homepage</a>
+                <a href="inizio.php" alt="Home">Homepage</a>
             </h3>
 
 		</form>
