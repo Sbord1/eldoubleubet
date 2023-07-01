@@ -96,7 +96,7 @@
 
     .register-btn {
       display: inline-block;
-      margin-left: 1px;
+      margin-left: 5px;
       padding: 5px 10px;
       background-color: #007bff;
       color: #ffffff;
