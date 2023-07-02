@@ -6,7 +6,7 @@
 	//se cliccato bottone per attivare account, attivalo e imposta credito a 20
 	if (isset($_POST['attiva'])){
 		$sqlQuery = "UPDATE $DBuser_table
-					set account=\"attivo\", credito=\"20\"
+					set account=\"attivo\", credito=20
 					where id = $_POST[id]";
 					
 		$resultQ = mysqli_query($mysqliConnection, $sqlQuery);
@@ -18,7 +18,7 @@
 	//se cliccato bottone per disattivare account, disattivalo e imposta credito a 0
 		if (isset($_POST['disattiva'])){
 		$sqlQuery = "UPDATE $DBuser_table
-					set account=\"disattivo\", credito=\"0\"
+					set account=\"disattivo\", credito=0
 					where id = $_POST[id]";
 					
 		$resultQ = mysqli_query($mysqliConnection, $sqlQuery);
