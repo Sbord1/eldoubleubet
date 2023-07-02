@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE scommesseBasket SYSTEM "scommesseBasket.dtd">
 <!-- Esempi di 3 scommesse di basket -->
-
 <scommesseBasket>
   <!-- utente sbord1 ha puntato 30 crediti sulla vittoria della squadra in casa -->
     <scommessa eliminato="0">
