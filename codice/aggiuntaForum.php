@@ -7,7 +7,7 @@ if (isset($_POST['invio']) && $_POST['invio']=="Invia" && $_POST['commento']) {
     $_SESSION['category']=$_POST['category'];
 
     $doc = new DOMDocument();
-    $doc->load("forum.xml");
+    $doc->load("fileXML/forum/forum.xml");
 
 
     $root = $doc->documentElement;
@@ -32,7 +32,7 @@ if (isset($_POST['invio']) && $_POST['invio']=="Invia" && $_POST['commento']) {
     $newRecord->appendChild($newTime);
 
     $root->appendChild($newRecord);
-    $doc->save('forum.xml');
+    $doc->save('fileXML/forum/forum.xml');
 
     header('Location: forum.php');
 
