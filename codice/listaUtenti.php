@@ -61,6 +61,28 @@
                 background-color: #333333;
                 padding: 10px;
             }
+			nav ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			}
+			
+			nav ul li {
+			display: inline-block;
+			margin-left: 10px;
+			margin-right: 10px;
+			}
+			
+			nav ul li a {
+			color: #ffffff;
+			text-decoration: none;
+			padding: 5px 10px;
+			}
+			
+			nav ul li a:hover {
+			background-color: #666666;
+			}
         </style> 
     </head>
 
@@ -78,16 +100,23 @@
 	</style>
         
 		<header>
-            <div>
-                <table style="margin-left: auto; margin-right: auto;">
-                    <tbody>
-                        <tr>
-                            <td><img src="loghi/logo.png" alt="Logo del sito" width="128px" height="auto" /></td>
-                            <td><h1 style="color: white;">ELDOUBLEUBET</h1></td>
-                        </tr>
-                    </tbody>
-                </table>
-              </div>            
+            	<div>
+					<table style="margin-left: auto; margin-right: auto;">
+						<tbody>
+							<tr>
+								<td><img src="loghi/logo.png" alt="Logo del sito" width="128px" height="auto" /></td>
+								<td><h1 style="color: white;">ELDOUBLEUBET</h1></td>
+							</tr>
+						</tbody>
+					</table>
+              	</div>  
+			  
+			  	<?php
+
+				// Inserisce il menu' relativo al visitatore oppure all'uetnte loggato (scommettitore, admin oppure gestore)
+				require("./menuConSwitch.php");
+
+				?>
         </header>
 
         <hr />
