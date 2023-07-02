@@ -189,6 +189,8 @@
 
 		</header>
 
+		<h2 style="text-align: center;">TENNIS</h2>
+
         <h4 style="text-align: center;">Clicca sulla quota che desideri per piazzare la scommessa</h4>
     <table class="tablecenter">
     	<tbody>
@@ -214,6 +216,7 @@ foreach ( file("fileXML/scommesseDisponibili/tennis.xml") as $node ) {
    	
 	// Costruiamo i titoli delle colonne della tabella che conterra' le scommesse di tennis estratte da tennis.xml
 	$elenco = "<tr> 
+					<td class=\"head\"> ID </td>
 					<td class=\"head\"> Data </td>
 					<td class=\"head\"> Ora di inizio </td>
 					<td class=\"head\"> Ora di fine </td>
@@ -270,6 +273,7 @@ foreach ( file("fileXML/scommesseDisponibili/tennis.xml") as $node ) {
 
         // cliccando sulla quota, mi rimanda alla pagina piazzaScommessa.php dove so quale quota ho cliccato e di quale squadra
 		$elenco.="\n<tr>
+						<td>$idNumber</td>
                         <td>$anno_mese_giorno</td>
                         <td> $oraInizioValue </td>
                         <td> $oraFineValue </td>
@@ -277,6 +281,9 @@ foreach ( file("fileXML/scommesseDisponibili/tennis.xml") as $node ) {
                         <td> 
 						 		<form method=\"post\" action=\"piazzaScommessa.php\"> 
 						  		<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quota1Value </button>
+				  				<input type=\"hidden\" name=\"category\" value=\"tennis\">
+								<input type=\"hidden\" name=\"risultato\" value=\"1\">
+								<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
 						  		<input type=\"hidden\" name=\"giocatoreCasa\" value=\"$giocatoreCasaValue\">
 						 		<input type=\"hidden\" name=\"giocatoreTrasferta\" value=\"$giocatoreTrasfertaValue\">
 						 		<input type=\"hidden\" name=\"quota\" value=\"$quota1Value\"> </form>
@@ -284,6 +291,9 @@ foreach ( file("fileXML/scommesseDisponibili/tennis.xml") as $node ) {
                         <td>
 								<form method=\"post\" action=\"piazzaScommessa.php\"> 
 								<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quota2Value </button>
+				  				<input type=\"hidden\" name=\"category\" value=\"tennis\">
+								<input type=\"hidden\" name=\"risultato\" value=\"2\">
+								<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
 								<input type=\"hidden\" name=\"giocatoreCasa\" value=\"$giocatoreCasaValue\">
 								<input type=\"hidden\" name=\"giocatoreTrasferta\" value=\"$giocatoreTrasfertaValue\">
 								<input type=\"hidden\" name=\"quota\" value=\"$quota2Value\"> </form>
