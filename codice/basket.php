@@ -6,7 +6,6 @@
 ?>
 
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE movies SYSTEM "movies.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
  
 	<head>
