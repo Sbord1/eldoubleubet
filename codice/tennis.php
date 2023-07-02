@@ -258,7 +258,9 @@ foreach ( file("fileXML/scommesseDisponibili/tennis.xml") as $node ) {
         $anno = $data->lastChild;
         $annoValue = $anno->textContent;
 
-        $risultato = $data->nextSibling;
+        $puntata = $data->nextSibling;
+
+        $risultato = $puntata->nextSibling;
         $puntiGiocatoreCasa = $risultato->firstChild;
         $puntiGiocatoreCasaValue = $puntiGiocatoreCasa->textContent;
         $puntiGiocatoreTrasferta = $risultato->lastChild;
