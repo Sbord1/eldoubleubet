@@ -59,6 +59,13 @@
                 background-color: #333333;
                 padding: 10px;
             }
+
+            footer {
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+            }
         </style>
     </head>
 
@@ -117,7 +124,17 @@
 
 		</form>
 
+        <footer style="background-color: lightgrey; text-align: center; height: 60px; padding: 20px;">
+            <p style="color: black">
+                Authors: Francesco Sbordone, Riccardo Tuzzolino
+                <br />
+                <em><a href="">webmaster@example.com</a></em>
+            </p>
+        </footer>
 
+        <footer>
+            <p style="color: white;">&copy; 2023 Eldoubleubet. Tutti i diritti riservati.</p>
+        </footer>
 
     </body>
 <html>
