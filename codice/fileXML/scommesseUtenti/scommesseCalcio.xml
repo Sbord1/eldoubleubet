@@ -1,39 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE scommesseCalcio SYSTEM "scommesseCalcio.dtd">
 <!-- Esempi di 3 scommesse di calcio -->
-
+<!-- L'id della scommessa equivale all'id della partita cui si riferisce la scommessa -->
 <scommesseCalcio>
-  <!-- utente sbord1 ha puntato 30 crediti sulla vittoria della squadra in casa -->
+  <!-- utente mario ha puntato 30 crediti sulla vittoria della squadra in casa -->
     <scommessa eliminato="0">
-        <id> 1 </id>
-        <scommettitore> sbord1 </scommettitore>
-        <risultato>
-            <esito> 1 </esito>
-            <goal> </goal>
-            <under> </under>
-        </risultato>
-        <puntata> 30 </puntata>
+        <id>1</id>
+        <scommettitore>mario</scommettitore>
+        <risultato>1</risultato>
+        <puntata>30</puntata>
     </scommessa>
-     <!-- utente tuzzo18 ha puntato 18 crediti su "Goal" (segnano entrambe le squadre) -->
+     <!-- utente ciruzzo ha puntato 18 crediti su "Goal" (segnano entrambe le squadre) -->
     <scommessa eliminato="0">
-        <id> 1 </id>
-        <scommettitore> tuzzo18 </scommettitore>
-        <risultato>
-            <esito> </esito>
-            <goal> si </goal>
-            <under> </under>
-        </risultato>
-        <puntata> 18 </puntata>
+        <id>1</id>
+        <scommettitore>ciruzzo</scommettitore>
+        <risultato>GG</risultato>
+        <puntata>18</puntata>
     </scommessa>
-   <!-- utente mario ha puntato 10 crediti sulla vittoria della squadra in casa e su "Over 2.5" (al più 2 goal) -->
+   <!-- utente mario ha puntato 10 crediti su "Over 2.5" (piu' di 2 goal) -->
     <scommessa eliminato="0">
-        <id> 2 </id>
-        <scommettitore> mario </scommettitore>
-        <risultato>
-            <esito> 1 </esito>
-            <goal> </goal>
-            <under> no </under>
-        </risultato>
-        <puntata> 10 </puntata>
+        <id>2</id>
+        <scommettitore>mario</scommettitore>
+        <risultato>Over</risultato>
+        <puntata>10</puntata>
+    </scommessa>
+    <scommessa eliminato="0">
+        <id>1</id>
+        <scommettitore>ciruzzo</scommettitore>
+        <risultato>NG</risultato>
+        <puntata>5</puntata>
+    </scommessa>
+    <scommessa eliminato="0">
+        <id>1</id>
+        <scommettitore>mario</scommettitore>
+        <risultato>2</risultato>
+        <puntata>30</puntata>
+    </scommessa>
+    <scommessa eliminato="0">
+        <id>2</id>
+        <scommettitore>mario</scommettitore>
+        <risultato>Under</risultato>
+        <puntata>10</puntata>
     </scommessa>
 </scommesseCalcio>
