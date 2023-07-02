@@ -160,7 +160,7 @@ session_start();
         # Lettura file "forum.xml"
 
         $xmlString = "";
-        foreach ( file("forum.xml") as $node ) {
+        foreach ( file("fileXML/forum/forum.xml") as $node ) {
           $xmlString .= trim($node);
         }
 
