@@ -127,7 +127,8 @@
 			margin-right: auto;
 			margin-left: auto;
 			width: 75%;
-			padding-bottom: 15px;	
+			padding-bottom: 15px;
+            border: 1px solid black;
 		}
 
 		.link-button {
@@ -188,6 +189,8 @@
 		?>
 
 		</header>
+
+	    <h2 style="text-align: center;">IPPICA</h2>
 
         <h4 style="text-align: center;">Clicca sulla quota che desideri per piazzare la scommessa</h4>
 
@@ -369,7 +372,7 @@ foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
         $elenco = "
         <table class=\"tablecenter\">
             <tbody>
-                <tr> 
+                <tr>
                 <td class=\"head\"> Data </td>
                 <td class=\"head\"> Ora di inizio </td>
                 <td class=\"head\"> Ora di fine </td>
@@ -379,6 +382,8 @@ foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
                 <td class=\"head\"> 2&deg; posto </td>
                 <td class=\"head\"> 3&deg; posto </td>
                 <td class=\"head\"> Risultato </td>
+                <td class=\"head\"> ID </td>
+                <td class=\"head\"> Distanza </td>
                 </tr>\n";
 
         // cliccando sulla quota, mi rimanda alla pagina piazzaScommessa.php dove so quale quota ho cliccato e di quale squadra
@@ -391,22 +396,37 @@ foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
         <td> 
                  <form method=\"post\" action=\"piazzaScommessa.php\"> 
                   <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo1_quota1Value </button>
-                  <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo1Value\">
+				  <input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"1\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"1\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                  <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo1Value\">
                   <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo1_quota1Value\"> </form>
         </td>
         <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo1_quota2Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo1Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				<input type=\"hidden\" name=\"numero\" value=\"1\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"2\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo1Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo1_quota2Value\"> </form>
         </td>
         <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo1_quota3Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo1Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				<input type=\"hidden\" name=\"numero\" value=\"1\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"3\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo1Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo1_quota3Value\"> </form>
         </td>
         <td rowspan=\"8\">$risultatoPrimoValue - $risultatoSecondoValue - $risultatoTerzoValue</td>
+        <td rowspan=\"8\">$idNumber</td>
+        <td rowspan=\"8\">$distanzaValue"."m</td>
+
         </tr>\n
 
         <tr>
@@ -418,19 +438,31 @@ foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
             <td> 
                  <form method=\"post\" action=\"piazzaScommessa.php\"> 
                   <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo2_quota1Value </button>
-                  <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo2Value\">
+				  <input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"2\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"1\">
+				  <input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                  <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo2Value\">
                   <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo2_quota1Value\"> </form>
             </td>
             <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo2_quota2Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo2Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"2\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"2\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo2Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo2_quota2Value\"> </form>
             </td>
             <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo2_quota3Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo2Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"2\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"3\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo2Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo2_quota3Value\"> </form>
             </td>
         </tr>\n
@@ -444,19 +476,31 @@ foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
             <td> 
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo3_quota1Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo3Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"3\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"1\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo3Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo3_quota1Value\"> </form>
             </td>
             <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo3_quota2Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo3Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"3\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"2\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo3Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo3_quota2Value\"> </form>
             </td>
             <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo3_quota3Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo3Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"3\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"3\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo3Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo3_quota3Value\"> </form>
             </td>
         </tr>\n
@@ -470,19 +514,31 @@ foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
             <td> 
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo4_quota1Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo4Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"4\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"1\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo4Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo4_quota1Value\"> </form>
             </td>
             <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo4_quota2Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo4Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"4\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"2\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo4Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo4_quota2Value\"> </form>
             </td>
             <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo4_quota3Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo4Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"4\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"3\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo4Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo4_quota3Value\"> </form>
             </td>
         </tr>\n
@@ -496,19 +552,31 @@ foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
             <td> 
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo5_quota1Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo5Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"5\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"1\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo5Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo5_quota1Value\"> </form>
             </td>
             <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo5_quota2Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo5Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"5\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"2\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo5Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo5_quota2Value\"> </form>
             </td>
             <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo5_quota3Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo5Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"5\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"3\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo5Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo5_quota3Value\"> </form>
             </td>
         </tr>\n
@@ -522,19 +590,31 @@ foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
             <td> 
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo6_quota1Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo6Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"6\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"1\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo6Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo6_quota1Value\"> </form>
             </td>
             <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo6_quota2Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo6Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"6\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"2\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo6Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo6_quota2Value\"> </form>
             </td>
             <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo6_quota3Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo6Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"6\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"3\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo6Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo6_quota3Value\"> </form>
             </td>
         </tr>\n
@@ -548,19 +628,31 @@ foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
             <td> 
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo7_quota1Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo7Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"7\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"1\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo7Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo7_quota1Value\"> </form>
             </td>
             <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo7_quota2Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo7Value\">
+                <input type=\"hidden\" name=\"category\" value=\"ippica\">
+				<input type=\"hidden\" name=\"numero\" value=\"7\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"2\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo7Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo7_quota2Value\"> </form>
             </td>
             <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo7_quota3Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo7Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"7\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"3\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo7Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo7_quota3Value\"> </form>
             </td>
         </tr>\n
@@ -574,19 +666,31 @@ foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
             <td> 
                  <form method=\"post\" action=\"piazzaScommessa.php\"> 
                   <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo8_quota1Value </button>
-                  <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo8Value\">
+				  <input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"8\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"1\">
+				  <input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                  <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo8Value\">
                   <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo8_quota1Value\"> </form>
             </td>
             <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo8_quota2Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo8Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"8\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"2\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo8Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo8_quota2Value\"> </form>
             </td>
             <td>
                 <form method=\"post\" action=\"piazzaScommessa.php\"> 
                 <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quoteCavallo8_quota3Value </button>
-                <input type=\"hidden\" name=\"giocatoreCasa\" value=\"$nomeCavallo8Value\">
+				<input type=\"hidden\" name=\"category\" value=\"ippica\">
+				  <input type=\"hidden\" name=\"numero\" value=\"8\">
+				  <input type=\"hidden\" name=\"risultato\" value=\"3\">
+				<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+                <input type=\"hidden\" name=\"cavallo\" value=\"$nomeCavallo8Value\">
                 <input type=\"hidden\" name=\"quota\" value=\"$quoteCavallo8_quota3Value\"> </form>
             </td>
         </tr>\n
