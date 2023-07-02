@@ -9,6 +9,8 @@ if (!isset($_SESSION['tipologia'])) { //no login
     <!-- Se il login non e' stato effettuato (siamo un semplice visitatore) allora stampiamo il menu' per l'utente visitatore -->
     <nav>
       <ul>
+        <li><a href="inizio.php">Home</a></li>
+        |
         <li><a href="infoGenerali.php">Info Generali</a></li>
         |
         <li><a href="#">Calcio</a></li>
@@ -39,6 +41,8 @@ else {
 
     <nav>
       <ul>
+        <li><a href="inizio.php">Home</a></li>
+        |
         <li><a href="infoGenerali.php">Info Generali</a></li>
         |
         <li><a href="#">Calcio</a></li>
