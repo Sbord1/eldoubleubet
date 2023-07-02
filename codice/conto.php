@@ -202,6 +202,27 @@
         <hr />
 
         <h3 style="text-align: center">Inserisci la somma che vorresti ricaricare nel tuo conto</h3>
+	    <p style="text-align: center">
+        	<?php
+			require_once("./connection.php");
+					
+			//mostro credito utente
+			$sqlQuery = "SELECT credito from $DBuser_table
+			where username = \"$_SESSION[userName]\"";
+			
+	
+	
+	
+			$resultQ = mysqli_query($mysqliConnection, $sqlQuery);
+			
+			if (!$resultQ) {
+				printf("Oops! La query inviata non ha avuto successo!\n");
+				exit();
+			}
+			$row=mysqli_fetch_array($resultQ);
+			echo ("Attualmente hai a disposizione: $row[0] &euro;")
+			?>
+		</p>
 		<p style="text-align: center">
 			<form style="text-align:center" method="post" action="">
 			 <input style="width: 5%" type="number" name="somma" value="10" min="10" max="9999" size="10">
