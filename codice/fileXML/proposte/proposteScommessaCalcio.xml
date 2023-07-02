@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE proposteScommessaCalcio SYSTEM "proposteScommessaCalcio.dtd">
+<!-- Esempi di 1 proposta di partita di calcio dall'utente tuzzo18 -->
+
+<proposteScommessaCalcio>
+	<proposteScommessa>
+		<id> 10 </id>
+		<nome>
+			<squadraCasa> Palermo </squadraCasa>
+			<squadraTrasferta> Genoa </squadraTrasferta>
+		</nome>
+		<quotaCalcio>
+      			<quota1> 1.82 </quota1>
+      			<quotax> 3.55 </quotax>
+      			<quota2> 1.89 </quota2>
+			      <quotaUnder> 1.83 </quotaUnder>
+			      <quotaOver> 1.64 </quotaOver>
+			      <quotaGG> 1.50 </quotaGG>
+			      <quotaNG> 1.45 </quotaNG>
+     </quotaCalcio>
+    <ora>
+			      <oraInizio> 20:45 </oraInizio>
+			      <oraFine> 22:15 </oraFine>
+		</ora>
+		<data>
+			      <giorno> 21 </giorno>
+			      <mese> 05 </mese>
+			      <anno> 2017 </anno>
+		</data>
+		<puntata>
+			      <minima> 1 </minima>
+			      <massima> 9999 </massima>
+		</puntata>
+		<utente> tuzzo18 </utente>
+	</proposteScommessa>
+</proposteScommessaCalcio>

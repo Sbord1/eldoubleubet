@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chat SYSTEM "chat.dtd">
+<chat>
+
+    <message>
+        <id>1</id>
+        <sender>mario</sender>
+        <receiver>ciruzzo</receiver>
+        <text>Ciao ciruzzo!</text>
+        <data>2023-03-10</data>
+        <ora>19:00</ora>
+    </message>
+
+    <message>
+        <id>2</id>
+        <sender>ciruzzo</sender>
+        <receiver>mario</receiver>
+        <text>Ciao mario! Come stai??</text>
+        <data>2023-03-11</data>
+        <ora>10:01</ora>
+    </message>
+
+    <message>
+        <id>3</id>
+        <sender>mario</sender>
+        <receiver>ciruzzo</receiver>
+        <text>Tutto bene grazie...</text>
+        <data>2023-03-11</data>
+        <ora>12:01</ora>
+    </message>
+
+    <message>
+        <id>4</id>
+        <sender>mario</sender>
+        <receiver>ciruzzo</receiver>
+        <text>Come vanno le scommesse sul sito?</text>
+        <data>2023-03-12</data>
+        <ora>19:01</ora>
+    </message>
+
+    <message>
+        <id>5</id>
+        <sender>mario</sender>
+        <receiver>ciruzzo</receiver>
+        <text>Non posso lamentarmi... ho vinto 50 euro!</text>
+        <data>2023-03-13</data>
+        <ora>21:01</ora>
+    </message>
+
+</chat>

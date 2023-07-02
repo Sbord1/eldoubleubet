@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Definisco le scommesse relative al basket -->
+<!ELEMENT basket (scommessa*)>
+<!ELEMENT scommessa (id, nome, quotaBasket, ora, data, puntata, risultato)>
+
+<!ELEMENT id (#PCDATA)>
+
+<!ELEMENT nome (squadraCasa, squadraTrasferta)>
+<!ELEMENT squadraCasa (#PCDATA)>
+<!ELEMENT squadraTrasferta (#PCDATA)>
+
+<!-- quotaBasket è composta da: vittoria casa (1), vittoria trasferta (2) -->
+
+<!ELEMENT quotaBasket (quota1, quota2> 
+<!ELEMENT quota1 (#PCDATA)>
+<!ELEMENT quota2 (#PCDATA)>
+
+<!ELEMENT ora (oraInizio, oraFine)>
+<!ELEMENT oraInizio (#PCDATA)>
+<!ELEMENT oraFine (#PCDATA)>
+
+<!ELEMENT data (giorno, mese, anno)>
+<!ELEMENT giorno (#PCDATA)>
+<!ELEMENT mese (#PCDATA)>
+<!ELEMENT anno (#PCDATA)>
+
+<!-- puntata è composta da un valore minimo e un valore massimo di puntata -->
+<!ELEMENT puntata (minima, massima)>
+<!ELEMENT minima (#PCDATA)>
+<!ELEMENT massima (#PCDATA)>
+
+<!ELEMENT risultato (puntiSquadraCasa, puntiSquadraTrasferta)>
+<!ELEMENT puntiSquadraCasa (#PCDATA)>
+<!ELEMENT puntiSquadraTrasferta (#PCDATA)>
+
+

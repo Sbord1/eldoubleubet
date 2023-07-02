@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE proposteScommessaTennis SYSTEM "proposteScommessaTennis.dtd">
+<!-- Esempio di 1 proposta di partita di tennis dall'utente mario -->
+
+<proposteScommessaTennis>
+ <proposteScommessa>
+  	<id> 10 </id>
+	<nome>
+		<giocatoreCasa> Fritz T. </giocatoreCasa>
+		<giocatoreTrasferta> Paul T. </giocatoreTrasferta>
+	</nome>
+	<quotaTennis>
+      		<quota1> 1.35 </quota1>
+      		<quota2> 1.99 </quota2>
+  </quotaTennis>
+  <ora>
+        	<oraInizio> 15:00 </oraInizio>
+        	<oraFine> 17:00 </oraFine>
+	</ora>
+	<data>
+    		<giorno> 10 </giorno>
+    		<mese> 01 </mese>
+    		<anno> 2020 </anno>
+  </data>
+	<puntata>
+		    <minima> 1 </minima>
+		    <massima> 9999 </massima>
+	</puntata>
+	<utente> mario </utente>
+</proposteScommessa>
+</proposteScommessaTennis>

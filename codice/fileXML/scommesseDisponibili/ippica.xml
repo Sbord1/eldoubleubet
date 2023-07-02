@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ippica SYSTEM "ippica.dtd">
+
+<ippica>
+
+    <scommessa>
+        <id>1</id>
+
+        <data>
+            <giorno>18</giorno>
+            <mese>07</mese>
+            <anno>2023</anno>
+        </data>
+
+        <ora>
+            <oraInizio>20:00</oraInizio>
+            <oraFine>20:05</oraFine>
+        </ora>
+
+        <cavalli>
+            <cavallo>
+                <nome>Eclipse</nome>
+                <numero>1</numero>
+                <quote>
+                    <quota1>51</quota1>
+                    <quota2>21.3</quota2>
+                    <quota3>11.2</quota3>
+                </quote>
+            </cavallo>
+            <cavallo>
+                <nome>West Australian</nome>
+                <numero>2</numero>
+                <quote>
+                    <quota1>71</quota1>
+                    <quota2>31.3</quota2>
+                    <quota3>11.2</quota3>
+                </quote>
+            </cavallo>
+            <cavallo>
+                <nome>Flyng Fox</nome>
+                <numero>3</numero>
+                <quote>
+                    <quota1>41</quota1>
+                    <quota2>21.3</quota2>
+                    <quota3>9.2</quota3>
+                </quote>
+            </cavallo>
+            <cavallo>
+                <nome>Man O'war</nome>
+                <numero>4</numero>
+                <quote>
+                    <quota1>51</quota1>
+                    <quota2>31.3</quota2>
+                    <quota3>8.2</quota3>
+                </quote>
+            </cavallo>
+            <cavallo>
+                <nome>Phar Lap</nome>
+                <numero>5</numero>
+                <quote>
+                    <quota1>61</quota1>
+                    <quota2>41.3</quota2>
+                    <quota3>10.2</quota3>
+                </quote>
+            </cavallo>
+            <cavallo>
+                <nome>Seabiscuit</nome>
+                <numero>6</numero>
+                <quote>
+                    <quota1>31</quota1>
+                    <quota2>33.3</quota2>
+                    <quota3>11.2</quota3>
+                </quote>
+            </cavallo>
+            <cavallo>
+                <nome>Arkle</nome>
+                <numero>7</numero>
+                <quote>
+                    <quota1>61</quota1>
+                    <quota2>36.3</quota2>
+                    <quota3>11.2</quota3>
+                </quote>
+            </cavallo>
+            <cavallo>
+                <nome>Sea-Bird</nome>
+                <numero>8</numero>
+                <quote>
+                    <quota1>41</quota1>
+                    <quota2>37.3</quota2>
+                    <quota3>11.2</quota3>
+                </quote>
+            </cavallo>
+        </cavalli>
+
+        <distanza>1500</distanza>
+
+        <puntata>
+			<minima>1</minima>
+			<massima>9999</massima>
+		</puntata>
+
+        <risultato>
+            <primo>4</primo>
+            <secondo>1</secondo>
+            <terzo>2</terzo>
+        </risultato>
+
+    </scommessa>
+
+</ippica>

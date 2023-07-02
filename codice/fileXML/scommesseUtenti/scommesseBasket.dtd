@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Definisco le scommesse relative al basket di un utente -->
+<!ELEMENT scommesseBasket (scommessa*)>
+<!ELEMENT scommessa (id, scommettitore, risultato, puntata)>
+
+<!ATTLIST scommessa
+              eliminato (1 | 0) "0"> 
+
+<!ELEMENT id (#PCDATA)>
+
+<!ELEMENT scommettitore (#PCDATA)>
+
+<!-- composto da "1","2"-->
+<!ELEMENT risultato (#PCDATA)>
+
+<!ELEMENT puntata (#PCDATA)>
+

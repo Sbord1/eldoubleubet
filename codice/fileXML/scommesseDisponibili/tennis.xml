@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tennis SYSTEM "tennis.dtd">
+<!-- Esempi di 3 partite di tennis -->
+<tennis>
+ <scommessa>
+  	<id> 1 </id>
+	<nome>
+		<giocatoreCasa> Alcaraz C. </giocatoreCasa>
+		<giocatoreTrasferta> Djokovic N. </giocatoreTrasferta>
+	</nome>
+	<quotaTennis>
+      		<quota1> 1.85 </quota1>
+      		<quota2> 1.79 </quota2>
+    	</quotaTennis>
+    	<ora>
+        	<oraInizio> 15:00 </oraInizio>
+        	<oraFine> 17:00 </oraFine>
+	</ora>
+	<data>
+    		<giorno> 13 </giorno>
+    		<mese> 02 </mese>
+    		<anno> 2023 </anno>
+  	</data>
+	<puntata>
+		<minima> 1 </minima>
+		<massima> 9999 </massima>
+	</puntata>
+	 <risultato>
+		 <puntiGiocatoreCasa> 1 </puntiGiocatoreCasa>
+		 <puntiGiocatoreTrasferta> 3 </puntiGiocatoreTrasferta>
+	 </risultato>
+</scommessa>
+<scommessa>
+  	<id> 2 </id>
+	<nome>
+		<giocatoreCasa> Medvedev D. </giocatoreCasa>
+		<giocatoreTrasferta> Ruud C. </giocatoreTrasferta>
+	</nome>
+	<quotaTennis>
+      		<quota1> 1.65 </quota1>
+      		<quota2> 1.99 </quota2>
+	</quotaTennis>
+    	<ora>
+        	<oraInizio> 15:00 </oraInizio>
+        	<oraFine> 17:00 </oraFine>
+	</ora>
+  	<data>
+    		<giorno> 17 </giorno>
+    		<mese> 04 </mese>
+    		<anno> 2023 </anno>
+  	</data>
+	<puntata>
+		<minima> 1 </minima>
+		<massima> 9999 </massima>
+	</puntata>
+	<risultato>
+		 <puntiGiocatoreCasa> 3 </puntiGiocatoreCasa>
+		 <puntiGiocatoreTrasferta> 2 </puntiGiocatoreTrasferta>
+	 </risultato>
+</scommessa>
+<scommessa>
+  	<id> 1 </id>
+	<nome>
+		<giocatoreCasa> Rune H. </giocatoreCasa>
+		<giocatoreTrasferta> Sinner J. </giocatoreTrasferta>
+	</nome>
+	<quotaTennis>
+      		<quota1> 1.45 </quota1>
+      		<quota2> 2.12 </quota2>
+      	</quotaTennis>
+    	<ora>
+        	<oraInizio> 15:00 </oraInizio>
+        	<oraFine> 17:00 </oraFine>
+	</ora>
+  	<data>
+    		<giorno> 23 </giorno>
+    		<mese> 01 </mese>
+    		<anno> 2023 </anno>
+  	</data>
+	<puntata>
+		<minima> 1 </minima>
+		<massima> 9999 </massima>
+	</puntata>
+	<risultato>
+		 <puntiGiocatoreCasa> 2 </puntiGiocatoreCasa>
+		 <puntiGiocatoreTrasferta> 3 </puntiGiocatoreTrasferta>
+	 </risultato>
+</scommessa>
+</tennis>

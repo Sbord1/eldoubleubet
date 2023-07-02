@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE scommesseBasket SYSTEM "scommesseBasket.dtd">
+<!-- Esempi di 3 scommesse di basket -->
+
+<scommesseBasket>
+  <!-- utente sbord1 ha puntato 30 crediti sulla vittoria della squadra in casa -->
+    <scommessa eliminato="0">
+        <id> 1 </id>
+        <scommettitore> sbord1 </scommettitore>
+        <risultato> 1 </risultato>
+        <puntata> 30 </puntata>
+    </scommessa>
+     <!-- utente tuzzo18 ha puntato 18 crediti sulla vittoria della squadra in trasferta  -->
+    <scommessa eliminato="0">
+        <id> 1 </id>
+        <scommettitore> tuzzo18 </scommettitore>
+        <risultato> 2 </risultato>
+        <puntata> 18 </puntata>
+    </scommessa>
+   <!-- utente mario ha puntato 10 crediti sulla vittoria della squadra in casa  -->
+    <scommessa eliminato="0">
+        <id> 2 </id>
+        <scommettitore> mario </scommettitore>
+        <risultato> 1 </risultato>
+        <puntata> 10 </puntata>
+    </scommessa>
+</scommesseBasket>

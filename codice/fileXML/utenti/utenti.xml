@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE utenti SYSTEM "utenti.dtd">
+
+<!-- Esempi di 2 utenti "admin", 2 utenti "scommettitore" e 2 utenti "gestore" -->
+<utenti>
+    <utente tipologia="admin" account="attivo">
+        <nome> Francesco </nome>
+        <cognome> Sbordone </cognome>
+        <dataNascita>
+            <anno> 2001 </anno>
+            <mese> 03 </mese>
+            <giorno> 20 </giorno>
+        </dataNascita>
+        <username> Sbord1 </username>
+        <password> Sbord1 </password> <!-- Non so se dobbiamo criptarla -->
+    </utente>
+    <utente tipologia="admin" account="attivo">
+        <nome> Riccardo </nome>
+        <cognome> Tuzzolino </cognome>
+        <dataNascita>
+            <anno> 2001 </anno>
+            <mese> 01 </mese>
+            <giorno> 18 </giorno>
+        </dataNascita>
+        <username> Tuzzo18 </username>
+        <password> Tuzzo18 </password> <!-- Non so se dobbiamo criptarla -->
+    </utente>
+    <utente tipologia="scommettitore" account="attivo">
+        <nome> Mario </nome>
+        <cognome> Rossi </cognome>
+        <dataNascita>
+            <anno> 2001 </anno>
+            <mese> 09 </mese>
+            <giorno> 03 </giorno>
+        </dataNascita>
+        <username> mario </username>
+        <password> mario </password> <!-- Non so se dobbiamo criptarla -->
+    </utente>
+    <utente tipologia="scommettitore" account="disattivo">
+        <nome> Ciro </nome>
+        <cognome> Esposito </cognome>
+        <dataNascita>
+            <anno> 1999 </anno>
+            <mese> 02 </mese>
+            <giorno> 28 </giorno>
+        </dataNascita>
+        <username> Ciruzzo </username>
+        <password> Ciruzzo </password> <!-- Non so se dobbiamo criptarla -->
+    </utente>
+    <utente tipologia="gestore" account="attivo">
+        <nome> Tizio </nome>
+        <cognome> Gracco </cognome>
+        <dataNascita>
+            <anno> 1995 </anno>
+            <mese> 05 </mese>
+            <giorno> 30 </giorno>
+        </dataNascita>
+        <username> Tizio </username>
+        <password> Tizio </password> <!-- Non so se dobbiamo criptarla -->
+    </utente>
+    <utente tipologia="gestore" account="attivo">
+        <nome> Caio </nome>
+        <cognome> Gracco </cognome>
+        <dataNascita>
+            <anno> 1995 </anno>
+            <mese> 05 </mese>
+            <giorno> 30 </giorno>
+        </dataNascita>
+        <username> Caio </username>
+        <password> Caio </password> <!-- Non so se dobbiamo criptarla -->
+    </utente>
+</utenti>

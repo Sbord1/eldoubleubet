@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE proposteScommessaIppica SYSTEM "proposteScommessaIppica.dtd">
+
+<proposteScommessaIppica>
+
+    <propostaScommessa>
+
+        <id>1</id>
+
+        <data>
+            <giorno>11</giorno>
+            <mese>03</mese>
+            <anno>2023</anno>
+        </data>
+
+        <ora>
+            <oraInizio>19:00</oraInizio>
+            <oraFine>19:05</oraFine>
+        </ora>
+
+        <cavalli>
+            <cavallo>
+                <nome>Ulysses</nome>
+                <numero>1</numero>
+                <quote>
+                    <quota1>51</quota1>
+                    <quota2>21.3</quota2>
+                    <quota3>11.2</quota3>
+                </quote>
+            </cavallo>
+            <cavallo>
+                <nome>Gun Runner</nome>
+                <numero>2</numero>
+                <quote>
+                    <quota1>71</quota1>
+                    <quota2>31.3</quota2>
+                    <quota3>11.2</quota3>
+                </quote>
+            </cavallo>
+            <cavallo>
+                <nome>Gentildonna</nome>
+                <numero>3</numero>
+                <quote>
+                    <quota1>41</quota1>
+                    <quota2>21.3</quota2>
+                    <quota3>9.2</quota3>
+                </quote>
+            </cavallo>
+            <cavallo>
+                <nome>Orfevre</nome>
+                <numero>4</numero>
+                <quote>
+                    <quota1>51</quota1>
+                    <quota2>31.3</quota2>
+                    <quota3>8.2</quota3>
+                </quote>
+            </cavallo>
+            <cavallo>
+                <nome>HighlandReel</nome>
+                <numero>5</numero>
+                <quote>
+                    <quota1>61</quota1>
+                    <quota2>41.3</quota2>
+                    <quota3>10.2</quota3>
+                </quote>
+            </cavallo>
+            <cavallo>
+                <nome>CapeBlanco</nome>
+                <numero>6</numero>
+                <quote>
+                    <quota1>31</quota1>
+                    <quota2>33.3</quota2>
+                    <quota3>11.2</quota3>
+                </quote>
+            </cavallo>
+            <cavallo>
+                <nome>Montjeu</nome>
+                <numero>7</numero>
+                <quote>
+                    <quota1>61</quota1>
+                    <quota2>36.3</quota2>
+                    <quota3>11.2</quota3>
+                </quote>
+            </cavallo>
+            <cavallo>
+                <nome>Justify</nome>
+                <numero>8</numero>
+                <quote>
+                    <quota1>41</quota1>
+                    <quota2>37.3</quota2>
+                    <quota3>11.2</quota3>
+                </quote>
+            </cavallo>
+        </cavalli>
+
+        <distanza>1000</distanza>
+
+        <puntata>
+			<minima>1</minima>
+			<massima>9999</massima>
+		</puntata>
+
+        <utente>tuzzo18</utente>
+
+    </propostaScommessa>
+
+</proposteScommessaIppica>

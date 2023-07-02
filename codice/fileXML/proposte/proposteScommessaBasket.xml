@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE proposteScommessaBasket SYSTEM "proposteScommessaBasket.dtd">
+<!-- Esempio di 1 proposta di scommessa per il basket dall' utente sbord1  -->
+<proposteScommessaBasket>
+<propostaScommessa>
+	<id> 10 </id>
+	<nome>
+		    <squadraCasa> Miami Heat </squadraCasa>
+		    <squadraTrasferta> Denver Nuggets </squadraTrasferta>
+	</nome>
+	<quotaBasket>
+      		<quota1> 1.35 </quota1>
+      		<quota2> 2.49 </quota2>
+  </quotaBasket>
+  <ora> 
+          <oraInizio> 22:00 </oraInizio>
+          <oraFine> 23:30 </oraFine>
+   </ora>
+  <data>
+      		<giorno> 08 </giorno>
+      		<mese> 06 </mese>
+      		<anno> 2023 </anno>
+  </data>
+	<puntata>
+		    <minima> 1 </minima>
+		    <massima> 9999 </massima>
+	</puntata>
+  <utente> sbord1 </utente>
+</propostaScommessa>
+</proposteScommessaBasket>
