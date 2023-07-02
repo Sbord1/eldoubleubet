@@ -76,6 +76,13 @@ session_start();
     .forum-btn:hover {
       background-color: #0056b3;
     }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
     
   </style>
 </head>
@@ -265,6 +272,18 @@ session_start();
         <h3 style="text-align: center;">
             <a href="inizio.php" alt="Home">Homepage</a>
         </h3>
+
+        <footer style="background-color: lightgrey; text-align: center; height: 60px; padding: 20px;">
+            <p style="color: black">
+                Authors: Francesco Sbordone, Riccardo Tuzzolino
+                <br />
+                <em><a href="">webmaster@example.com</a></em>
+            </p>
+        </footer>
+
+        <footer>
+            <p style="color: white;">&copy; 2023 Eldoubleubet. Tutti i diritti riservati.</p>
+        </footer>
 
 </body>
 </html>
