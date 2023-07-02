@@ -22,7 +22,7 @@ facciamo in modo che la stringa contenga il file "appiattito", cioe' privo di qu
 che non sia correlato al contenuto effettivo del documento XML - ad esempio senza gli spazi tra un elemento e il predecessore o successore
 */
 $xmlString = "";
-foreach ( file("chat.xml") as $node ) {
+foreach ( file("fileXML/chat/chat.xml") as $node ) {
 	$xmlString .= trim($node);
 }
 
