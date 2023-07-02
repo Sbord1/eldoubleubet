@@ -1,5 +1,10 @@
 <?php
 
+	session_start();
+
+	// Se non e' stato eseguito il login si viene reindirizzati alla pagina di login
+	if (!isset($_SESSION['accessoPermesso'])) header('Location: loginPage.html');
+
 // variabili scommessa
 	$squadraCasa=$_POST['squadraCasa'];
 	$squadraTrasferta=$_POST['squadraTrasferta'];
