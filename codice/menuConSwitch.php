@@ -13,13 +13,13 @@ if (!isset($_SESSION['tipologia'])) { //no login
         |
         <li><a href="infoGenerali.php">Info Generali</a></li>
         |
-        <li><a href="#">Calcio</a></li>
+        <li><a href="calcio.php">Calcio</a></li>
         |
-        <li><a href="#">Basket</a></li>
+        <li><a href="basket.php">Basket</a></li>
         |
-        <li><a href="#">Tennis</a></li>
+        <li><a href="tennis.php">Tennis</a></li>
         |
-        <li><a href="#">Ippica</a></li>
+        <li><a href="ippica.php">Ippica</a></li>
       </ul>
     </nav>
 
@@ -45,13 +45,13 @@ else {
         |
         <li><a href="infoGenerali.php">Info Generali</a></li>
         |
-        <li><a href="#">Calcio</a></li>
+        <li><a href="calcio.php">Calcio</a></li>
         |
-        <li><a href="#">Basket</a></li>
+        <li><a href="basket.php">Basket</a></li>
         |
-        <li><a href="#">Tennis</a></li>
+        <li><a href="tennis.php">Tennis</a></li>
         |
-        <li><a href="#">Ippica</a></li>
+        <li><a href="ippica.php">Ippica</a></li>
         |
         <li><a href="#">Conto</a></li>
         |
@@ -74,13 +74,13 @@ else {
 	
     <nav>
       <ul>
-        <li><a href="#">Calcio</a></li>
+        <li><a href="calcio.php">Calcio</a></li>
         |
-        <li><a href="#">Basket</a></li>
+        <li><a href="basket.php">Basket</a></li>
         |
-        <li><a href="#">Tennis</a></li>
+        <li><a href="tennis.php">Tennis</a></li>
         |
-        <li><a href="#">Ippica</a></li>
+        <li><a href="ippica.php">Ippica</a></li>
         |
         <li><a href="#">Richieste accredito</a></li>
         |
@@ -103,13 +103,13 @@ else {
 
     <nav>
       <ul>
-        <li><a href="#">Calcio</a></li>
+        <li><a href="calcio.php">Calcio</a></li>
         |
-        <li><a href="#">Basket</a></li>
+        <li><a href="basket.php">Basket</a></li>
         |
-        <li><a href="#">Tennis</a></li>
+        <li><a href="tennis.php">Tennis</a></li>
         |
-        <li><a href="#">Ippica</a></li>
+        <li><a href="ippica.php">Ippica</a></li>
         |
         <li><a href="#">Richieste accredito</a></li>
         |
