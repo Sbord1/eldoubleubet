@@ -189,6 +189,7 @@
 
 		</header>
 	
+	<h2 style="text-align: center;">CALCIO</h2>
 	
 	<h4 style="text-align: center;">Clicca sulla quota che desideri per piazzare la scommessa</h4>
     <table class="tablecenter">
@@ -216,14 +217,15 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
     $lunghezza = $calcio->length;
    	
 	// Costruiamo i titoli delle colonne della tabella che conterra' le scommesse di calcio estratte da calcio.xml
-	$elenco = "<tr> 
+	$elenco = "<tr> 	
+					<td class=\"head\"> ID </td>
 					<td class=\"head\"> Data </td>
 					<td class=\"head\"> Ora di inizio </td>
 					<td class=\"head\"> Ora di fine </td>
 					<td class=\"head\"> Partita </td>
 					<td class=\"head\"> 1 </td>
-					<td class=\"head\"> 2 </td>
 					<td class=\"head\"> X </td>
+					<td class=\"head\"> 2 </td>
 					<td class=\"head\"> Under 2.5 </td>
 					<td class=\"head\"> Over 2.5 </td>
 					<td class=\"head\"> GG </td>
@@ -293,6 +295,7 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 
 // cliccando sulla quota, mi rimanda alla pagina piazzaScommessa.php dove so quale quota ho cliccato e di quale squadra
 		$elenco.="\n<tr>
+						<td>$idNumber</td>
 						<td>$anno_mese_giorno</td>
 						<td> $oraInizioValue </td>
 						<td> $oraFineValue </td>
@@ -300,6 +303,9 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 						<td> 
 						 		<form method=\"post\" action=\"piazzaScommessa.php\"> 
 						  		<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quota1Value </button>
+						  		<input type=\"hidden\" name=\"category\" value=\"calcio\">
+						  		<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+						  		<input type=\"hidden\" name=\"risultato\" value=\"1\">
 						  		<input type=\"hidden\" name=\"squadraCasa\" value=\"$squadraCasaValue\">
 						 		<input type=\"hidden\" name=\"squadraTrasferta\" value=\"$squadraTrasfertaValue\">
 						 		<input type=\"hidden\" name=\"quota\" value=\"$quota1Value\"> </form>
@@ -307,6 +313,9 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 						<td> 
 								<form method=\"post\" action=\"piazzaScommessa.php\"> 
 								<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quotaxValue </button>
+								<input type=\"hidden\" name=\"category\" value=\"calcio\">
+								<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+								<input type=\"hidden\" name=\"risultato\" value=\"X\">
 								<input type=\"hidden\" name=\"squadraCasa\" value=\"$squadraCasaValue\">
 								<input type=\"hidden\" name=\"squadraTrasferta\" value=\"$squadraTrasfertaValue\">
 								<input type=\"hidden\" name=\"quota\" value=\"$quotaxValue\"> </form> 
@@ -314,6 +323,9 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 						 <td>
 								<form method=\"post\" action=\"piazzaScommessa.php\"> 
 								<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quota2Value </button>
+								<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+								<input type=\"hidden\" name=\"category\" value=\"calcio\">
+								<input type=\"hidden\" name=\"risultato\" value=\"2\">
 								<input type=\"hidden\" name=\"squadraCasa\" value=\"$squadraCasaValue\">
 								<input type=\"hidden\" name=\"squadraTrasferta\" value=\"$squadraTrasfertaValue\">
 								<input type=\"hidden\" name=\"quota\" value=\"$quota2Value\"> </form>
@@ -321,6 +333,9 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 						 <td>
 								<form method=\"post\" action=\"piazzaScommessa.php\"> 
 								<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">  $quotaUnderValue </button>
+								<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+								<input type=\"hidden\" name=\"category\" value=\"calcio\">
+								<input type=\"hidden\" name=\"risultato\" value=\"Under\">
 								<input type=\"hidden\" name=\"squadraCasa\" value=\"$squadraCasaValue\">
 								<input type=\"hidden\" name=\"squadraTrasferta\" value=\"$squadraTrasfertaValue\">
 								<input type=\"hidden\" name=\"quota\" value=\" $quotaUnderValue\"> </form>
@@ -328,6 +343,9 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 						<td> 
 						 		<form method=\"post\" action=\"piazzaScommessa.php\"> 
 								<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">  $quotaOverValue  </button>
+								<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+								<input type=\"hidden\" name=\"category\" value=\"calcio\">
+								<input type=\"hidden\" name=\"risultato\" value=\"Over\">
 								<input type=\"hidden\" name=\"squadraCasa\" value=\"$squadraCasaValue\">
 								<input type=\"hidden\" name=\"squadraTrasferta\" value=\"$squadraTrasfertaValue\">
 								<input type=\"hidden\" name=\"quota\" value=\" $quotaOverValue \"> </form>
@@ -335,6 +353,9 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 						<td>
 						 		<form method=\"post\" action=\"piazzaScommessa.php\"> 
 								<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">  $quotaGGValue  </button>
+								<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+								<input type=\"hidden\" name=\"category\" value=\"calcio\">
+								<input type=\"hidden\" name=\"risultato\" value=\"GG\">
 								<input type=\"hidden\" name=\"squadraCasa\" value=\"$squadraCasaValue\">
 								<input type=\"hidden\" name=\"squadraTrasferta\" value=\"$squadraTrasfertaValue\">
 								<input type=\"hidden\" name=\"quota\" value=\" $quotaGGValue \"> </form> 
@@ -342,6 +363,9 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 						<td>
 								<form method=\"post\" action=\"piazzaScommessa.php\"> 
 								<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">  $quotaNGValue  </button>
+								<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\">
+								<input type=\"hidden\" name=\"category\" value=\"calcio\">
+								<input type=\"hidden\" name=\"risultato\" value=\"NG\">
 								<input type=\"hidden\" name=\"squadraCasa\" value=\"$squadraCasaValue\">
 								<input type=\"hidden\" name=\"squadraTrasferta\" value=\"$squadraTrasfertaValue\">
 								<input type=\"hidden\" name=\"quota\" value=\" $quotaNGValue \"> </form>
