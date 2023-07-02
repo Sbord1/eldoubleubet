@@ -162,7 +162,7 @@
                         <p> Eldoubleubet &egrave; un sito di scommesse online realizzato come progetto universitario da Sbordone F. e Tuzzolino R.</p>
                         <h4>Come registrarsi </h4>
                         <p> Per giocare con Eldoubleubet &egrave; necessario aprire un conto di gioco ed aver compiuto 18 anni di et&agrave;. 
-							Il cliente deve quindi compilare il contratto nell'apposita sezione "Registrati".
+							Il cliente deve quindi compilare il contratto nell'apposita sezione "Registrati" in alto a destra.
 							L'account dovr&agrave; essere poi attivato da un gestore del sito web. </p>
 						<h4>Come ricaricare il conto </h4>
 						<p> Per ricaricare il proprio conto bisogna inviare una richiesta formale nell'apposita sezione "Conto".
