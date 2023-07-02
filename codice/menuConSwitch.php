@@ -55,7 +55,7 @@ else {
         |
         <li><a href="conto.php">Conto</a></li>
         |
-        <li><a href="#">Riepilogo</a></li>
+        <li><a href="riepilogoScommesseUtente.php">Riepilogo</a></li>
         |
         <li><a href="#">Proponi scommessa</a></li>
         |
