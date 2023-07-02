@@ -197,7 +197,7 @@
 /////////////////////////////////////////////////////////////////////////
 # Lettura file "calcio.xml"
 $xmlString = "";
-foreach ( file("calcio.xml") as $node ) {
+foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 	$xmlString .= trim($node);
 }
 
