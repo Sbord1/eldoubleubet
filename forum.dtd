@@ -11,13 +11,7 @@
 
 <!ELEMENT text (#PCDATA)>
 
-<!ELEMENT data (giorno, mese, anno)>
-
-<!ELEMENT giorno (#PCDATA)>
-
-<!ELEMENT mese (#PCDATA)>
-
-<!ELEMENT anno (#PCDATA)>
+<!ELEMENT data (#PCDATA)>
 
 <!ELEMENT ora (#PCDATA)>
 
