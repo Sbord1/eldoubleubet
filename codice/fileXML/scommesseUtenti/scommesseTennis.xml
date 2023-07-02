@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE scommesseTennis SYSTEM "scommesseTennis.dtd">
 <!-- Esempi di 3 scommesse di tennis -->
-
 <scommesseTennis>
   <!-- utente sbord1 ha puntato 30 crediti sulla vittoria del giocatore in casa -->
     <scommessa eliminato="0">
