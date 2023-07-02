@@ -5,9 +5,7 @@
 
     <richiesta status="in-sospeso">
         <id>1</id>
-        <!-- username dell'utente scommettitore che ha richiesto l'accredito -->
         <richiedente>matteo</richiedente>
-        <!-- quantita' di credito richiesta -->
         <somma>50</somma>
     </richiesta>
 
