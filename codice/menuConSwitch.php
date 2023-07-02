@@ -55,9 +55,9 @@ else {
         |
         <li><a href="#">Proponi scommessa</a></li>
         |
-        <li><a href="#">Chat</a></li>
+        <li><a href="chat.php">Chat</a></li>
         |
-        <li><a href="#">Forum</a></li>
+        <li><a href="forum.php">Forum</a></li>
       </ul>
     </nav>
 
