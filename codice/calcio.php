@@ -115,10 +115,12 @@
 		tr {
 			background-color: rgb(228, 240, 245);
 			height: 30px;
+			text-align:center;
 		}
 
   		td.head{
   		 	background-color: #FDEBD0;
+			text-align: center;
   		}
 
 		.tablecenter{
@@ -216,6 +218,7 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
    	
 	// Costruiamo i titoli delle colonne della tabella che conterra' le scommesse di calcio estratte da calcio.xml
 	$elenco = "<tr> 
+					<td class=\"head\"> Data </td>
 					<td class=\"head\"> Ora di inizio </td>
 					<td class=\"head\"> Ora di fine </td>
 					<td class=\"head\"> Partita </td>
@@ -225,7 +228,9 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 					<td class=\"head\"> Under 2.5 </td>
 					<td class=\"head\"> Over 2.5 </td>
 					<td class=\"head\"> GG </td>
-					<td class=\"head\"> NG </td> </tr>\n";
+					<td class=\"head\"> NG </td>
+					<td class=\"head\"> Risultato </td>
+					</tr>\n";
 
 	//ciclo per ottenere info su tutte le scommesse di calcio
    for ($i=0; $i<$lunghezza; $i++) {
@@ -283,14 +288,17 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 		$puntiSquadraCasaValue = $puntiSquadraCasa->textContent;
 		$puntiSquadraTrasferta = $risultato->lastChild;
 		$puntiSquadraTrasfertaValue = $puntiSquadraTrasferta->textContent;
+
+		$anno_mese_giorno = trim($annoValue)."-".trim($meseValue)."-".trim($giornoValue);
 	
 
 // cliccando sulla quota, mi rimanda alla pagina piazzaScommessa.php dove so quale quota ho cliccato e di quale squadra
 		$elenco.="\n<tr>
+						<td>$anno_mese_giorno</td>
 						<td> $oraInizioValue </td>
 						<td> $oraFineValue </td>
 						<td> $squadraCasaValue - $squadraTrasfertaValue </td>
-						 <td> 
+						<td> 
 						 		<form method=\"post\" action=\"piazzaScommessa.php\"> 
 						  		<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\"> $quota1Value </button>
 						  		<input type=\"hidden\" name=\"squadraCasa\" value=\"$squadraCasaValue\">
@@ -338,7 +346,9 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 								<input type=\"hidden\" name=\"squadraCasa\" value=\"$squadraCasaValue\">
 								<input type=\"hidden\" name=\"squadraTrasferta\" value=\"$squadraTrasfertaValue\">
 								<input type=\"hidden\" name=\"quota\" value=\" $quotaNGValue \"> </form>
-						</td> </tr>\n";
+						</td>
+						<td> $puntiSquadraCasaValue - $puntiSquadraTrasfertaValue </td>
+						</tr>\n";
 			
 }
 	echo "$elenco";
