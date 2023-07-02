@@ -11,130 +11,184 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
     <head>
-        <title>Eldoubleubet</title>  
-    </head>
-<?php
-// Controlliamo se e' stato effettuato il login per salvare in $str il nome dell'utente loggato
-	if(isset($_SESSION['userName']))
-   		$str="Utente ".$_SESSION['userName'];
-	else
-    	$str='Fai il login';
-    	$str2='Registrati ';
-?>
-
-
-        <p style="float: right;">
-            <!-- Stampiamo il nome dell'utente se ha effettuato il login altrimenti comparira' "Fai il login". -->
-            <b><?php echo $str."---> "; ?></b>
-           
-            
-            <?php 
-            // Se non e' stato fatto il login compare il logo per farlo
-            if(!isset($_SESSION['userName'])){
-                echo "<a href=\"loginPage.html\">
-                        <img src=\"loghi/userLogin.jpg\" alt=\"userLogo\" title=\"Login\" style=\"float: right; height: 30px;\"/>
-                      </a>";
-                      
-                }
-            // Se e' stato fatto il login compare il logo per fare il logout
-            else{
-                echo "<a href=\"logout.php\">
-                        <img src=\"loghi/logout.png\" alt=\"logoutLogo\" title=\"Logout\" style=\"float: right; height: 30px;\"/>
-                      </a>";
+        <title>Eldoubleubet - Info Generali</title>  
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
             }
-            ?>
             
-            <!-- Stampiamo la possibilita' di registrarsi nel caso in cui l'utente non sia registrato nel database --> 
-          
-          <?php  
-            if(!isset($_SESSION['userName'])){
-             echo "<b>";
-             echo "<br />  <br />" .$str2. "---> ";
-             echo "</b>";
-             
-                echo "<a href=\"registrazione.php\">
-                        <img src=\"loghi/userLogin.jpg\" alt=\"userLogo\" title=\"Login\" style=\"float: right; height: 30px;\"/>
-                      </a>";
-                      }
-            ?>
-        </p>
+            header {
+            background-color: #333333;
+            padding: 10px;
+            }
+            
+            .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            }
+            
+            
+            .btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            color: #ffffff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 4px;
+            }
+            
+            .btn:hover {
+            background-color: #0056b3;
+            }
+            
+            nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            }
+            
+            nav ul li {
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+            }
+            
+            nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 5px 10px;
+            }
+            
+            nav ul li a:hover {
+            background-color: #666666;
+            }
+            
+            .login-btn {
+            display: inline-block;
+            margin-left: 1px;
+            padding: 5px 10px;
+            background-color: #ffffff;
+            color: #333333;
+            border-radius: 4px;
+            }
+            
+            .login-btn:hover {
+            background-color: #cccccc;
+            }
+
+            .register-btn {
+            display: inline-block;
+            margin-left: 5px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 4px;
+            }
+
+            .register-btn:hover {
+            background-color: #0056b3;
+            }
+
+            footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            }
+        </style>
+    </head>
         
     <body style="background-color: lightyellow;">
-		
-		<table style="margin-left: auto; margin-right: auto;">
-            <tbody>
-                <tr>
-                    <td>
-                        <a href="index.php">
-                            <img src="loghi/movieCamera.png" alt="camera logo" height="80"/>
-                        </a>
-                    </td>
-                    <td> 
-                        <h1>Eldoubleubet</h1>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <?php
 
-        // Inserisce la tabella con le categorie di film ed eventualmente anche il carrello se e' stato effettuato l'accesso
-        require("./menuConSwitch.php");
-
+        <header>
+        <?php 
+        // Se non e' stato fatto il login compare il bottone per farlo e anche il bottone per registrarsi
+        if(!isset($_SESSION['userName'])){
+            
+            echo "<div style=\"float: right;\">";
+            echo "<a href=\"loginPage.html\" class=\"login-btn\">Login</a>";
+            echo "<a href=\"registrazione.php\" class=\"register-btn\">Registrati</a>";
+            echo "</div>";
+                    
+        }
+        // Se e' stato fatto il login compare il bottone per fare il logout
+        else{
+            echo "<div style=\"float: right;\">";
+            echo "<a href=\"logout.php\" class=\"register-btn\">Logout</a>";
+            echo "</div>";
+        }
         ?>
+        
+        <div>
+            <table style="margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td>
+                        <a href="inizio.php">
+                            <img src="loghi/logo.png" alt="Logo del sito" width="128px" height="auto" />
+                        </a>
+                        </td>
+                        <td><h1 style="color: white;">ELDOUBLEUBET</h1></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+            <?php
+
+                // Inserisce il menu' relativo al visitatore oppure all'uetnte loggato (scommettitore, admin oppure gestore)
+                require("./menuConSwitch.php");
+
+            ?>
+        </header>
 
 
         <p>
 
-        <table width="1000" cellpadding="10" style="margin-left: auto; margin-right: auto;">
+        <table width="1000" cellpadding="10" style="margin-left: auto; margin-right: auto; padding-bottom: 15px;">
             <tbody>
                 <tr>
                     <td width="1000" style="background-color: white;">
-                        <p>
-
-
-                        </p>
                         <hr />
                         <h4>Chi siamo</h4>
-                        <p> Eldoubleubet è un sito di scommesse online realizzato come progetto universitario da Sbordone F. e Tuzzolino R.</p>
+                        <p> Eldoubleubet &egrave; un sito di scommesse online realizzato come progetto universitario da Sbordone F. e Tuzzolino R.</p>
                         <h4>Come registrarsi </h4>
-                        <p> Per giocare con Eldoubleubet è necessario aprire un conto di gioco, aver compiuto 18 anni di età. 
+                        <p> Per giocare con Eldoubleubet &egrave; necessario aprire un conto di gioco ed aver compiuto 18 anni di et&agrave;. 
 							Il cliente deve quindi compilare il contratto nell'apposita sezione "Registrati".
-							L'account dovrà essere poi attivato da un gestore del sito web. </p>
+							L'account dovr&agrave; essere poi attivato da un gestore del sito web. </p>
 						<h4>Come ricaricare il conto </h4>
 						<p> Per ricaricare il proprio conto bisogna inviare una richiesta formale nell'apposita sezione "Conto".
-							La richiesta di accredito dovrà essere poi accettata da un gestore del sito web</p>
+							La richiesta di accredito dovr&agrave; essere poi accettata da un gestore del sito web</p>
 						<h4>Come giocare </h4>
-						<p> Per piazzare una scommessa cliccare sulla sezione dello sport su cui si ha interesse.
-							Il palinsesto comprende diversi sport quali: calcio, basket, tennis e Ippica.</p>
+						<p> Per piazzare una scommessa cliccare sulla sezione dello sport di interesse.
+							Il palinsesto comprende diversi sport quali: calcio, basket, tennis e ippica.</p>
                         <hr />
                     </td>
                 </tr>
             </tbody>
         </table>
 
-
-    
-
-        <p style="background-color: lightyellow; text-align: center;">
-            <a href="">Italiano</a>
-            |
-            <a href="">English</a>
-        </p>
         
-        <footer style="background-color: lightgrey; text-align: center; height: 40px; padding: 20px;">
-            Authors: Francesco Sbordone, Riccardo Tuzzolino
-            <br />
-            <em><a href="">webmaster@example.com</a></em>
+        <footer style="background-color: lightgrey; text-align: center; height: 60px; padding: 20px;">
+            <p style="color: black">
+                Authors: Francesco Sbordone, Riccardo Tuzzolino
+                <br />
+                <em><a href="">webmaster@example.com</a></em>
+            </p>
         </footer>
 
-        <footer style="background-color: grey; text-align: center; height: 20px; padding: 10px;">
-            &copy; Copyright 2022 - 2023. All rights reserved.
+        <footer>
+            <p style="color: white;">&copy; 2023 Eldoubleubet. Tutti i diritti riservati.</p>
         </footer>
         
-
-
-
     </body>
 
 </html>
