@@ -1,4 +1,7 @@
 <?php
+
+	session_start();
+
 	if (isset($_POST['accetta']) || (isset($_POST['rifiuta']))){
 		
 		
@@ -238,7 +241,7 @@ foreach ( file("fileXML/richiesteAccredito/richiesteAccredito.xml") as $node ) {
 	//ciclo per ottenere info su tutti i film di una stessa categoria
    for ($i=0; $i<$lunghezza; $i++) {
 	
-		$richiesta = $richiesteAccredito->item($i); //è uno dei record
+		$richiesta = $richiesteAccredito->item($i); //ï¿½ uno dei record
 		$status = $richiesta->getAttribute("status");
 	
 		$id = $richiesta->firstChild; //id primo child
