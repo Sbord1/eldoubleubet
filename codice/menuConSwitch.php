@@ -53,7 +53,7 @@ else {
         |
         <li><a href="ippica.php">Ippica</a></li>
         |
-        <li><a href="#">Conto</a></li>
+        <li><a href="conto.php">Conto</a></li>
         |
         <li><a href="#">Riepilogo</a></li>
         |
@@ -82,7 +82,7 @@ else {
         |
         <li><a href="ippica.php">Ippica</a></li>
         |
-        <li><a href="#">Richieste accredito</a></li>
+        <li><a href="richiesteAccredito.php">Richieste accredito</a></li>
         |
         <li><a href="#">Approva scommesse</a></li>
         |
@@ -111,7 +111,7 @@ else {
         |
         <li><a href="ippica.php">Ippica</a></li>
         |
-        <li><a href="#">Richieste accredito</a></li>
+        <li><a href="richiesteAccredito.php">Richieste accredito</a></li>
         |
         <li><a href="#">Approva scommesse</a></li>
         |
