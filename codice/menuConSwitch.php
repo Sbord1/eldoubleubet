@@ -59,7 +59,7 @@ else {
         |
         <li><a href="riepilogoScommesseUtente.php">Riepilogo</a></li>
         |
-        <li><a href="#">Proponi scommessa</a></li>
+        <li><a href="proposteScommessa.php">Proponi scommessa</a></li>
         |
         <li><a href="chat.php">Chat</a></li>
         |
@@ -86,9 +86,9 @@ else {
         |
         <li><a href="richiesteAccredito.php">Richieste accredito</a></li>
         |
-        <li><a href="#">Approva scommesse</a></li>
+        <li><a href="approvaScommessa.php">Approva scommesse</a></li>
         |
-        <li><a href="#">Inserimento scommessa</a></li>
+        <li><a href="proposteScommessa.php">Inserimento scommessa</a></li>
         |
         <li><a href="#">Riepilogo</a></li>
         |
@@ -115,7 +115,7 @@ else {
         |
         <li><a href="richiesteAccredito.php">Richieste accredito</a></li>
         |
-        <li><a href="#">Approva scommesse</a></li>
+        <li><a href="approvaScommessa.php">Approva scommesse</a></li>
         |
         <li><a href="#">Riepilogo</a></li>
         |
