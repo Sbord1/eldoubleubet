@@ -59,7 +59,7 @@
 	 </risultato>
 </scommessa>
 <scommessa>
-  	<id> 1 </id>
+  	<id> 3 </id>
 	<nome>
 		<giocatoreCasa> Rune H. </giocatoreCasa>
 		<giocatoreTrasferta> Sinner J. </giocatoreTrasferta>
@@ -82,8 +82,8 @@
 		<massima> 9999 </massima>
 	</puntata>
 	<risultato>
-		 <puntiGiocatoreCasa> 2 </puntiGiocatoreCasa>
-		 <puntiGiocatoreTrasferta> 3 </puntiGiocatoreTrasferta>
+		 <puntiGiocatoreCasa></puntiGiocatoreCasa>
+		 <puntiGiocatoreTrasferta></puntiGiocatoreTrasferta>
 	 </risultato>
 </scommessa>
 </tennis>
