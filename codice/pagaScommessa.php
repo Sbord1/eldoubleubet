@@ -60,7 +60,7 @@
             case 'calcio':
                 $category= "calcio";
                 // Modifichiamo il file fileXML/scommesseUtenti/scommesseCalcio.xml
-                $id = $_POST['idPartita'];
+                $id_partita = $_POST['idPartita'];
                 $scommettitore = $username;
                 $risultato = $_POST['risultato'];
                 $puntata = $_POST['puntata'];
@@ -73,13 +73,18 @@
 
 
                 $root = $doc->documentElement;
-                $elementi = $root->childNodes;
+                $lunghezza = $root->childNodes->length;
 
+                // Calcolo nuovo id_scommessa
+                $idList = $doc->getElementsByTagName("idScommessa");
+                $last_id = count($idList);
+                $nuovo_id_scommessa = $last_id + 1;
 
                 $newRecord = $doc->createElement("scommessa");
                 $newRecord->setAttribute("eliminato", "0");
                 $newRecord->setAttribute("pagata", "0");
-                $newId = $doc->createElement("id", $id);
+                $newIdPartita = $doc->createElement("idPartita", $id_partita);
+                $newIdScommessa = $doc->createElement("idScommessa", $nuovo_id_scommessa);
                 $newScommettitore = $doc->createElement("scommettitore", $scommettitore);
                 $newRisultato = $doc->createElement("risultato", $risultato);
                 $newPuntata = $doc->createElement("puntata", $puntata);
@@ -89,7 +94,8 @@
 
                 
 
-                $newRecord->appendChild($newId);
+                $newRecord->appendChild($newIdPartita);
+                $newRecord->appendChild($newIdScommessa);
                 $newRecord->appendChild($newScommettitore);
                 $newRecord->appendChild($newRisultato);
                 $newRecord->appendChild($newPuntata);
@@ -107,7 +113,7 @@
             case 'basket':
                 $category= "basket";
                 // Modifichiamo il file fileXML/scommesseUtenti/scommesseBasket.xml
-                $id = $_POST['idPartita'];
+                $id_partita = $_POST['idPartita'];
                 $scommettitore = $username;
                 $risultato = $_POST['risultato'];
                 $puntata = $_POST['puntata'];
@@ -122,11 +128,17 @@
                 $root = $doc->documentElement;
                 $elementi = $root->childNodes;
 
+                // Calcolo nuovo id_scommessa
+                $idList = $doc->getElementsByTagName("idScommessa");
+                $last_id = count($idList);
+                $nuovo_id_scommessa = $last_id + 1;
+
 
                 $newRecord = $doc->createElement("scommessa");
                 $newRecord->setAttribute("eliminato", "0");
                 $newRecord->setAttribute("pagata", "0");
-                $newId = $doc->createElement("id", $id);
+                $newIdPartita = $doc->createElement("idPartita", $id_partita);
+                $newIdScommessa = $doc->createElement("idScommessa", $nuovo_id_scommessa);
                 $newScommettitore = $doc->createElement("scommettitore", $scommettitore);
                 $newRisultato = $doc->createElement("risultato", $risultato);
                 $newPuntata = $doc->createElement("puntata", $puntata);
@@ -134,7 +146,8 @@
                 $newVincita = $doc->createElement("vincita", $vincita);
                 
 
-                $newRecord->appendChild($newId);
+                $newRecord->appendChild($newIdPartita);
+                $newRecord->appendChild($newIdScommessa);
                 $newRecord->appendChild($newScommettitore);
                 $newRecord->appendChild($newRisultato);
                 $newRecord->appendChild($newPuntata);
@@ -151,7 +164,7 @@
             case 'tennis':
                 $category= "tennis";
                 // Modifichiamo il file fileXML/scommesseUtenti/scommesseTennis.xml
-                $id = $_POST['idPartita'];
+                $id_partita = $_POST['idPartita'];
                 $scommettitore = $username;
                 $risultato = $_POST['risultato'];
                 $puntata = $_POST['puntata'];
@@ -166,11 +179,17 @@
                 $root = $doc->documentElement;
                 $elementi = $root->childNodes;
 
+                // Calcolo nuovo id_scommessa
+                $idList = $doc->getElementsByTagName("idScommessa");
+                $last_id = count($idList);
+                $nuovo_id_scommessa = $last_id + 1;
+
 
                 $newRecord = $doc->createElement("scommessa");
                 $newRecord->setAttribute("eliminato", "0");
                 $newRecord->setAttribute("pagata", "0");
-                $newId = $doc->createElement("id", $id);
+                $newIdPartita = $doc->createElement("idPartita", $id_partita);
+                $newIdScommessa = $doc->createElement("idScommessa", $nuovo_id_scommessa);
                 $newScommettitore = $doc->createElement("scommettitore", $scommettitore);
                 $newRisultato = $doc->createElement("risultato", $risultato);
                 $newPuntata = $doc->createElement("puntata", $puntata);
@@ -178,7 +197,8 @@
                 $newVincita = $doc->createElement("vincita", $vincita);
                 
 
-                $newRecord->appendChild($newId);
+                $newRecord->appendChild($newIdPartita);
+                $newRecord->appendChild($newIdScommessa);
                 $newRecord->appendChild($newScommettitore);
                 $newRecord->appendChild($newRisultato);
                 $newRecord->appendChild($newPuntata);
@@ -195,7 +215,7 @@
             case 'ippica':
                 $category= "ippica";
                 // Modifichiamo il file fileXML/scommesseUtenti/scommesseIppica.xml
-                $id = $_POST['idPartita'];
+                $id_partita = $_POST['idPartita'];
                 $scommettitore = $username;
                 $numeroCavallo = $_POST['numero'];
                 // $risultato puo' essere solo 1 (primo posto), 2 (secondo posto) o 3 (terzo posto)
@@ -212,11 +232,16 @@
                 $root = $doc->documentElement;
                 $elementi = $root->childNodes;
 
+                // Calcolo nuovo id_scommessa
+                $idList = $doc->getElementsByTagName("idScommessa");
+                $last_id = count($idList);
+                $nuovo_id_scommessa = $last_id + 1;
 
                 $newRecord = $doc->createElement("scommessa");
                 $newRecord->setAttribute("eliminato", "0");
                 $newRecord->setAttribute("pagata", "0");
-                $newId = $doc->createElement("id", $id);
+                $newIdPartita = $doc->createElement("idPartita", $id_partita);
+                $newIdScommessa = $doc->createElement("idScommessa", $nuovo_id_scommessa);
                 $newScommettitore = $doc->createElement("scommettitore", $scommettitore);
 
                 if ($risultato=="1") {
@@ -245,7 +270,8 @@
                 $newVincita = $doc->createElement("vincita", $vincita);
                 
 
-                $newRecord->appendChild($newId);
+                $newRecord->appendChild($newIdPartita);
+                $newRecord->appendChild($newIdScommessa);
                 $newRecord->appendChild($newScommettitore);
 
                 $newRecord->appendChild($newRisultato);
