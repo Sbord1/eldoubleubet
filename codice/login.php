@@ -33,7 +33,7 @@
       // con i valori della riga selezionata, oppure NULL - se non c'e' la riga
       $row = mysqli_fetch_array($resultQ);
 
-      if ($row) {   // utente esiste valido --> Accesso permesso!
+      if ($row && $row['account']=="attivo") {   // utente esiste valido --> Accesso permesso!
         // Session creation
         session_start();
         // In PHP le variabili di sessione sono rese disponibili nell'array $_SESSION
