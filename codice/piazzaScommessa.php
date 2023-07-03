@@ -13,6 +13,13 @@
 	// Se non e' stato eseguito il login si viene reindirizzati alla pagina di login
 	if (!isset($_SESSION['accessoPermesso'])) header('Location: loginPage.html');
 
+	// Se l'account dell'utente non e' attivo allora non puo' scommettere
+	if ($_SESSION['status'] == 'disattivo') {
+		echo "Il tuo account risulta essere disattivato! Contatta l'admin del sito.";
+        echo "<a href=\"inizio.php\" alt=\"Home\">Homepage</a>";
+        exit();
+	}
+
 ?>
 
 <?xml version="1.0" encoding="UTF-8"?>
