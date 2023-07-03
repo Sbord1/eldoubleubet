@@ -167,7 +167,7 @@ usort($multiArray, 'date_compare');
         </form>
 
         <h3 style="text-align: center;">
-            <a href="inizio.php" alt="Home">Homepage</a>
+            <a href="chat.php" alt="Home">Go back</a>
         </h3>
 
     </body>
