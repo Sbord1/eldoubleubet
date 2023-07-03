@@ -39,23 +39,135 @@ $sqlQuery = "SELECT * FROM $DBuser_table";
                 background-color: #333333;
                 padding: 10px;
             }
+
+            .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            }
+
+            h1 {
+            text-align: center;
+            color: #333333;
+            }
+            
+            p {
+            text-align: center;
+            color: #666666;
+            }
+            
+            .btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            color: #ffffff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 4px;
+            }
+            
+            .btn:hover {
+            background-color: #0056b3;
+            }
+            
+            nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            }
+            
+            nav ul li {
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+            }
+            
+            nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 5px 10px;
+            }
+            
+            nav ul li a:hover {
+            background-color: #666666;
+            }
+            
+            .login-btn {
+            display: inline-block;
+            margin-left: 1px;
+            padding: 5px 10px;
+            background-color: #ffffff;
+            color: #333333;
+            border-radius: 4px;
+            }
+            
+            .login-btn:hover {
+            background-color: #cccccc;
+            }
+
+            .register-btn {
+            display: inline-block;
+            margin-left: 5px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 4px;
+            }
+
+            .register-btn:hover {
+            background-color: #0056b3;
+            }
         </style> 
     </head>
 
     <body>
         
-		<header>
-            <div>
-                <table style="margin-left: auto; margin-right: auto;">
-                    <tbody>
-                        <tr>
-                            <td><img src="loghi/logo.png" alt="Logo del sito" width="128px" height="auto" /></td>
-                            <td><h1 style="color: white;">ELDOUBLEUBET</h1></td>
-                        </tr>
-                    </tbody>
-                </table>
-              </div>            
-        </header>
+    <header>
+
+        <?php 
+        // Se non e' stato fatto il login compare il bottone per farlo e anche il bottone per registrarsi
+        if(!isset($_SESSION['userName'])){
+
+        echo "<div style=\"float: right;\">";
+        echo "<a href=\"loginPage.html\" class=\"login-btn\">Login</a>";
+        echo "<a href=\"registrazione.php\" class=\"register-btn\">Registrati</a>";
+        echo "</div>";
+                
+        }
+        // Se e' stato fatto il login compare il bottone per fare il logout
+        else{
+        echo "<div style=\"float: right;\">";
+        echo "<a href=\"logout.php\" class=\"register-btn\">Logout</a>";
+        echo "</div>";
+        }
+        ?>
+
+        <div>
+        <table style="margin-left: auto; margin-right: auto;">
+            <tbody>
+                <tr style="background-color: transparent;">
+                    <td>
+                        <a href="inizio.php">
+                        <img src="loghi/logo.png" alt="Logo del sito" width="128px" height="auto" />
+                        </a>
+                    </td>
+                    <td><h1 style="color: white;">ELDOUBLEUBET</h1></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <?php
+
+        // Inserisce il menu' relativo al visitatore oppure all'uetnte loggato (scommettitore, admin oppure gestore)
+        require("./menuConSwitch.php");
+
+        ?>
+
+    </header>
 
         <h3 style="text-align: center">Lista utenti scommettitori con cui poter chattare:</h3>
 
