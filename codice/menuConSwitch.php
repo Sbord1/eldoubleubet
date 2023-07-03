@@ -117,7 +117,7 @@ else {
         |
         <li><a href="#">Riepilogo</a></li>
         |
-        <li><a href="#">Inserisci risultati</a></li>
+        <li><a href="inserisciRisultati.php">Inserisci risultati</a></li>
         |
         <li><a href="listaUtenti.php">Account</a></li>
       </ul>
