@@ -12,6 +12,8 @@
             <terzo> </terzo>
         </risultato>
         <puntata>5</puntata>
+        <quota>61</quota>
+        <vincita>305</vincita>
     </scommessa>
 
     <scommessa eliminato="0">
@@ -23,6 +25,8 @@
             <terzo> </terzo>
         </risultato>
         <puntata>10</puntata>
+        <quota>21.3</quota>
+        <vincita>213</vincita>
     </scommessa>
 
-</scommesseIppica>
+<scommessa eliminato="0"><id>2</id><scommettitore>mario</scommettitore><risultato><primo> </primo><secondo>4</secondo><terzo> </terzo></risultato><puntata>1</puntata><quota>31.3</quota><vincita>31.3</vincita></scommessa><scommessa eliminato="0"><id>2</id><scommettitore>mario</scommettitore><risultato><primo> </primo><secondo> </secondo><terzo>3</terzo></risultato><puntata>1</puntata><quota>9.2</quota><vincita>9.2</vincita></scommessa></scommesseIppica>
