@@ -813,9 +813,7 @@
 	</h3>
     <table border="1" cellpadding="5" style="border-color: black; margin-left: auto; margin-right: auto;">
     	<tbody>
-    	<?php
-    		echo("$elenco");
-    	?>
+    	
     <h3 style="text-align: center;">
             <a href="inizio.php" alt="Home">Homepage</a>
         </h3>
