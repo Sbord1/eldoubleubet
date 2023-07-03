@@ -7,6 +7,8 @@
         <scommettitore>mario</scommettitore>
         <risultato>1</risultato>
         <puntata>30</puntata>
+        <quota>1.85</quota>
+        <vincita>55.5</vincita>
     </scommessa>
     
     <scommessa eliminato="0">
@@ -14,6 +16,8 @@
         <scommettitore>mario</scommettitore>
         <risultato>2</risultato>
         <puntata>18</puntata>
+        <quota>1.79</quota>
+        <vincita>32.22</vincita>
     </scommessa>
    
     <scommessa eliminato="0">
@@ -21,5 +25,7 @@
         <scommettitore>ciruzzo</scommettitore>
         <risultato>1</risultato>
         <puntata>10</puntata>
+        <quota>1.65</quota>
+        <vincita>16.5</vincita>
     </scommessa>
-</scommesseTennis>
+<scommessa eliminato="0"><id> 1 </id><scommettitore>mario</scommettitore><risultato>2</risultato><puntata>1</puntata><quota> 2.12 </quota><vincita>2.12</vincita></scommessa></scommesseTennis>
