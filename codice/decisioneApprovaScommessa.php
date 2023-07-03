@@ -1,5 +1,5 @@
 <?php 
-	
+		session_start();
 		//controllo se ho cliccato il bottone per rifiutare o accettare proposta
 		//Se accettata devo inserirla nell'apposito file xml e rimuovere la proposta nel file xml delle proposte
 		if (isset($_POST['accetta']) || (isset($_POST['rifiuta']))){
@@ -811,8 +811,7 @@
 			}
 	?>
 	</h3>
-    <table border="1" cellpadding="5" style="border-color: black; margin-left: auto; margin-right: auto;">
-    	<tbody>
+    
     	
     <h3 style="text-align: center;">
             <a href="inizio.php" alt="Home">Homepage</a>
