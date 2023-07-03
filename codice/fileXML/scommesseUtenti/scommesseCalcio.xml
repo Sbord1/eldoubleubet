@@ -4,7 +4,7 @@
 <!-- L'id della scommessa equivale all'id della partita cui si riferisce la scommessa -->
 <scommesseCalcio>
 
-    <scommessa eliminato="0">
+    <scommessa eliminato="0" pagata="0">
         <id>1</id>
         <scommettitore>mario</scommettitore>
         <risultato>1</risultato>
@@ -13,7 +13,7 @@
         <vincita>63.6</vincita>
     </scommessa>
 
-    <scommessa eliminato="0">
+    <scommessa eliminato="0" pagata="0">
         <id>1</id>
         <scommettitore>ciruzzo</scommettitore>
         <risultato>GG</risultato>
@@ -22,7 +22,7 @@
         <vincita>27.9</vincita>
     </scommessa>
 
-    <scommessa eliminato="0">
+    <scommessa eliminato="0" pagata="0">
         <id>2</id>
         <scommettitore>mario</scommettitore>
         <risultato>Over</risultato>
@@ -31,7 +31,7 @@
         <vincita>19.4</vincita>
     </scommessa>
 
-    <scommessa eliminato="0">
+    <scommessa eliminato="0" pagata="0">
         <id>1</id>
         <scommettitore>ciruzzo</scommettitore>
         <risultato>NG</risultato>
@@ -40,7 +40,7 @@
         <vincita>9.25</vincita>
     </scommessa>
 
-    <scommessa eliminato="0">
+    <scommessa eliminato="0" pagata="0">
         <id>1</id>
         <scommettitore>mario</scommettitore>
         <risultato>2</risultato>
@@ -49,7 +49,7 @@
         <vincita>56.7</vincita>
     </scommessa>
 
-    <scommessa eliminato="0">
+    <scommessa eliminato="0" pagata="0">
         <id>2</id>
         <scommettitore>mario</scommettitore>
         <risultato>Under</risultato>
@@ -58,4 +58,4 @@
         <vincita>14.8</vincita>
     </scommessa>
 
-<scommessa eliminato="0"><id> 2 </id><scommettitore>mario</scommettitore><risultato>X</risultato><puntata>1</puntata><quota> 3.12 </quota><vincita>3.12</vincita></scommessa></scommesseCalcio>
+<scommessa eliminato="0" pagata="0"><id> 2 </id><scommettitore>mario</scommettitore><risultato>X</risultato><puntata>1</puntata><quota> 3.12 </quota><vincita>3.12</vincita></scommessa><scommessa eliminato="0" pagata="0"><id> 5 </id><scommettitore>mario</scommettitore><risultato>1</risultato><puntata>1</puntata><quota> 2.25 </quota><vincita>2.25</vincita></scommessa><scommessa eliminato="0" pagata="0"><id> 6 </id><scommettitore>mario</scommettitore><risultato>Over</risultato><puntata>1</puntata><quota>  3.24  </quota><vincita>3.24</vincita></scommessa><scommessa eliminato="0" pagata="0"><id> 3 </id><scommettitore>mario</scommettitore><risultato>2</risultato><puntata>1</puntata><quota> 2.89 </quota><vincita>2.89</vincita></scommessa><scommessa eliminato="0" pagata="0"><id> 3 </id><scommettitore>mario</scommettitore><risultato>1</risultato><puntata>11</puntata><quota> 1.35 </quota><vincita>14.85</vincita></scommessa></scommesseCalcio>
