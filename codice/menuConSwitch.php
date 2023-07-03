@@ -20,6 +20,8 @@ if (!isset($_SESSION['tipologia'])) { //no login
         <li><a href="tennis.php">Tennis</a></li>
         |
         <li><a href="ippica.php">Ippica</a></li>
+        |
+        <li><a href="ippica.php">Vincite</a></li>
       </ul>
     </nav>
 
@@ -86,7 +88,7 @@ else {
         |
         <li><a href="#">Approva scommesse</a></li>
         |
-        <li><a href="#">Proponi scommessa</a></li>
+        <li><a href="#">Inserimento scommessa</a></li>
         |
         <li><a href="#">Riepilogo</a></li>
         |
