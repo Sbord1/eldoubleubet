@@ -216,6 +216,7 @@
                             <td class=\"head\">Scommettitore</td>
                             <td class=\"head\">Risultato giocato</td>
                             <td class=\"head\">Puntata</td>
+                            <td class=\"head\">Quota</td>
                             <td class=\"head\">Potenziale Vincita</td>
                             <td class=\"head\">Terminata</td>
                             <td class=\"head\">Esito</td>
@@ -239,13 +240,20 @@
                 $puntata = $risultato->nextSibling;
                 $puntataValue = $puntata->textContent;
 
+				$quota = $puntata->nextSibling;
+				$quotaValue = $quota->textContent;
+
+				$vincita = $quota->nextSibling;
+				$vincitaValue = $vincita->textContent;
+
                 $elenco.=
                 "\n<tr>
                     <td>$idValue</td>
                     <td>$scommettitoreValue</td>
                     <td>$risultatoValue</td>
                     <td>$puntataValue</td>
-                    <td></td>
+                    <td>$quotaValue</td>
+                    <td>$vincitaValue</td>
                     <td></td>
                     <td></td>
                 </tr>\n
@@ -286,6 +294,7 @@
                             <td class=\"head\">Scommettitore</td>
                             <td class=\"head\">Risultato giocato</td>
                             <td class=\"head\">Puntata</td>
+                            <td class=\"head\">Quota</td>
                             <td class=\"head\">Potenziale Vincita</td>
                             <td class=\"head\">Terminata</td>
                             <td class=\"head\">Esito</td>
@@ -309,13 +318,20 @@
                 $puntata = $risultato->nextSibling;
                 $puntataValue = $puntata->textContent;
 
+				$quota = $puntata->nextSibling;
+				$quotaValue = $quota->textContent;
+
+				$vincita = $quota->nextSibling;
+				$vincitaValue = $vincita->textContent;
+
                 $elenco.=
                 "\n<tr>
                     <td>$idValue</td>
                     <td>$scommettitoreValue</td>
                     <td>$risultatoValue</td>
                     <td>$puntataValue</td>
-                    <td></td>
+                    <td>$quotaValue</td>
+                    <td>$vincitaValue</td>
                     <td></td>
                     <td></td>
                 </tr>\n
@@ -356,6 +372,7 @@
                             <td class=\"head\">Scommettitore</td>
                             <td class=\"head\">Risultato giocato</td>
                             <td class=\"head\">Puntata</td>
+                            <td class=\"head\">Quota</td>
                             <td class=\"head\">Potenziale Vincita</td>
                             <td class=\"head\">Terminata</td>
                             <td class=\"head\">Esito</td>
@@ -379,13 +396,20 @@
                 $puntata = $risultato->nextSibling;
                 $puntataValue = $puntata->textContent;
 
+				$quota = $puntata->nextSibling;
+				$quotaValue = $quota->textContent;
+
+				$vincita = $quota->nextSibling;
+				$vincitaValue = $vincita->textContent;
+
                 $elenco.=
                 "\n<tr>
                     <td>$idValue</td>
                     <td>$scommettitoreValue</td>
                     <td>$risultatoValue</td>
                     <td>$puntataValue</td>
-                    <td></td>
+                    <td>$quotaValue</td>
+					<td>$vincitaValue</td>
                     <td></td>
                     <td></td>
                 </tr>\n
@@ -425,6 +449,7 @@
                             <td class=\"head\">Scommettitore</td>
                             <td class=\"head\">Risultato giocato</td>
                             <td class=\"head\">Puntata</td>
+                            <td class=\"head\">Quota</td>
                             <td class=\"head\">Potenziale Vincita</td>
                             <td class=\"head\">Terminata</td>
                             <td class=\"head\">Esito</td>
@@ -463,13 +488,20 @@
                 $puntata = $risultato->nextSibling;
                 $puntataValue = $puntata->textContent;
 
+				$quota = $puntata->nextSibling;
+				$quotaValue = $quota->textContent;
+
+				$vincita = $quota->nextSibling;
+				$vincitaValue = $vincita->textContent;
+
                 $elenco.=
                 "\n<tr>
                     <td>$idValue</td>
                     <td>$scommettitoreValue</td>
                     <td>$risultatoValue</td>
                     <td>$puntataValue</td>
-                    <td></td>
+                    <td>$quotaValue</td>
+                    <td>$vincitaValue</td>
                     <td></td>
                     <td></td>
                 </tr>\n
