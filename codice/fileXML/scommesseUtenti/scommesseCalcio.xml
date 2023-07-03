@@ -9,6 +9,8 @@
         <scommettitore>mario</scommettitore>
         <risultato>1</risultato>
         <puntata>30</puntata>
+        <quota>2.12</quota>
+        <vincita>63.6</vincita>
     </scommessa>
 
     <scommessa eliminato="0">
@@ -16,6 +18,8 @@
         <scommettitore>ciruzzo</scommettitore>
         <risultato>GG</risultato>
         <puntata>18</puntata>
+        <quota>1.55</quota>
+        <vincita>27.9</vincita>
     </scommessa>
 
     <scommessa eliminato="0">
@@ -23,6 +27,8 @@
         <scommettitore>mario</scommettitore>
         <risultato>Over</risultato>
         <puntata>10</puntata>
+        <quota>1.94</quota>
+        <vincita>19.4</vincita>
     </scommessa>
 
     <scommessa eliminato="0">
@@ -30,6 +36,8 @@
         <scommettitore>ciruzzo</scommettitore>
         <risultato>NG</risultato>
         <puntata>5</puntata>
+        <quota>1.85</quota>
+        <vincita>9.25</vincita>
     </scommessa>
 
     <scommessa eliminato="0">
@@ -37,6 +45,8 @@
         <scommettitore>mario</scommettitore>
         <risultato>2</risultato>
         <puntata>30</puntata>
+        <quota>1.89</quota>
+        <vincita>56.7</vincita>
     </scommessa>
 
     <scommessa eliminato="0">
@@ -44,6 +54,8 @@
         <scommettitore>mario</scommettitore>
         <risultato>Under</risultato>
         <puntata>10</puntata>
+        <quota>1.48</quota>
+        <vincita>14.8</vincita>
     </scommessa>
 
-<scommessa eliminato="0"><id> 1 </id><scommettitore>mario</scommettitore><risultato>1</risultato><puntata>5</puntata></scommessa></scommesseCalcio>
+<scommessa eliminato="0"><id> 2 </id><scommettitore>mario</scommettitore><risultato>X</risultato><puntata>1</puntata><quota> 3.12 </quota><vincita>3.12</vincita></scommessa></scommesseCalcio>
