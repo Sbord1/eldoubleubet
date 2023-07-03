@@ -4,7 +4,8 @@
 <scommesseIppica>
 
     <scommessa eliminato="0" pagata="0">
-        <id>1</id>
+        <idPartita>1</idPartita>
+        <idScommessa>1</idScommessa>
         <scommettitore>mario</scommettitore>
         <risultato>
             <primo>5</primo>
@@ -17,7 +18,8 @@
     </scommessa>
 
     <scommessa eliminato="0" pagata="0">
-        <id>1</id>
+        <idPartita>1</idPartita>
+        <idScommessa>2</idScommessa>
         <scommettitore>mario</scommettitore>
         <risultato>
             <primo> </primo>
@@ -29,4 +31,4 @@
         <vincita>213</vincita>
     </scommessa>
 
-<scommessa eliminato="0" pagata="0"><id>2</id><scommettitore>mario</scommettitore><risultato><primo> </primo><secondo>4</secondo><terzo> </terzo></risultato><puntata>1</puntata><quota>31.3</quota><vincita>31.3</vincita></scommessa><scommessa eliminato="0" pagata="0"><id>2</id><scommettitore>mario</scommettitore><risultato><primo> </primo><secondo> </secondo><terzo>3</terzo></risultato><puntata>1</puntata><quota>9.2</quota><vincita>9.2</vincita></scommessa></scommesseIppica>
+<scommessa eliminato="0" pagata="0"><idPartita>1</idPartita><idScommessa>3</idScommessa><scommettitore>mario</scommettitore><risultato><primo> </primo><secondo>5</secondo><terzo> </terzo></risultato><puntata>1</puntata><quota>41.3</quota><vincita>41.3</vincita></scommessa></scommesseIppica>
