@@ -68,6 +68,7 @@
                 $vincita = $quota * $puntata;
 
                 $doc = new DOMDocument();
+                $doc->formatOutput = true;
                 $doc->load("fileXML/scommesseUtenti/scommesseCalcio.xml");
 
 
@@ -77,6 +78,7 @@
 
                 $newRecord = $doc->createElement("scommessa");
                 $newRecord->setAttribute("eliminato", "0");
+                $newRecord->setAttribute("pagata", "0");
                 $newId = $doc->createElement("id", $id);
                 $newScommettitore = $doc->createElement("scommettitore", $scommettitore);
                 $newRisultato = $doc->createElement("risultato", $risultato);
@@ -113,6 +115,7 @@
                 $vincita = $quota * $puntata;
 
                 $doc = new DOMDocument();
+                $doc->formatOutput = true;
                 $doc->load("fileXML/scommesseUtenti/scommesseBasket.xml");
 
 
@@ -122,6 +125,7 @@
 
                 $newRecord = $doc->createElement("scommessa");
                 $newRecord->setAttribute("eliminato", "0");
+                $newRecord->setAttribute("pagata", "0");
                 $newId = $doc->createElement("id", $id);
                 $newScommettitore = $doc->createElement("scommettitore", $scommettitore);
                 $newRisultato = $doc->createElement("risultato", $risultato);
@@ -155,6 +159,7 @@
                 $vincita = $quota * $puntata;
 
                 $doc = new DOMDocument();
+                $doc->formatOutput = true;
                 $doc->load("fileXML/scommesseUtenti/scommesseTennis.xml");
 
 
@@ -164,6 +169,7 @@
 
                 $newRecord = $doc->createElement("scommessa");
                 $newRecord->setAttribute("eliminato", "0");
+                $newRecord->setAttribute("pagata", "0");
                 $newId = $doc->createElement("id", $id);
                 $newScommettitore = $doc->createElement("scommettitore", $scommettitore);
                 $newRisultato = $doc->createElement("risultato", $risultato);
@@ -199,6 +205,7 @@
                 $vincita = $quota * $puntata;
 
                 $doc = new DOMDocument();
+                $doc->formatOutput = true;
                 $doc->load("fileXML/scommesseUtenti/scommesseIppica.xml");
 
 
@@ -208,6 +215,7 @@
 
                 $newRecord = $doc->createElement("scommessa");
                 $newRecord->setAttribute("eliminato", "0");
+                $newRecord->setAttribute("pagata", "0");
                 $newId = $doc->createElement("id", $id);
                 $newScommettitore = $doc->createElement("scommettitore", $scommettitore);
 
