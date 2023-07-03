@@ -2,7 +2,7 @@
 <!DOCTYPE scommesseTennis SYSTEM "scommesseTennis.dtd">
 <!-- Esempi di 3 scommesse di tennis -->
 <scommesseTennis>
-    <scommessa eliminato="0">
+    <scommessa eliminato="0" pagata="0">
         <id>1</id>
         <scommettitore>mario</scommettitore>
         <risultato>1</risultato>
@@ -11,7 +11,7 @@
         <vincita>55.5</vincita>
     </scommessa>
     
-    <scommessa eliminato="0">
+    <scommessa eliminato="0" pagata="0">
         <id>1</id>
         <scommettitore>mario</scommettitore>
         <risultato>2</risultato>
@@ -20,7 +20,7 @@
         <vincita>32.22</vincita>
     </scommessa>
    
-    <scommessa eliminato="0">
+    <scommessa eliminato="0" pagata="0">
         <id>2</id>
         <scommettitore>ciruzzo</scommettitore>
         <risultato>1</risultato>
@@ -28,4 +28,4 @@
         <quota>1.65</quota>
         <vincita>16.5</vincita>
     </scommessa>
-<scommessa eliminato="0"><id> 1 </id><scommettitore>mario</scommettitore><risultato>2</risultato><puntata>1</puntata><quota> 2.12 </quota><vincita>2.12</vincita></scommessa></scommesseTennis>
+<scommessa eliminato="0" pagata="0"><id> 1 </id><scommettitore>mario</scommettitore><risultato>2</risultato><puntata>1</puntata><quota> 2.12 </quota><vincita>2.12</vincita></scommessa><scommessa eliminato="0" pagata="0"><id> 3 </id><scommettitore>mario</scommettitore><risultato>1</risultato><puntata>1</puntata><quota> 1.45 </quota><vincita>1.45</vincita></scommessa></scommesseTennis>
