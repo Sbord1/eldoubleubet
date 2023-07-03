@@ -120,6 +120,16 @@ $sqlQuery = "SELECT * FROM $DBuser_table";
             .register-btn:hover {
             background-color: #0056b3;
             }
+            
+            .link-button {
+  					background: none;
+  					border: none;
+  					color: black;
+  					cursor: pointer;
+ 				 	text-decoration: underline;
+  					font-size: 1em;
+  					font-family: serif;
+					}
         </style> 
     </head>
 
@@ -183,12 +193,12 @@ $sqlQuery = "SELECT * FROM $DBuser_table";
         while ($row = mysqli_fetch_array($resultQ)) {
 
             // Un utente scommettitote puo' chattare solo con un altro utente scommettitote che non sia se' stesso
-            if ($row['tipologia']=='scommettitore' && $row['username']!=$_SESSION['userName']) {
+            if ($row['username']!=$_SESSION['userName']) {
 
                 echo "<tr style=\"background-color: white;\">";
                 echo "<form method=\"post\" action=\"chatUtente.php\">";
                 echo "<input type=\"hidden\" name=\"receiver\" value=\"$row[username]\">";
-                echo "<td> <button type=\"submit\">".$row['username']."</button> </td>";
+                echo "<td> <button class=\"link-button\" type=\"submit\">".$row['username']."</button> </td>";
                 echo "</form>";
                 echo "</tr>";
             }
