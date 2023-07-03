@@ -40,6 +40,8 @@
         $_SESSION['userName']=$_POST['userName']; //registrazione e assegnazione di una variabile di sessione
         $_SESSION['dataLogin']=time();
         $_SESSION['numeroUtente']=$row['id'];
+        // Consentiremo all'utente di scommettere solo se il suo account e' attivo
+        $_SESSION['status']=$row['account'];
         $_SESSION['accessoPermesso']=1000;
         // Utilizziamo la query per estrarre il valore di tipologia
         $_SESSION['tipologia']=$row['tipologia'];
