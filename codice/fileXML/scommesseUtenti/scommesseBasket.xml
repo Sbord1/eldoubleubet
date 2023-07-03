@@ -2,30 +2,40 @@
 <!DOCTYPE scommesseBasket SYSTEM "scommesseBasket.dtd">
 <!-- Esempi di 3 scommesse di tennis -->
 <scommesseBasket>
-    <scommessa eliminato="0" pagata="0">
-        <id>1</id>
-        <scommettitore>mario</scommettitore>
-        <risultato>1</risultato>
-        <puntata>10</puntata>
-		<quota>2.35</quota>
-        <vincita>23.5</vincita>
-    </scommessa>
-    
-    <scommessa eliminato="0" pagata="0">
-        <id>1</id>
-        <scommettitore>mario</scommettitore>
-        <risultato>2</risultato>
-        <puntata>18</puntata>
-		<quota>1.49</quota>
-        <vincita>26.82</vincita>
-    </scommessa>
-   
-    <scommessa eliminato="0" pagata="0">
-        <id>2</id>
-        <scommettitore>ciruzzo</scommettitore>
-        <risultato>1</risultato>
-        <puntata>10</puntata>
-		<quota>1.75</quota>
-        <vincita>17.5</vincita>
-    </scommessa>
-<scommessa eliminato="0" pagata="0"><id> 2 </id><scommettitore>mario</scommettitore><risultato>1</risultato><puntata>1</puntata><quota> 1.75 </quota><vincita>1.75</vincita></scommessa><scommessa eliminato="0" pagata="0"><id> 3 </id><scommettitore>mario</scommettitore><risultato>2</risultato><puntata>1</puntata><quota> 1.85 </quota><vincita>1.85</vincita></scommessa><scommessa eliminato="0" pagata="0"><id> 2 </id><scommettitore>mario</scommettitore><risultato>1</risultato><puntata>1</puntata><quota> 1.75 </quota><vincita>1.75</vincita></scommessa><scommessa eliminato="0" pagata="0"><id> 3 </id><scommettitore>mario</scommettitore><risultato>1</risultato><puntata>1</puntata><quota> 1.90 </quota><vincita>1.9</vincita></scommessa></scommesseBasket>
+  <scommessa eliminato="0" pagata="0">
+    <idPartita>1</idPartita>
+    <idScommessa>1</idScommessa>
+    <scommettitore>mario</scommettitore>
+    <risultato>1</risultato>
+    <puntata>10</puntata>
+    <quota>2.35</quota>
+    <vincita>23.5</vincita>
+  </scommessa>
+  <scommessa eliminato="0" pagata="0">
+    <idPartita>1</idPartita>
+    <idScommessa>2</idScommessa>
+    <scommettitore>mario</scommettitore>
+    <risultato>2</risultato>
+    <puntata>18</puntata>
+    <quota>1.49</quota>
+    <vincita>26.82</vincita>
+  </scommessa>
+  <scommessa eliminato="0" pagata="0">
+    <idPartita>2</idPartita>
+    <idScommessa>3</idScommessa>
+    <scommettitore>ciruzzo</scommettitore>
+    <risultato>1</risultato>
+    <puntata>10</puntata>
+    <quota>1.75</quota>
+    <vincita>17.5</vincita>
+  </scommessa>
+  <scommessa eliminato="0" pagata="0">
+    <idPartita> 2 </idPartita>
+    <idScommessa>4</idScommessa>
+    <scommettitore>mario</scommettitore>
+    <risultato>1</risultato>
+    <puntata>1</puntata>
+    <quota> 1.75 </quota>
+    <vincita>1.75</vincita>
+  </scommessa>
+</scommesseBasket>
