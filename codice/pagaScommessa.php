@@ -64,6 +64,8 @@
                 $scommettitore = $username;
                 $risultato = $_POST['risultato'];
                 $puntata = $_POST['puntata'];
+                $quota = $_POST['quota'];
+                $vincita = $quota * $puntata;
 
                 $doc = new DOMDocument();
                 $doc->load("fileXML/scommesseUtenti/scommesseCalcio.xml");
@@ -79,12 +81,19 @@
                 $newScommettitore = $doc->createElement("scommettitore", $scommettitore);
                 $newRisultato = $doc->createElement("risultato", $risultato);
                 $newPuntata = $doc->createElement("puntata", $puntata);
+                $newQuota = $doc->createElement("quota", $quota);
+                $newVincita = $doc->createElement("vincita", $vincita);
+
+
                 
 
                 $newRecord->appendChild($newId);
                 $newRecord->appendChild($newScommettitore);
                 $newRecord->appendChild($newRisultato);
                 $newRecord->appendChild($newPuntata);
+                $newRecord->appendChild($newQuota);
+                $newRecord->appendChild($newVincita);
+
 
 
                 $root->appendChild($newRecord);
@@ -100,6 +109,8 @@
                 $scommettitore = $username;
                 $risultato = $_POST['risultato'];
                 $puntata = $_POST['puntata'];
+                $quota = $_POST['quota'];
+                $vincita = $quota * $puntata;
 
                 $doc = new DOMDocument();
                 $doc->load("fileXML/scommesseUtenti/scommesseBasket.xml");
@@ -115,12 +126,16 @@
                 $newScommettitore = $doc->createElement("scommettitore", $scommettitore);
                 $newRisultato = $doc->createElement("risultato", $risultato);
                 $newPuntata = $doc->createElement("puntata", $puntata);
+                $newQuota = $doc->createElement("quota", $quota);
+                $newVincita = $doc->createElement("vincita", $vincita);
                 
 
                 $newRecord->appendChild($newId);
                 $newRecord->appendChild($newScommettitore);
                 $newRecord->appendChild($newRisultato);
                 $newRecord->appendChild($newPuntata);
+                $newRecord->appendChild($newQuota);
+                $newRecord->appendChild($newVincita);
 
 
                 $root->appendChild($newRecord);
@@ -136,6 +151,8 @@
                 $scommettitore = $username;
                 $risultato = $_POST['risultato'];
                 $puntata = $_POST['puntata'];
+                $quota = $_POST['quota'];
+                $vincita = $quota * $puntata;
 
                 $doc = new DOMDocument();
                 $doc->load("fileXML/scommesseUtenti/scommesseTennis.xml");
@@ -151,12 +168,16 @@
                 $newScommettitore = $doc->createElement("scommettitore", $scommettitore);
                 $newRisultato = $doc->createElement("risultato", $risultato);
                 $newPuntata = $doc->createElement("puntata", $puntata);
+                $newQuota = $doc->createElement("quota", $quota);
+                $newVincita = $doc->createElement("vincita", $vincita);
                 
 
                 $newRecord->appendChild($newId);
                 $newRecord->appendChild($newScommettitore);
                 $newRecord->appendChild($newRisultato);
                 $newRecord->appendChild($newPuntata);
+                $newRecord->appendChild($newQuota);
+                $newRecord->appendChild($newVincita);
 
 
                 $root->appendChild($newRecord);
@@ -174,6 +195,8 @@
                 // $risultato puo' essere solo 1 (primo posto), 2 (secondo posto) o 3 (terzo posto)
                 $risultato = $_POST['risultato'];
                 $puntata = $_POST['puntata'];
+                $quota = $_POST['quota'];
+                $vincita = $quota * $puntata;
 
                 $doc = new DOMDocument();
                 $doc->load("fileXML/scommesseUtenti/scommesseIppica.xml");
@@ -210,6 +233,8 @@
                 $newTerzo = $doc->createElement("terzo", $terzo);
 
                 $newPuntata = $doc->createElement("puntata", $puntata);
+                $newQuota = $doc->createElement("quota", $quota);
+                $newVincita = $doc->createElement("vincita", $vincita);
                 
 
                 $newRecord->appendChild($newId);
@@ -221,6 +246,8 @@
                 $newRisultato->appendChild($newTerzo);
 
                 $newRecord->appendChild($newPuntata);
+                $newRecord->appendChild($newQuota);
+                $newRecord->appendChild($newVincita);
 
 
                 $root->appendChild($newRecord);
