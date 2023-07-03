@@ -21,7 +21,7 @@ if (!isset($_SESSION['tipologia'])) { //no login
         |
         <li><a href="ippica.php">Ippica</a></li>
         |
-        <li><a href="ippica.php">Vincite</a></li>
+        <li><a href="#">Vincite</a></li>
       </ul>
     </nav>
 
