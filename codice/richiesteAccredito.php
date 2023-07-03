@@ -4,7 +4,7 @@
 
 	if (isset($_POST['accetta']) || (isset($_POST['rifiuta']))){
 		
-		
+		//apro il file xml dedicato alle richieste di accredito
 		$xmlString="";
 		# Name of the output file
 		$xml_file_name = 'fileXML/richiesteAccredito/richiesteAccredito.xml';
@@ -23,7 +23,38 @@
 		$richiesteAccredito = $doc->documentElement; //root
 		$lunghezza = $richiesteAccredito->childNodes->length;  //lunghezza corrisponde a quante richieste ci sono
 		
-		//Ottengo lista di nodi 
+		////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////
+		
+		//apro file della chat, questo per inviare la comunicazione all'utente
+		$xmlString2="";
+		# Name of the output file
+		$xml_file_name2 = 'fileXML/chat/chat.xml';
+	
+		foreach ( file("$xml_file_name2") as $node ) {
+		$xmlString2 .= trim($node);
+	}
+		
+		$doc2 = new DOMdocument();
+		$doc2->loadXML($xmlString2);
+	
+
+	   if (!$doc2->loadXML($xmlString2)) {
+			die ("Error mentre si andava parsando il documento\n");
+	}
+		$chat = $doc2->documentElement; //root
+		$lunghezza2 = $chat->childNodes->length;  //lunghezza corrisponde a quante richieste ci sono
+		
+		
+		
+		//Ottengo l'id dell'ultimo nodo (chat.xml), questo perchè il nuovo nodo deve avere id+1
+		$last_id = $doc2->getElementsByTagName("id")[$lunghezza2-1]->nodeValue;
+		$last_id = $last_id + 1;
+		
+		$date = date("Y-m-d");
+    	$time = date("H:i:s");
+		
+		//Ottengo lista di nodi per richiesteAccredito
 		$idList = $doc->getElementsByTagName("id");
 	
 	
@@ -48,11 +79,53 @@
    						printf("Oops! La query inviata non ha avuto successo!\n");
 						exit();
 					}
+					
+					//invio comunicazione
+					$newRecord = $doc2->createElement("message");
+					$newId = $doc2->createElement("id", $last_id);
+					$newSender = $doc2->createElement("sender", $_SESSION['userName']);
+					$newReceiver = $doc2->createElement("receiver", $_POST['username']);
+					$newText = $doc2->createElement("text","Richiesta ricarica accettata");
+					$newData = $doc2->createElement("data", $date);
+					$newOra = $doc2->createElement("ora", $time);
 
+					$newRecord->appendChild($newId);
+					$newRecord->appendChild($newSender);
+					$newRecord->appendChild($newReceiver);
+					$newRecord->appendChild($newText);
+					$newRecord->appendChild($newData);
+					$newRecord->appendChild($newOra);
+
+					$chat->appendChild($newRecord);
+					$doc2->save("$xml_file_name2");
+
+					
+					
 				}
 
   				else if(isset($_POST['rifiuta'])){ //rifiuta la richiesta
   					$parent= $id->parentNode->setAttribute("status", "rifiutata");
+  					
+  					//invio comunicazione
+					$newRecord = $doc2->createElement("message");
+					$newId = $doc2->createElement("id", $last_id);
+					$newSender = $doc2->createElement("sender", $_SESSION['userName']);
+					$newReceiver = $doc2->createElement("receiver", $_POST['username']);
+					$newText = $doc2->createElement("text","Richiesta ricarica rifiutata");
+					$newData = $doc2->createElement("data", $date);
+					$newOra = $doc2->createElement("ora", $time);
+
+					$newRecord->appendChild($newId);
+					$newRecord->appendChild($newSender);
+					$newRecord->appendChild($newReceiver);
+					$newRecord->appendChild($newText);
+					$newRecord->appendChild($newData);
+					$newRecord->appendChild($newOra);
+
+					$chat->appendChild($newRecord);
+					$doc2->save("$xml_file_name2");
+
+
   				}
   			}
   				
@@ -241,7 +314,7 @@ foreach ( file("fileXML/richiesteAccredito/richiesteAccredito.xml") as $node ) {
 	//ciclo per ottenere info su tutti i film di una stessa categoria
    for ($i=0; $i<$lunghezza; $i++) {
 	
-		$richiesta = $richiesteAccredito->item($i); //� uno dei record
+		$richiesta = $richiesteAccredito->item($i); // uno dei record
 		$status = $richiesta->getAttribute("status");
 	
 		$id = $richiesta->firstChild; //id primo child
@@ -276,5 +349,8 @@ foreach ( file("fileXML/richiesteAccredito/richiesteAccredito.xml") as $node ) {
 	echo "$elenco";
 	echo "</tbody>\n</table>";
 ?> 	
+		<h3 style="text-align: center;">
+            <a href="inizio.php" alt="Home">Homepage</a>
+        </h3>
 	</body>
 </html>
