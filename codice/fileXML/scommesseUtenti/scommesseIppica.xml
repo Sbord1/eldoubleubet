@@ -3,7 +3,7 @@
 <!-- Abbiamo 2 scommesse, fatte da 2 utenti diversi, ma che fanno entrambe riferimento alla stessa scommessa avente id=1 nel file ippica.xml -->
 <scommesseIppica>
 
-    <scommessa eliminato="0">
+    <scommessa eliminato="0" pagata="0">
         <id>1</id>
         <scommettitore>mario</scommettitore>
         <risultato>
@@ -16,7 +16,7 @@
         <vincita>305</vincita>
     </scommessa>
 
-    <scommessa eliminato="0">
+    <scommessa eliminato="0" pagata="0">
         <id>1</id>
         <scommettitore>mario</scommettitore>
         <risultato>
@@ -29,4 +29,4 @@
         <vincita>213</vincita>
     </scommessa>
 
-<scommessa eliminato="0"><id>2</id><scommettitore>mario</scommettitore><risultato><primo> </primo><secondo>4</secondo><terzo> </terzo></risultato><puntata>1</puntata><quota>31.3</quota><vincita>31.3</vincita></scommessa><scommessa eliminato="0"><id>2</id><scommettitore>mario</scommettitore><risultato><primo> </primo><secondo> </secondo><terzo>3</terzo></risultato><puntata>1</puntata><quota>9.2</quota><vincita>9.2</vincita></scommessa></scommesseIppica>
+<scommessa eliminato="0" pagata="0"><id>2</id><scommettitore>mario</scommettitore><risultato><primo> </primo><secondo>4</secondo><terzo> </terzo></risultato><puntata>1</puntata><quota>31.3</quota><vincita>31.3</vincita></scommessa><scommessa eliminato="0" pagata="0"><id>2</id><scommettitore>mario</scommettitore><risultato><primo> </primo><secondo> </secondo><terzo>3</terzo></risultato><puntata>1</puntata><quota>9.2</quota><vincita>9.2</vincita></scommessa></scommesseIppica>
