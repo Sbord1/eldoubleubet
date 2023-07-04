@@ -9,7 +9,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
  
 	<head>
-		<title>Lista scommesse di Tennis</title>
+		<title>Lista scommesse di Ippica</title>
 	<style>
 		body {
 		font-family: Arial, sans-serif;
