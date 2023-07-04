@@ -23,7 +23,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
  
 	<head>
-		<title>Lista scommesse di Calcio</title>
+		<title>Riepilogo scommesse</title>
 	<style>
 		body {
 		font-family: Arial, sans-serif;
@@ -334,7 +334,7 @@
 						$current_date = date("Y-m-d");
 						$current_time = date("H:i:s");
 						
-						if (($current_date >= $anno_mese_giorno_partita) && ($current_time > $oraFineValue)) {
+						if (($current_date > $anno_mese_giorno_partita) || (($current_date == $anno_mese_giorno_partita) && ($current_time > $oraFineValue))) {
 							$stato = "Terminata";
 						}
 						else {
@@ -372,12 +372,12 @@
 									$esito = "Vinta";
 								}
 							}
-							if ($puntiSquadraCasaValue>1 && $puntiSquadraTrasfertaValue>1) {
+							if ($puntiSquadraCasaValue>=1 && $puntiSquadraTrasfertaValue>=1) {
 								if ($risultatoScommessoValue=="GG"){
 									$esito = "Vinta";
 								}
 							}
-							if ($puntiSquadraCasaValue==0 && $puntiSquadraTrasfertaValue==0) {
+							if (($puntiSquadraCasaValue==0 && $puntiSquadraTrasfertaValue==0) || ($puntiSquadraCasaValue==0 && $puntiSquadraTrasfertaValue>0) || ($puntiSquadraCasaValue>0 && $puntiSquadraTrasfertaValue==0)) {
 								if ($risultatoScommessoValue=="NG"){
 									$esito = "Vinta";
 								}
@@ -576,7 +576,7 @@
 						$current_date = date("Y-m-d");
 						$current_time = date("H:i:s");
 						
-						if (($current_date >= $anno_mese_giorno_partita) && ($current_time > $oraFineValue)) {
+						if (($current_date > $anno_mese_giorno_partita) || (($current_date == $anno_mese_giorno_partita) && ($current_time > $oraFineValue))) {
 							$stato = "Terminata";
 						}
 						else {
@@ -794,7 +794,7 @@
 						$current_date = date("Y-m-d");
 						$current_time = date("H:i:s");
 						
-						if (($current_date >= $anno_mese_giorno_partita) && ($current_time > $oraFineValue)) {
+						if (($current_date > $anno_mese_giorno_partita) || (($current_date == $anno_mese_giorno_partita) && ($current_time > $oraFineValue))) {
 							$stato = "Terminata";
 						}
 						else {
@@ -1007,8 +1007,9 @@
 						// Verifichiamo se la partita e' terminata confrontando la data e l'ora di fine della partita con la data e l'ora attuali
 						$current_date = date("Y-m-d");
 						$current_time = date("H:i:s");
+
 						
-						if (($current_date >= $anno_mese_giorno_partita) && ($current_time > $oraFineValue)) {
+						if ( ($current_date > $anno_mese_giorno_partita) || (($current_date == $anno_mese_giorno_partita) && ($current_time > $oraFineValue)) ) {
 							$stato = "Terminata";
 						}
 						else {
@@ -1104,7 +1105,7 @@
 					<form method=\"post\" action=\"pagamentoVincita.php\"> 
 					<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">$pagamento_effettuato</button>
 					<input type=\"hidden\" name=\"idScommessa\" value=\"$id_scommessa_value\">
-					<input type=\"hidden\" name=\"category\" value=\"scommesseTennis\">
+					<input type=\"hidden\" name=\"category\" value=\"scommesseIppica\">
 					<input type=\"hidden\" name=\"vincita\" value=\"$vincitaValue\">
 					</form>
 					";
