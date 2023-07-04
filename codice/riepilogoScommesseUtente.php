@@ -259,199 +259,206 @@
 
 			$scommessa = $scommesseCalcio->item($i);
 
-			$pagata = $scommessa->getAttribute("pagata");
+			$e = $scommessa->getAttribute("eliminato");
 
-			if($pagata=="0"){
-				$pagamento_effettuato = "No";
-			}
-			else {
-				$pagamento_effettuato = "Si";
-			}
+			// Mostriamo la scommessa solo se non e' stata eliminata
+			if ($e == "0") {
 
-			// id della partita cui la scommessa fa riferimento
-			$id = $scommessa->firstChild;
-            $idValue = $id->textContent;
+				$pagata = $scommessa->getAttribute("pagata");
 
-			$id_scommessa = $id->nextSibling;
-			$id_scommessa_value = $id_scommessa->textContent;
-
-			$scommettitore = $id_scommessa->nextSibling;
-			$scommettitoreValue = $scommettitore->textContent;
-
-			// Verifichiamo che la scommessa sia stata effettuata dall'utente loggato
-            if ($scommettitoreValue==$username) {
-
-
-				// Leggiamo il file xml contenente le partite di calcio per recuperare i dati relativi alla data e all'ora della partita su cui si e' scommesso
-				/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-				# Lettura file "calcio.xml"
-				$xmlString = "";
-				foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
-					$xmlString .= trim($node);
-				}
-
-				$doc = new DOMdocument();
-				$doc->formatOutput = true;
-				$doc->loadXML($xmlString);
-				
-				if (!$doc->loadXML($xmlString)) {
-					die ("Error mentre si andava parsando il documento\n");
-				}
-				/////////////////////////////////////////////////////////////////////////
-
-				$scommesse = $doc->getElementsByTagName('scommessa');
-
-				foreach ($scommesse as $scommessa) {
-					$idPartita = $scommessa->firstChild;
-					$idPartitaValue = $idPartita->textContent;
-
-					// Controlliamo che l'id della scommessa sia uguale all'id della partita
-					// Se sono uguali significa che la scommessa fa riferimento a quella partita
-					if($idPartitaValue==$idValue) {
-						$nome = $idPartita->nextSibling;
-						$quotaCalcio = $nome->nextSibling;
-
-						// Estraggo i dati relativi all'ora della partita
-						$ora = $quotaCalcio->nextSibling;
-						$oraInizio = $ora->firstChild;
-						$oraInizioValue = $oraInizio->textContent;
-						$oraFine = $ora->lastChild;
-						$oraFineValue = $oraFine->textContent;
-
-						// Estraggo i dati relativi alla data in cui si gioca la partita
-						$data = $ora->nextSibling;
-						$giorno = $data->firstChild;
-						$giornoValue = $giorno->textContent;
-						$mese = $giorno->nextSibling;
-						$meseValue = $mese->textContent;
-						$anno = $data->lastChild;
-						$annoValue = $anno->textContent;
-
-						$anno_mese_giorno_partita = trim($annoValue)."-".trim($meseValue)."-".trim($giornoValue);
-
-						////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-						// Verifichiamo se la partita e' terminata confrontando la data e l'ora di fine della partita con la data e l'ora attuali
-						$current_date = date("Y-m-d");
-						$current_time = date("H:i:s");
-						
-						if (($current_date > $anno_mese_giorno_partita) || (($current_date == $anno_mese_giorno_partita) && ($current_time > $oraFineValue))) {
-							$stato = "Terminata";
-						}
-						else {
-							$stato = "-";
-						}
-						////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-						// Se la partita e' terminata, estraiamo il risultato
-						if ($stato == "Terminata") {
-							$puntata = $data->nextSibling;
-							$risultato = $puntata->nextSibling;
-							$puntiSquadraCasa = $risultato->firstChild;
-							$puntiSquadraCasaValue = $puntiSquadraCasa->textContent;
-							$puntiSquadraTrasferta = $risultato->lastChild;
-							$puntiSquadraTrasfertaValue = $puntiSquadraTrasferta->textContent;
-
-							// Dati estratti dalla scommessa piazzata dall'utente
-							$risultatoScommesso = $scommettitore->nextSibling;
-							$risultatoScommessoValue = $risultatoScommesso->textContent;
-
-							// Confrontiamo il risultato giocato col risultato effettivo della partita
-							$esito = "Persa";
-
-							if ($puntiSquadraCasaValue > $puntiSquadraTrasfertaValue) {
-								if ($risultatoScommessoValue=="1"){
-									$esito = "Vinta";
-								}
-							}
-							if ($puntiSquadraCasaValue < $puntiSquadraTrasfertaValue) {
-								if ($risultatoScommessoValue=="2"){
-									$esito = "Vinta";
-								}
-							}
-							if ($puntiSquadraCasaValue == $puntiSquadraTrasfertaValue) {
-								if ($risultatoScommessoValue=="X"){
-									$esito = "Vinta";
-								}
-							}
-							if ($puntiSquadraCasaValue>=1 && $puntiSquadraTrasfertaValue>=1) {
-								if ($risultatoScommessoValue=="GG"){
-									$esito = "Vinta";
-								}
-							}
-							if (($puntiSquadraCasaValue==0 && $puntiSquadraTrasfertaValue==0) || ($puntiSquadraCasaValue==0 && $puntiSquadraTrasfertaValue>0) || ($puntiSquadraCasaValue>0 && $puntiSquadraTrasfertaValue==0)) {
-								if ($risultatoScommessoValue=="NG"){
-									$esito = "Vinta";
-								}
-							}
-							if ((int)$puntiSquadraCasaValue+(int)$puntiSquadraTrasfertaValue>=3) {
-								if ($risultatoScommessoValue=="Over"){
-									$esito = "Vinta";
-								}
-							}
-							if ((int)$puntiSquadraCasaValue+(int)$puntiSquadraTrasfertaValue<=2) {
-								if ($risultatoScommessoValue=="Under"){
-									$esito = "Vinta";
-								}
-							}
-
-						}
-						else {
-							$esito = "In attesa";
-						}
-
-						break;
-					}
-				}
-			
-				//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-				// Dati estratti dalla scommessa piazzata dall'utente
-                $risultatoScommesso = $scommettitore->nextSibling;
-                $risultatoScommessoValue = $risultatoScommesso->textContent;
-
-
-                $puntata = $risultatoScommesso->nextSibling;
-                $puntataValue = $puntata->textContent;
-
-				$tot_puntate = $tot_puntate + $puntataValue;
-
-				$quota = $puntata->nextSibling;
-				$quotaValue = $quota->textContent;
-
-				$vincita = $quota->nextSibling;
-				$vincitaValue = $vincita->textContent;
-
-				// Se la scommessa e' stata vinta ma ancora non e' stata pagata l'utente puo' richiedere l'accredito della vincita
-				if (($esito=="Vinta") && ($pagata=="0")) {
-					// form per accreditare i soldi vinti sul conto dell'utente
-					$richiesta_vincita = "
-					<form method=\"post\" action=\"pagamentoVincita.php\"> 
-					<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">$pagamento_effettuato</button>
-					<input type=\"hidden\" name=\"idScommessa\" value=\"$id_scommessa_value\">
-					<input type=\"hidden\" name=\"category\" value=\"scommesseCalcio\">
-					<input type=\"hidden\" name=\"vincita\" value=\"$vincitaValue\">
-					</form>
-					";
+				if($pagata=="0"){
+					$pagamento_effettuato = "No";
 				}
 				else {
-					$richiesta_vincita = $pagamento_effettuato;
+					$pagamento_effettuato = "Si";
 				}
 
-                $elenco.=
-                "\n<tr>
-                    <td>$idValue</td>
-                    <td>$anno_mese_giorno_partita</td>
-                    <td>$oraInizioValue - $oraFineValue</td>
-                    <td>$scommettitoreValue</td>
-                    <td>$risultatoScommessoValue</td>
-                    <td>$puntataValue &euro;</td>
-                    <td>$quotaValue</td>
-                    <td>$vincitaValue &euro;</td>
-                    <td>$stato</td>
-                    <td>$esito</td>
-                    <td>$richiesta_vincita</td>
-                </tr>\n
-                ";
-            }
+				// id della partita cui la scommessa fa riferimento
+				$id = $scommessa->firstChild;
+				$idValue = $id->textContent;
+
+				$id_scommessa = $id->nextSibling;
+				$id_scommessa_value = $id_scommessa->textContent;
+
+				$scommettitore = $id_scommessa->nextSibling;
+				$scommettitoreValue = $scommettitore->textContent;
+
+				// Verifichiamo che la scommessa sia stata effettuata dall'utente loggato
+				if ($scommettitoreValue==$username) {
+
+
+					// Leggiamo il file xml contenente le partite di calcio per recuperare i dati relativi alla data e all'ora della partita su cui si e' scommesso
+					/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+					# Lettura file "calcio.xml"
+					$xmlString = "";
+					foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
+						$xmlString .= trim($node);
+					}
+
+					$doc = new DOMdocument();
+					$doc->formatOutput = true;
+					$doc->loadXML($xmlString);
+					
+					if (!$doc->loadXML($xmlString)) {
+						die ("Error mentre si andava parsando il documento\n");
+					}
+					/////////////////////////////////////////////////////////////////////////
+
+					$scommesse = $doc->getElementsByTagName('scommessa');
+
+					foreach ($scommesse as $scommessa) {
+						$idPartita = $scommessa->firstChild;
+						$idPartitaValue = $idPartita->textContent;
+
+						// Controlliamo che l'id della scommessa sia uguale all'id della partita
+						// Se sono uguali significa che la scommessa fa riferimento a quella partita
+						if($idPartitaValue==$idValue) {
+							$nome = $idPartita->nextSibling;
+							$quotaCalcio = $nome->nextSibling;
+
+							// Estraggo i dati relativi all'ora della partita
+							$ora = $quotaCalcio->nextSibling;
+							$oraInizio = $ora->firstChild;
+							$oraInizioValue = $oraInizio->textContent;
+							$oraFine = $ora->lastChild;
+							$oraFineValue = $oraFine->textContent;
+
+							// Estraggo i dati relativi alla data in cui si gioca la partita
+							$data = $ora->nextSibling;
+							$giorno = $data->firstChild;
+							$giornoValue = $giorno->textContent;
+							$mese = $giorno->nextSibling;
+							$meseValue = $mese->textContent;
+							$anno = $data->lastChild;
+							$annoValue = $anno->textContent;
+
+							$anno_mese_giorno_partita = trim($annoValue)."-".trim($meseValue)."-".trim($giornoValue);
+
+							////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+							// Verifichiamo se la partita e' terminata confrontando la data e l'ora di fine della partita con la data e l'ora attuali
+							$current_date = date("Y-m-d");
+							$current_time = date("H:i:s");
+							
+							if (($current_date > $anno_mese_giorno_partita) || (($current_date == $anno_mese_giorno_partita) && ($current_time > $oraFineValue))) {
+								$stato = "Terminata";
+							}
+							else {
+								$stato = "-";
+							}
+							////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+							// Se la partita e' terminata, estraiamo il risultato
+							if ($stato == "Terminata") {
+								$puntata = $data->nextSibling;
+								$risultato = $puntata->nextSibling;
+								$puntiSquadraCasa = $risultato->firstChild;
+								$puntiSquadraCasaValue = $puntiSquadraCasa->textContent;
+								$puntiSquadraTrasferta = $risultato->lastChild;
+								$puntiSquadraTrasfertaValue = $puntiSquadraTrasferta->textContent;
+
+								// Dati estratti dalla scommessa piazzata dall'utente
+								$risultatoScommesso = $scommettitore->nextSibling;
+								$risultatoScommessoValue = $risultatoScommesso->textContent;
+
+								// Confrontiamo il risultato giocato col risultato effettivo della partita
+								$esito = "Persa";
+
+								if ($puntiSquadraCasaValue > $puntiSquadraTrasfertaValue) {
+									if ($risultatoScommessoValue=="1"){
+										$esito = "Vinta";
+									}
+								}
+								if ($puntiSquadraCasaValue < $puntiSquadraTrasfertaValue) {
+									if ($risultatoScommessoValue=="2"){
+										$esito = "Vinta";
+									}
+								}
+								if ($puntiSquadraCasaValue == $puntiSquadraTrasfertaValue) {
+									if ($risultatoScommessoValue=="X"){
+										$esito = "Vinta";
+									}
+								}
+								if ($puntiSquadraCasaValue>=1 && $puntiSquadraTrasfertaValue>=1) {
+									if ($risultatoScommessoValue=="GG"){
+										$esito = "Vinta";
+									}
+								}
+								if (($puntiSquadraCasaValue==0 && $puntiSquadraTrasfertaValue==0) || ($puntiSquadraCasaValue==0 && $puntiSquadraTrasfertaValue>0) || ($puntiSquadraCasaValue>0 && $puntiSquadraTrasfertaValue==0)) {
+									if ($risultatoScommessoValue=="NG"){
+										$esito = "Vinta";
+									}
+								}
+								if ((int)$puntiSquadraCasaValue+(int)$puntiSquadraTrasfertaValue>=3) {
+									if ($risultatoScommessoValue=="Over"){
+										$esito = "Vinta";
+									}
+								}
+								if ((int)$puntiSquadraCasaValue+(int)$puntiSquadraTrasfertaValue<=2) {
+									if ($risultatoScommessoValue=="Under"){
+										$esito = "Vinta";
+									}
+								}
+
+							}
+							else {
+								$esito = "In attesa";
+							}
+
+							break;
+						}
+					}
+				
+					//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+					// Dati estratti dalla scommessa piazzata dall'utente
+					$risultatoScommesso = $scommettitore->nextSibling;
+					$risultatoScommessoValue = $risultatoScommesso->textContent;
+
+
+					$puntata = $risultatoScommesso->nextSibling;
+					$puntataValue = $puntata->textContent;
+
+					$tot_puntate = $tot_puntate + $puntataValue;
+
+					$quota = $puntata->nextSibling;
+					$quotaValue = $quota->textContent;
+
+					$vincita = $quota->nextSibling;
+					$vincitaValue = $vincita->textContent;
+
+					// Se la scommessa e' stata vinta ma ancora non e' stata pagata l'utente puo' richiedere l'accredito della vincita
+					if (($esito=="Vinta") && ($pagata=="0")) {
+						// form per accreditare i soldi vinti sul conto dell'utente
+						$richiesta_vincita = "
+						<form method=\"post\" action=\"pagamentoVincita.php\"> 
+						<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">$pagamento_effettuato</button>
+						<input type=\"hidden\" name=\"idScommessa\" value=\"$id_scommessa_value\">
+						<input type=\"hidden\" name=\"category\" value=\"scommesseCalcio\">
+						<input type=\"hidden\" name=\"vincita\" value=\"$vincitaValue\">
+						</form>
+						";
+					}
+					else {
+						$richiesta_vincita = $pagamento_effettuato;
+					}
+
+					$elenco.=
+					"\n<tr>
+						<td>$idValue</td>
+						<td>$anno_mese_giorno_partita</td>
+						<td>$oraInizioValue - $oraFineValue</td>
+						<td>$scommettitoreValue</td>
+						<td>$risultatoScommessoValue</td>
+						<td>$puntataValue &euro;</td>
+						<td>$quotaValue</td>
+						<td>$vincitaValue &euro;</td>
+						<td>$stato</td>
+						<td>$esito</td>
+						<td>$richiesta_vincita</td>
+					</tr>\n
+					";
+				}
+
+			}
         }
 
         $elenco.="</tbody>\n</table>\n";
@@ -503,173 +510,179 @@
 
 			$scommessa = $scommesseBasket->item($i);
 
-			$pagata = $scommessa->getAttribute("pagata");
+			$e = $scommessa->getAttribute("eliminato");
 
-			if($pagata=="0"){
-				$pagamento_effettuato = "No";
-			}
-			else {
-				$pagamento_effettuato = "Si";
-			}
+			// Mostriamo la scommessa solo se non e' stata eliminata
+			if ($e == "0") {
 
-			// id della partita cui la scommessa fa riferimento
-			$id = $scommessa->firstChild;
-            $idValue = $id->textContent;
+				$pagata = $scommessa->getAttribute("pagata");
 
-			$id_scommessa = $id->nextSibling;
-			$id_scommessa_value = $id_scommessa->textContent;
-
-			$scommettitore = $id_scommessa->nextSibling;
-			$scommettitoreValue = $scommettitore->textContent;
-
-            if ($scommettitoreValue==$username) {
-
-				// Leggiamo il file xml contenente le partite di basket per recuperare i dati relativi alla data e all'ora della partita su cui si e' scommesso
-				/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-				# Lettura file "basket.xml"
-				$xmlString = "";
-				foreach ( file("fileXML/scommesseDisponibili/basket.xml") as $node ) {
-					$xmlString .= trim($node);
-				}
-
-				$doc = new DOMdocument();
-				$doc->formatOutput = true;
-				$doc->loadXML($xmlString);
-				
-				if (!$doc->loadXML($xmlString)) {
-					die ("Error mentre si andava parsando il documento\n");
-				}
-				/////////////////////////////////////////////////////////////////////////
-
-				$scommesse = $doc->getElementsByTagName('scommessa');
-
-				foreach ($scommesse as $scommessa) {
-					$idPartita = $scommessa->firstChild;
-					$idPartitaValue = $idPartita->textContent;
-
-					// Controlliamo che l'id della scommessa sia uguale all'id della partita
-					// Se sono uguali significa che la scommessa fa riferimento a quella partita
-					if($idPartitaValue==$idValue) {
-						$nome = $idPartita->nextSibling;
-						$quotaBasket = $nome->nextSibling;
-
-						// Estraggo i dati relativi all'ora della partita
-						$ora = $quotaBasket->nextSibling;
-						$oraInizio = $ora->firstChild;
-						$oraInizioValue = $oraInizio->textContent;
-						$oraFine = $ora->lastChild;
-						$oraFineValue = $oraFine->textContent;
-
-						// Estraggo i dati relativi alla data in cui si giocs la partita
-						$data = $ora->nextSibling;
-						$giorno = $data->firstChild;
-						$giornoValue = $giorno->textContent;
-						$mese = $giorno->nextSibling;
-						$meseValue = $mese->textContent;
-						$anno = $data->lastChild;
-						$annoValue = $anno->textContent;
-
-						$anno_mese_giorno_partita = trim($annoValue)."-".trim($meseValue)."-".trim($giornoValue);
-
-						////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-						// Verifichiamo se la partita e' terminata confrontando la data e l'ora di fine della partita con la data e l'ora attuali
-						$current_date = date("Y-m-d");
-						$current_time = date("H:i:s");
-						
-						if (($current_date > $anno_mese_giorno_partita) || (($current_date == $anno_mese_giorno_partita) && ($current_time > $oraFineValue))) {
-							$stato = "Terminata";
-						}
-						else {
-							$stato = "-";
-						}
-						////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-						// Se la partita e' terminata, estraiamo il risultato
-						if ($stato == "Terminata") {
-							$puntata = $data->nextSibling;
-							$risultato = $puntata->nextSibling;
-							$puntiSquadraCasa = $risultato->firstChild;
-							$puntiSquadraCasaValue = $puntiSquadraCasa->textContent;
-							$puntiSquadraTrasferta = $risultato->lastChild;
-							$puntiSquadraTrasfertaValue = $puntiSquadraTrasferta->textContent;
-
-							// Dati estratti dalla scommessa piazzata dall'utente
-							$risultatoScommesso = $scommettitore->nextSibling;
-							$risultatoScommessoValue = $risultatoScommesso->textContent;
-
-							// Confrontiamo il risultato giocato col risultato effettivo della partita
-							$esito = "Persa";
-
-							if ($puntiSquadraCasaValue > $puntiSquadraTrasfertaValue) {
-								if ($risultatoScommessoValue=="1"){
-									$esito = "Vinta";
-								}
-							}
-							if ($puntiSquadraCasaValue < $puntiSquadraTrasfertaValue) {
-								if ($risultatoScommessoValue=="2"){
-									$esito = "Vinta";
-								}
-							}
-							
-						}
-						// La partita non e' terminata
-						else {
-							$esito = "In attesa";
-						}
-
-						break;
-					}
-				}
-			
-				//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-                $risultato = $scommettitore->nextSibling;
-                $risultatoValue = $risultato->textContent;
-
-                $puntata = $risultato->nextSibling;
-                $puntataValue = $puntata->textContent;
-
-				$tot_puntate = $tot_puntate + $puntataValue;
-
-				$quota = $puntata->nextSibling;
-				$quotaValue = $quota->textContent;
-
-				$vincita = $quota->nextSibling;
-				$vincitaValue = $vincita->textContent;
-
-				// Se la scommessa e' stata vinta ma ancora non e' stata pagata l'utente puo' richiedere l'accredito della vincita
-				if (($esito=="Vinta") && ($pagata=="0")) {
-					// form per accreditare i soldi vinti sul conto dell'utente
-					$richiesta_vincita = "
-					<form method=\"post\" action=\"pagamentoVincita.php\"> 
-					<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">$pagamento_effettuato</button>
-					<input type=\"hidden\" name=\"idScommessa\" value=\"$id_scommessa_value\">
-					<input type=\"hidden\" name=\"category\" value=\"scommesseBasket\">
-					<input type=\"hidden\" name=\"vincita\" value=\"$vincitaValue\">
-					</form>
-					";
+				if($pagata=="0"){
+					$pagamento_effettuato = "No";
 				}
 				else {
-					$richiesta_vincita = $pagamento_effettuato;
+					$pagamento_effettuato = "Si";
 				}
 
+				// id della partita cui la scommessa fa riferimento
+				$id = $scommessa->firstChild;
+				$idValue = $id->textContent;
 
-                $elenco.=
-                "\n<tr>
-                    <td>$idValue</td>
-					<td>$anno_mese_giorno_partita</td>
-                    <td>$oraInizioValue - $oraFineValue</td>
-                    <td>$scommettitoreValue</td>
-                    <td>$risultatoValue</td>
-                    <td>$puntataValue &euro;</td>
-                    <td>$quotaValue</td>
-                    <td>$vincitaValue &euro;</td>
-                    <td>$stato</td>
-                    <td>$esito</td>
-                    <td>$richiesta_vincita</td>
-                </tr>\n
-                ";
-            }
+				$id_scommessa = $id->nextSibling;
+				$id_scommessa_value = $id_scommessa->textContent;
+
+				$scommettitore = $id_scommessa->nextSibling;
+				$scommettitoreValue = $scommettitore->textContent;
+
+				if ($scommettitoreValue==$username) {
+
+					// Leggiamo il file xml contenente le partite di basket per recuperare i dati relativi alla data e all'ora della partita su cui si e' scommesso
+					/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+					# Lettura file "basket.xml"
+					$xmlString = "";
+					foreach ( file("fileXML/scommesseDisponibili/basket.xml") as $node ) {
+						$xmlString .= trim($node);
+					}
+
+					$doc = new DOMdocument();
+					$doc->formatOutput = true;
+					$doc->loadXML($xmlString);
+					
+					if (!$doc->loadXML($xmlString)) {
+						die ("Error mentre si andava parsando il documento\n");
+					}
+					/////////////////////////////////////////////////////////////////////////
+
+					$scommesse = $doc->getElementsByTagName('scommessa');
+
+					foreach ($scommesse as $scommessa) {
+						$idPartita = $scommessa->firstChild;
+						$idPartitaValue = $idPartita->textContent;
+
+						// Controlliamo che l'id della scommessa sia uguale all'id della partita
+						// Se sono uguali significa che la scommessa fa riferimento a quella partita
+						if($idPartitaValue==$idValue) {
+							$nome = $idPartita->nextSibling;
+							$quotaBasket = $nome->nextSibling;
+
+							// Estraggo i dati relativi all'ora della partita
+							$ora = $quotaBasket->nextSibling;
+							$oraInizio = $ora->firstChild;
+							$oraInizioValue = $oraInizio->textContent;
+							$oraFine = $ora->lastChild;
+							$oraFineValue = $oraFine->textContent;
+
+							// Estraggo i dati relativi alla data in cui si giocs la partita
+							$data = $ora->nextSibling;
+							$giorno = $data->firstChild;
+							$giornoValue = $giorno->textContent;
+							$mese = $giorno->nextSibling;
+							$meseValue = $mese->textContent;
+							$anno = $data->lastChild;
+							$annoValue = $anno->textContent;
+
+							$anno_mese_giorno_partita = trim($annoValue)."-".trim($meseValue)."-".trim($giornoValue);
+
+							////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+							// Verifichiamo se la partita e' terminata confrontando la data e l'ora di fine della partita con la data e l'ora attuali
+							$current_date = date("Y-m-d");
+							$current_time = date("H:i:s");
+							
+							if (($current_date > $anno_mese_giorno_partita) || (($current_date == $anno_mese_giorno_partita) && ($current_time > $oraFineValue))) {
+								$stato = "Terminata";
+							}
+							else {
+								$stato = "-";
+							}
+							////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+							// Se la partita e' terminata, estraiamo il risultato
+							if ($stato == "Terminata") {
+								$puntata = $data->nextSibling;
+								$risultato = $puntata->nextSibling;
+								$puntiSquadraCasa = $risultato->firstChild;
+								$puntiSquadraCasaValue = $puntiSquadraCasa->textContent;
+								$puntiSquadraTrasferta = $risultato->lastChild;
+								$puntiSquadraTrasfertaValue = $puntiSquadraTrasferta->textContent;
+
+								// Dati estratti dalla scommessa piazzata dall'utente
+								$risultatoScommesso = $scommettitore->nextSibling;
+								$risultatoScommessoValue = $risultatoScommesso->textContent;
+
+								// Confrontiamo il risultato giocato col risultato effettivo della partita
+								$esito = "Persa";
+
+								if ($puntiSquadraCasaValue > $puntiSquadraTrasfertaValue) {
+									if ($risultatoScommessoValue=="1"){
+										$esito = "Vinta";
+									}
+								}
+								if ($puntiSquadraCasaValue < $puntiSquadraTrasfertaValue) {
+									if ($risultatoScommessoValue=="2"){
+										$esito = "Vinta";
+									}
+								}
+								
+							}
+							// La partita non e' terminata
+							else {
+								$esito = "In attesa";
+							}
+
+							break;
+						}
+					}
+				
+					//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+					$risultato = $scommettitore->nextSibling;
+					$risultatoValue = $risultato->textContent;
+
+					$puntata = $risultato->nextSibling;
+					$puntataValue = $puntata->textContent;
+
+					$tot_puntate = $tot_puntate + $puntataValue;
+
+					$quota = $puntata->nextSibling;
+					$quotaValue = $quota->textContent;
+
+					$vincita = $quota->nextSibling;
+					$vincitaValue = $vincita->textContent;
+
+					// Se la scommessa e' stata vinta ma ancora non e' stata pagata l'utente puo' richiedere l'accredito della vincita
+					if (($esito=="Vinta") && ($pagata=="0")) {
+						// form per accreditare i soldi vinti sul conto dell'utente
+						$richiesta_vincita = "
+						<form method=\"post\" action=\"pagamentoVincita.php\"> 
+						<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">$pagamento_effettuato</button>
+						<input type=\"hidden\" name=\"idScommessa\" value=\"$id_scommessa_value\">
+						<input type=\"hidden\" name=\"category\" value=\"scommesseBasket\">
+						<input type=\"hidden\" name=\"vincita\" value=\"$vincitaValue\">
+						</form>
+						";
+					}
+					else {
+						$richiesta_vincita = $pagamento_effettuato;
+					}
+
+
+					$elenco.=
+					"\n<tr>
+						<td>$idValue</td>
+						<td>$anno_mese_giorno_partita</td>
+						<td>$oraInizioValue - $oraFineValue</td>
+						<td>$scommettitoreValue</td>
+						<td>$risultatoValue</td>
+						<td>$puntataValue &euro;</td>
+						<td>$quotaValue</td>
+						<td>$vincitaValue &euro;</td>
+						<td>$stato</td>
+						<td>$esito</td>
+						<td>$richiesta_vincita</td>
+					</tr>\n
+					";
+				}
+			}
         }
 
         $elenco.="</tbody>\n</table>\n";
@@ -721,172 +734,178 @@
 
 			$scommessa = $scommesseTennis->item($i);
 
-			$pagata = $scommessa->getAttribute("pagata");
+			$e = $scommessa->getAttribute("eliminato");
 
-			if($pagata=="0"){
-				$pagamento_effettuato = "No";
-			}
-			else {
-				$pagamento_effettuato = "Si";
-			}
+			// Mostriamo la scommessa solo se non e' stata eliminata
+			if ($e == "0") {
 
-			// id della partita cui la scommessa fa riferimento
-			$id = $scommessa->firstChild;
-            $idValue = $id->textContent;
+				$pagata = $scommessa->getAttribute("pagata");
 
-			$id_scommessa = $id->nextSibling;
-			$id_scommessa_value = $id_scommessa->textContent;
-
-			$scommettitore = $id_scommessa->nextSibling;
-			$scommettitoreValue = $scommettitore->textContent;
-
-            if ($scommettitoreValue==$username) {
-
-				// Leggiamo il file xml contenente le partite di tennis per recuperare i dati relativi alla data e all'ora della partita su cui si e' scommesso
-				/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-				# Lettura file "tennis.xml"
-				$xmlString = "";
-				foreach ( file("fileXML/scommesseDisponibili/tennis.xml") as $node ) {
-					$xmlString .= trim($node);
-				}
-
-				$doc = new DOMdocument();
-				$doc->formatOutput = true;
-				$doc->loadXML($xmlString);
-				
-				if (!$doc->loadXML($xmlString)) {
-					die ("Error mentre si andava parsando il documento\n");
-				}
-				/////////////////////////////////////////////////////////////////////////
-
-				$scommesse = $doc->getElementsByTagName('scommessa');
-
-				foreach ($scommesse as $scommessa) {
-					$idPartita = $scommessa->firstChild;
-					$idPartitaValue = $idPartita->textContent;
-
-					// Controlliamo che l'id della scommessa sia uguale all'id della partita
-					// Se sono uguali significa che la scommessa fa riferimento a quella partita
-					if($idPartitaValue==$idValue) {
-						$nome = $idPartita->nextSibling;
-						$quotaTennis = $nome->nextSibling;
-
-						// Estraggo i dati relativi all'ora della partita
-						$ora = $quotaTennis->nextSibling;
-						$oraInizio = $ora->firstChild;
-						$oraInizioValue = $oraInizio->textContent;
-						$oraFine = $ora->lastChild;
-						$oraFineValue = $oraFine->textContent;
-
-						// Estraggo i dati relativi alla data in cui si giocs la partita
-						$data = $ora->nextSibling;
-						$giorno = $data->firstChild;
-						$giornoValue = $giorno->textContent;
-						$mese = $giorno->nextSibling;
-						$meseValue = $mese->textContent;
-						$anno = $data->lastChild;
-						$annoValue = $anno->textContent;
-
-						$anno_mese_giorno_partita = trim($annoValue)."-".trim($meseValue)."-".trim($giornoValue);
-
-						////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-						// Verifichiamo se la partita e' terminata confrontando la data e l'ora di fine della partita con la data e l'ora attuali
-						$current_date = date("Y-m-d");
-						$current_time = date("H:i:s");
-						
-						if (($current_date > $anno_mese_giorno_partita) || (($current_date == $anno_mese_giorno_partita) && ($current_time > $oraFineValue))) {
-							$stato = "Terminata";
-						}
-						else {
-							$stato = "-";
-						}
-						////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-						// Se la partita e' terminata, estraiamo il risultato
-						if ($stato == "Terminata") {
-							$puntata = $data->nextSibling;
-							$risultato = $puntata->nextSibling;
-							$puntiSquadraCasa = $risultato->firstChild;
-							$puntiSquadraCasaValue = $puntiSquadraCasa->textContent;
-							$puntiSquadraTrasferta = $risultato->lastChild;
-							$puntiSquadraTrasfertaValue = $puntiSquadraTrasferta->textContent;
-
-							// Dati estratti dalla scommessa piazzata dall'utente
-							$risultatoScommesso = $scommettitore->nextSibling;
-							$risultatoScommessoValue = $risultatoScommesso->textContent;
-
-							// Confrontiamo il risultato giocato col risultato effettivo della partita
-							$esito = "Persa";
-
-							if ($puntiSquadraCasaValue > $puntiSquadraTrasfertaValue) {
-								if ($risultatoScommessoValue=="1"){
-									$esito = "Vinta";
-								}
-							}
-							if ($puntiSquadraCasaValue < $puntiSquadraTrasfertaValue) {
-								if ($risultatoScommessoValue=="2"){
-									$esito = "Vinta";
-								}
-							}
-							
-						}
-						// La partita non e' terminata
-						else {
-							$esito = "In attesa";
-						}
-
-						break;
-					}
-				}
-			
-				//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-                $risultato = $scommettitore->nextSibling;
-                $risultatoValue = $risultato->textContent;
-
-                $puntata = $risultato->nextSibling;
-                $puntataValue = $puntata->textContent;
-
-				$tot_puntate = $tot_puntate + $puntataValue;
-
-				$quota = $puntata->nextSibling;
-				$quotaValue = $quota->textContent;
-
-				$vincita = $quota->nextSibling;
-				$vincitaValue = $vincita->textContent;
-
-				// Se la scommessa e' stata vinta ma ancora non e' stata pagata l'utente puo' richiedere l'accredito della vincita
-				if (($esito=="Vinta") && ($pagata=="0")) {
-					// form per accreditare i soldi vinti sul conto dell'utente
-					$richiesta_vincita = "
-					<form method=\"post\" action=\"pagamentoVincita.php\"> 
-					<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">$pagamento_effettuato</button>
-					<input type=\"hidden\" name=\"idScommessa\" value=\"$id_scommessa_value\">
-					<input type=\"hidden\" name=\"category\" value=\"scommesseTennis\">
-					<input type=\"hidden\" name=\"vincita\" value=\"$vincitaValue\">
-					</form>
-					";
+				if($pagata=="0"){
+					$pagamento_effettuato = "No";
 				}
 				else {
-					$richiesta_vincita = $pagamento_effettuato;
+					$pagamento_effettuato = "Si";
 				}
 
+				// id della partita cui la scommessa fa riferimento
+				$id = $scommessa->firstChild;
+				$idValue = $id->textContent;
 
-                $elenco.=
-                "\n<tr>
-                    <td>$idValue</td>
-					<td>$anno_mese_giorno_partita</td>
-                    <td>$oraInizioValue - $oraFineValue</td>
-                    <td>$scommettitoreValue</td>
-                    <td>$risultatoValue</td>
-                    <td>$puntataValue &euro;</td>
-                    <td>$quotaValue</td>
-					<td>$vincitaValue &euro;</td>
-                    <td>$stato</td>
-                    <td>$esito</td>
-                    <td>$richiesta_vincita</td>
-                </tr>\n
-                ";
-            }
+				$id_scommessa = $id->nextSibling;
+				$id_scommessa_value = $id_scommessa->textContent;
+
+				$scommettitore = $id_scommessa->nextSibling;
+				$scommettitoreValue = $scommettitore->textContent;
+
+				if ($scommettitoreValue==$username) {
+
+					// Leggiamo il file xml contenente le partite di tennis per recuperare i dati relativi alla data e all'ora della partita su cui si e' scommesso
+					/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+					# Lettura file "tennis.xml"
+					$xmlString = "";
+					foreach ( file("fileXML/scommesseDisponibili/tennis.xml") as $node ) {
+						$xmlString .= trim($node);
+					}
+
+					$doc = new DOMdocument();
+					$doc->formatOutput = true;
+					$doc->loadXML($xmlString);
+					
+					if (!$doc->loadXML($xmlString)) {
+						die ("Error mentre si andava parsando il documento\n");
+					}
+					/////////////////////////////////////////////////////////////////////////
+
+					$scommesse = $doc->getElementsByTagName('scommessa');
+
+					foreach ($scommesse as $scommessa) {
+						$idPartita = $scommessa->firstChild;
+						$idPartitaValue = $idPartita->textContent;
+
+						// Controlliamo che l'id della scommessa sia uguale all'id della partita
+						// Se sono uguali significa che la scommessa fa riferimento a quella partita
+						if($idPartitaValue==$idValue) {
+							$nome = $idPartita->nextSibling;
+							$quotaTennis = $nome->nextSibling;
+
+							// Estraggo i dati relativi all'ora della partita
+							$ora = $quotaTennis->nextSibling;
+							$oraInizio = $ora->firstChild;
+							$oraInizioValue = $oraInizio->textContent;
+							$oraFine = $ora->lastChild;
+							$oraFineValue = $oraFine->textContent;
+
+							// Estraggo i dati relativi alla data in cui si giocs la partita
+							$data = $ora->nextSibling;
+							$giorno = $data->firstChild;
+							$giornoValue = $giorno->textContent;
+							$mese = $giorno->nextSibling;
+							$meseValue = $mese->textContent;
+							$anno = $data->lastChild;
+							$annoValue = $anno->textContent;
+
+							$anno_mese_giorno_partita = trim($annoValue)."-".trim($meseValue)."-".trim($giornoValue);
+
+							////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+							// Verifichiamo se la partita e' terminata confrontando la data e l'ora di fine della partita con la data e l'ora attuali
+							$current_date = date("Y-m-d");
+							$current_time = date("H:i:s");
+							
+							if (($current_date > $anno_mese_giorno_partita) || (($current_date == $anno_mese_giorno_partita) && ($current_time > $oraFineValue))) {
+								$stato = "Terminata";
+							}
+							else {
+								$stato = "-";
+							}
+							////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+							// Se la partita e' terminata, estraiamo il risultato
+							if ($stato == "Terminata") {
+								$puntata = $data->nextSibling;
+								$risultato = $puntata->nextSibling;
+								$puntiSquadraCasa = $risultato->firstChild;
+								$puntiSquadraCasaValue = $puntiSquadraCasa->textContent;
+								$puntiSquadraTrasferta = $risultato->lastChild;
+								$puntiSquadraTrasfertaValue = $puntiSquadraTrasferta->textContent;
+
+								// Dati estratti dalla scommessa piazzata dall'utente
+								$risultatoScommesso = $scommettitore->nextSibling;
+								$risultatoScommessoValue = $risultatoScommesso->textContent;
+
+								// Confrontiamo il risultato giocato col risultato effettivo della partita
+								$esito = "Persa";
+
+								if ($puntiSquadraCasaValue > $puntiSquadraTrasfertaValue) {
+									if ($risultatoScommessoValue=="1"){
+										$esito = "Vinta";
+									}
+								}
+								if ($puntiSquadraCasaValue < $puntiSquadraTrasfertaValue) {
+									if ($risultatoScommessoValue=="2"){
+										$esito = "Vinta";
+									}
+								}
+								
+							}
+							// La partita non e' terminata
+							else {
+								$esito = "In attesa";
+							}
+
+							break;
+						}
+					}
+				
+					//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+					$risultato = $scommettitore->nextSibling;
+					$risultatoValue = $risultato->textContent;
+
+					$puntata = $risultato->nextSibling;
+					$puntataValue = $puntata->textContent;
+
+					$tot_puntate = $tot_puntate + $puntataValue;
+
+					$quota = $puntata->nextSibling;
+					$quotaValue = $quota->textContent;
+
+					$vincita = $quota->nextSibling;
+					$vincitaValue = $vincita->textContent;
+
+					// Se la scommessa e' stata vinta ma ancora non e' stata pagata l'utente puo' richiedere l'accredito della vincita
+					if (($esito=="Vinta") && ($pagata=="0")) {
+						// form per accreditare i soldi vinti sul conto dell'utente
+						$richiesta_vincita = "
+						<form method=\"post\" action=\"pagamentoVincita.php\"> 
+						<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">$pagamento_effettuato</button>
+						<input type=\"hidden\" name=\"idScommessa\" value=\"$id_scommessa_value\">
+						<input type=\"hidden\" name=\"category\" value=\"scommesseTennis\">
+						<input type=\"hidden\" name=\"vincita\" value=\"$vincitaValue\">
+						</form>
+						";
+					}
+					else {
+						$richiesta_vincita = $pagamento_effettuato;
+					}
+
+
+					$elenco.=
+					"\n<tr>
+						<td>$idValue</td>
+						<td>$anno_mese_giorno_partita</td>
+						<td>$oraInizioValue - $oraFineValue</td>
+						<td>$scommettitoreValue</td>
+						<td>$risultatoValue</td>
+						<td>$puntataValue &euro;</td>
+						<td>$quotaValue</td>
+						<td>$vincitaValue &euro;</td>
+						<td>$stato</td>
+						<td>$esito</td>
+						<td>$richiesta_vincita</td>
+					</tr>\n
+					";
+				}
+			}
         }
 
         $elenco.="</tbody>\n</table>\n";
@@ -937,199 +956,205 @@
 
 			$scommessa = $scommesseIppica->item($i);
 
-			$pagata = $scommessa->getAttribute("pagata");
+			$e = $scommessa->getAttribute("eliminato");
 
-			if($pagata=="0"){
-				$pagamento_effettuato = "No";
-			}
-			else {
-				$pagamento_effettuato = "Si";
-			}
+			// Mostriamo la scommessa solo se non e' stata eliminata
+			if ($e == "0") {
 
-			// id della partita cui la scommessa fa riferimento
-			$id = $scommessa->firstChild;
-            $idValue = $id->textContent;
+				$pagata = $scommessa->getAttribute("pagata");
 
-			$id_scommessa = $id->nextSibling;
-			$id_scommessa_value = $id_scommessa->textContent;
-
-			$scommettitore = $id_scommessa->nextSibling;
-			$scommettitoreValue = $scommettitore->textContent;
-
-            if ($scommettitoreValue==$username) {
-
-				// Leggiamo il file xml contenente le corse di ippica per recuperare i dati relativi alla data e all'ora della partita su cui si e' scommesso
-				/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-				# Lettura file "ippica.xml"
-				$xmlString = "";
-				foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
-					$xmlString .= trim($node);
-				}
-
-				$doc = new DOMdocument();
-				$doc->formatOutput = true;
-				$doc->loadXML($xmlString);
-				
-				if (!$doc->loadXML($xmlString)) {
-					die ("Error mentre si andava parsando il documento\n");
-				}
-				/////////////////////////////////////////////////////////////////////////
-
-				$scommesse = $doc->getElementsByTagName('scommessa');
-
-				foreach ($scommesse as $scommessa) {
-					$idCorsa = $scommessa->firstChild;
-					$idCorsaValue = $idCorsa->textContent;
-
-					// Controlliamo che l'id della scommessa sia uguale all'id della partita
-					// Se sono uguali significa che la scommessa fa riferimento a quella partita
-					if($idCorsaValue==$idValue) {
-						$data = $idCorsa->nextSibling;
-						$ora = $data->nextSibling;
-
-						// Estraggo i dati relativi all'ora della partita
-						$oraInizio = $ora->firstChild;
-						$oraInizioValue = $oraInizio->textContent;
-						$oraFine = $ora->lastChild;
-						$oraFineValue = $oraFine->textContent;
-
-						// Estraggo i dati relativi alla data in cui si giocs la partita
-						$giorno = $data->firstChild;
-						$giornoValue = $giorno->textContent;
-						$mese = $giorno->nextSibling;
-						$meseValue = $mese->textContent;
-						$anno = $data->lastChild;
-						$annoValue = $anno->textContent;
-
-						$anno_mese_giorno_partita = trim($annoValue)."-".trim($meseValue)."-".trim($giornoValue);
-
-						////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-						// Verifichiamo se la partita e' terminata confrontando la data e l'ora di fine della partita con la data e l'ora attuali
-						$current_date = date("Y-m-d");
-						$current_time = date("H:i:s");
-
-						
-						if ( ($current_date > $anno_mese_giorno_partita) || (($current_date == $anno_mese_giorno_partita) && ($current_time > $oraFineValue)) ) {
-							$stato = "Terminata";
-						}
-						else {
-							$stato = "-";
-						}
-						////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-						// Se la partita e' terminata, estraiamo il risultato
-						if ($stato == "Terminata") {
-							$cavalli = $ora->nextSibling;
-							$distanza = $cavalli->nextSibling;
-							$puntata = $distanza->nextSibling;
-							$risultato = $puntata->nextSibling;
-
-							$primo = $risultato->firstChild;
-							// # cavallo arrivato per primo
-							$primoArrivatoValue = $primo->textContent;
-							$secondo = $primo->nextSibling;
-							// # cavallo arrivato per secondo
-							$secondoArrivatoValue = $secondo->textContent;
-							$terzo = $risultato->lastChild;
-							// # cavallo arrivato per terzo
-							$terzoArrivatoValue = $terzo->textContent;
-
-							// Dati estratti dalla scommessa piazzata dall'utente (file scommesseIppica.xml)
-							$risultatoScommesso = $scommettitore->nextSibling;
-							$primo = $risultatoScommesso->firstChild;
-							// # cavallo scommesso al primo posto
-							$primoScommessoValue = $primo->textContent;
-							$secondo = $primo->nextSibling;
-							// # cavallo scommesso al secondo posto
-							$secondoScommessoValue = $secondo->textContent;
-							$terzo = $risultatoScommesso->lastChild;
-							// # cavallo scommesso al terzo posto
-							$terzoScommessoValue = $terzo->textContent;
-
-							// Confrontiamo il risultato giocato col risultato effettivo della partita
-							$esito = "Persa";
-
-							if ($primoScommessoValue == $primoArrivatoValue) {
-									$esito = "Vinta";
-							}
-							if ($secondoScommessoValue == $secondoArrivatoValue) {
-								$esito = "Vinta";
-							}
-							if ($terzoScommessoValue == $terzoArrivatoValue) {
-								$esito = "Vinta";
-							}
-							
-							
-						}
-						// La partita non e' terminata
-						else {
-							$esito = "In attesa";
-						}
-
-						break;
-					}
-				}
-
-                $risultato = $scommettitore->nextSibling;
-                $primo = $risultato->firstChild;
-				$primoValue = $primo->textContent;
-				$secondo = $primo->nextSibling;
-				$secondoValue = $secondo->textContent;
-				$terzo = $risultato->lastChild;
-				$terzoValue = $terzo->textContent;
-
-				if($primoValue != " ") {
-					$risultatoValue = "Cavallo #".$primoValue." arriva 1&deg;";
-				}
-				elseif ($secondoValue != " ") {
-					$risultatoValue = "Cavallo #".$secondoValue." arriva 2&deg;";
+				if($pagata=="0"){
+					$pagamento_effettuato = "No";
 				}
 				else {
-					$risultatoValue = "Cavallo #".$terzoValue." arriva 3&deg;";
+					$pagamento_effettuato = "Si";
 				}
 
-                $puntata = $risultato->nextSibling;
-                $puntataValue = $puntata->textContent;
+				// id della partita cui la scommessa fa riferimento
+				$id = $scommessa->firstChild;
+				$idValue = $id->textContent;
 
-				$tot_puntate = $tot_puntate + $puntataValue;
+				$id_scommessa = $id->nextSibling;
+				$id_scommessa_value = $id_scommessa->textContent;
 
-				$quota = $puntata->nextSibling;
-				$quotaValue = $quota->textContent;
+				$scommettitore = $id_scommessa->nextSibling;
+				$scommettitoreValue = $scommettitore->textContent;
 
-				$vincita = $quota->nextSibling;
-				$vincitaValue = $vincita->textContent;
+				if ($scommettitoreValue==$username) {
 
-				// Se la scommessa e' stata vinta ma ancora non e' stata pagata l'utente puo' richiedere l'accredito della vincita
-				if (($esito=="Vinta") && ($pagata=="0")) {
-					// form per accreditare i soldi vinti sul conto dell'utente
-					$richiesta_vincita = "
-					<form method=\"post\" action=\"pagamentoVincita.php\"> 
-					<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">$pagamento_effettuato</button>
-					<input type=\"hidden\" name=\"idScommessa\" value=\"$id_scommessa_value\">
-					<input type=\"hidden\" name=\"category\" value=\"scommesseIppica\">
-					<input type=\"hidden\" name=\"vincita\" value=\"$vincitaValue\">
-					</form>
+					// Leggiamo il file xml contenente le corse di ippica per recuperare i dati relativi alla data e all'ora della partita su cui si e' scommesso
+					/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+					# Lettura file "ippica.xml"
+					$xmlString = "";
+					foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
+						$xmlString .= trim($node);
+					}
+
+					$doc = new DOMdocument();
+					$doc->formatOutput = true;
+					$doc->loadXML($xmlString);
+					
+					if (!$doc->loadXML($xmlString)) {
+						die ("Error mentre si andava parsando il documento\n");
+					}
+					/////////////////////////////////////////////////////////////////////////
+
+					$scommesse = $doc->getElementsByTagName('scommessa');
+
+					foreach ($scommesse as $scommessa) {
+						$idCorsa = $scommessa->firstChild;
+						$idCorsaValue = $idCorsa->textContent;
+
+						// Controlliamo che l'id della scommessa sia uguale all'id della partita
+						// Se sono uguali significa che la scommessa fa riferimento a quella partita
+						if($idCorsaValue==$idValue) {
+							$data = $idCorsa->nextSibling;
+							$ora = $data->nextSibling;
+
+							// Estraggo i dati relativi all'ora della partita
+							$oraInizio = $ora->firstChild;
+							$oraInizioValue = $oraInizio->textContent;
+							$oraFine = $ora->lastChild;
+							$oraFineValue = $oraFine->textContent;
+
+							// Estraggo i dati relativi alla data in cui si giocs la partita
+							$giorno = $data->firstChild;
+							$giornoValue = $giorno->textContent;
+							$mese = $giorno->nextSibling;
+							$meseValue = $mese->textContent;
+							$anno = $data->lastChild;
+							$annoValue = $anno->textContent;
+
+							$anno_mese_giorno_partita = trim($annoValue)."-".trim($meseValue)."-".trim($giornoValue);
+
+							////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+							// Verifichiamo se la partita e' terminata confrontando la data e l'ora di fine della partita con la data e l'ora attuali
+							$current_date = date("Y-m-d");
+							$current_time = date("H:i:s");
+
+							
+							if ( ($current_date > $anno_mese_giorno_partita) || (($current_date == $anno_mese_giorno_partita) && ($current_time > $oraFineValue)) ) {
+								$stato = "Terminata";
+							}
+							else {
+								$stato = "-";
+							}
+							////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+							// Se la partita e' terminata, estraiamo il risultato
+							if ($stato == "Terminata") {
+								$cavalli = $ora->nextSibling;
+								$distanza = $cavalli->nextSibling;
+								$puntata = $distanza->nextSibling;
+								$risultato = $puntata->nextSibling;
+
+								$primo = $risultato->firstChild;
+								// # cavallo arrivato per primo
+								$primoArrivatoValue = $primo->textContent;
+								$secondo = $primo->nextSibling;
+								// # cavallo arrivato per secondo
+								$secondoArrivatoValue = $secondo->textContent;
+								$terzo = $risultato->lastChild;
+								// # cavallo arrivato per terzo
+								$terzoArrivatoValue = $terzo->textContent;
+
+								// Dati estratti dalla scommessa piazzata dall'utente (file scommesseIppica.xml)
+								$risultatoScommesso = $scommettitore->nextSibling;
+								$primo = $risultatoScommesso->firstChild;
+								// # cavallo scommesso al primo posto
+								$primoScommessoValue = $primo->textContent;
+								$secondo = $primo->nextSibling;
+								// # cavallo scommesso al secondo posto
+								$secondoScommessoValue = $secondo->textContent;
+								$terzo = $risultatoScommesso->lastChild;
+								// # cavallo scommesso al terzo posto
+								$terzoScommessoValue = $terzo->textContent;
+
+								// Confrontiamo il risultato giocato col risultato effettivo della partita
+								$esito = "Persa";
+
+								if ($primoScommessoValue == $primoArrivatoValue) {
+										$esito = "Vinta";
+								}
+								if ($secondoScommessoValue == $secondoArrivatoValue) {
+									$esito = "Vinta";
+								}
+								if ($terzoScommessoValue == $terzoArrivatoValue) {
+									$esito = "Vinta";
+								}
+								
+								
+							}
+							// La partita non e' terminata
+							else {
+								$esito = "In attesa";
+							}
+
+							break;
+						}
+					}
+
+					$risultato = $scommettitore->nextSibling;
+					$primo = $risultato->firstChild;
+					$primoValue = $primo->textContent;
+					$secondo = $primo->nextSibling;
+					$secondoValue = $secondo->textContent;
+					$terzo = $risultato->lastChild;
+					$terzoValue = $terzo->textContent;
+
+					if($primoValue != " ") {
+						$risultatoValue = "Cavallo #".$primoValue." arriva 1&deg;";
+					}
+					elseif ($secondoValue != " ") {
+						$risultatoValue = "Cavallo #".$secondoValue." arriva 2&deg;";
+					}
+					else {
+						$risultatoValue = "Cavallo #".$terzoValue." arriva 3&deg;";
+					}
+
+					$puntata = $risultato->nextSibling;
+					$puntataValue = $puntata->textContent;
+
+					$tot_puntate = $tot_puntate + $puntataValue;
+
+					$quota = $puntata->nextSibling;
+					$quotaValue = $quota->textContent;
+
+					$vincita = $quota->nextSibling;
+					$vincitaValue = $vincita->textContent;
+
+					// Se la scommessa e' stata vinta ma ancora non e' stata pagata l'utente puo' richiedere l'accredito della vincita
+					if (($esito=="Vinta") && ($pagata=="0")) {
+						// form per accreditare i soldi vinti sul conto dell'utente
+						$richiesta_vincita = "
+						<form method=\"post\" action=\"pagamentoVincita.php\"> 
+						<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">$pagamento_effettuato</button>
+						<input type=\"hidden\" name=\"idScommessa\" value=\"$id_scommessa_value\">
+						<input type=\"hidden\" name=\"category\" value=\"scommesseIppica\">
+						<input type=\"hidden\" name=\"vincita\" value=\"$vincitaValue\">
+						</form>
+						";
+					}
+					else {
+						$richiesta_vincita = $pagamento_effettuato;
+					}
+
+					$elenco.=
+					"\n<tr>
+						<td>$idValue</td>
+						<td>$anno_mese_giorno_partita</td>
+						<td>$oraInizioValue - $oraFineValue</td>
+						<td>$scommettitoreValue</td>
+						<td>$risultatoValue</td>
+						<td>$puntataValue &euro;</td>
+						<td>$quotaValue</td>
+						<td>$vincitaValue &euro;</td>
+						<td>$stato</td>
+						<td>$esito</td>
+						<td>$richiesta_vincita</td>
+					</tr>\n
 					";
 				}
-				else {
-					$richiesta_vincita = $pagamento_effettuato;
-				}
-
-                $elenco.=
-                "\n<tr>
-                    <td>$idValue</td>
-					<td>$anno_mese_giorno_partita</td>
-					<td>$oraInizioValue - $oraFineValue</td>
-                    <td>$scommettitoreValue</td>
-                    <td>$risultatoValue</td>
-                    <td>$puntataValue &euro;</td>
-                    <td>$quotaValue</td>
-                    <td>$vincitaValue &euro;</td>
-                    <td>$stato</td>
-                    <td>$esito</td>
-					<td>$richiesta_vincita</td>
-                </tr>\n
-                ";
-            }
+			}
         }
 
         $elenco.="</tbody>\n</table>\n";
