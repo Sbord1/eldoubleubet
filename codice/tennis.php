@@ -3,6 +3,11 @@
 	error_reporting(E_ALL);
 
 	session_start();
+	
+	//se sei gestore appare un buttone per eliminare le scommesse
+	$eliminato_button="";
+	if ($_SESSION['tipologia']=="gestore"){
+		$eliminato_button="Elimina";}
 ?>
 
 <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -214,6 +219,63 @@ foreach ( file("fileXML/scommesseDisponibili/tennis.xml") as $node ) {
     $tennis = $doc-> documentElement-> childNodes;
     $lunghezza = $tennis->length;
    	
+   	//se premuto pulsante elimina, cambio attributo alla scommessa
+   	if (isset($_POST['elimina'])){
+   	
+   		$scommesse = $doc->getElementsByTagName('scommessa'); //ottengo lista di scommesse
+   		
+   		foreach ($scommesse as $s){
+   			if($s->childNodes[0]->nodeValue == $_POST['idPartita']){
+   				$s->setAttribute("eliminato","1");
+   			}
+   			
+		} //fine for each
+		
+		$doc->save("fileXML/scommesseDisponibili/tennis.xml");
+	
+		/////////////////////////////////////////////////////////////////
+		//ora devo cancellare scommessa nelle scommesse degli utenti
+		$xmlString2 = "";
+		foreach ( file("fileXML/scommesseUtenti/scommesseTennis.xml") as $node ) {
+			$xmlString2 .= trim($node);
+		}
+
+		$doc2 = new DOMdocument();
+		$doc2->loadXML($xmlString2);
+	
+		if (!$doc->loadXML($xmlString2)) {
+			die ("Error mentre si andava parsando il documento\n");
+		}
+		
+		$scommesseUtenti = $doc2->getElementsByTagName("scommessa"); //ottengo lista di scommesse utente
+		foreach ($scommesseUtenti as $su){
+			if($su->childNodes[0]->nodeValue == $_POST['idPartita']){
+			$nomeScommettitore = $su->childNodes[2]->nodeValue;
+			$puntataScommettitore = $su->childNodes[4]->nodeValue;
+			$su->setAttribute("eliminato","1");
+			}
+		}//fine for each
+		
+		require_once("./connection.php");
+					
+					//aggiorno credito utente
+  					$sqlQuery = "UPDATE $DBuser_table
+					set credito= credito + $puntataScommettitore
+					where username = \"$nomeScommettitore\"";
+					
+					$resultQ = mysqli_query($mysqliConnection, $sqlQuery);
+					
+					if (!$resultQ) {
+   						printf("Oops! La query inviata non ha avuto successo!\n");
+						exit();
+					}
+		
+		
+		$doc2->save("fileXML/scommesseUtenti/scommesseTennis.xml");	
+	}	//fine if elimina
+	
+	
+	
 	// Costruiamo i titoli delle colonne della tabella che conterra' le scommesse di tennis estratte da tennis.xml
 	$elenco = "<tr> 
 					<td class=\"head\"> ID </td>
@@ -231,7 +293,8 @@ foreach ( file("fileXML/scommesseDisponibili/tennis.xml") as $node ) {
    for ($i=0; $i<$lunghezza; $i++) {
 	
 		$scommessa = $tennis->item($i); 
-	
+		$eliminato = $scommessa->getAttribute("eliminato");
+		
 		$id = $scommessa->firstChild; 
 		$idNumber = $id->textContent;
 
@@ -272,6 +335,7 @@ foreach ( file("fileXML/scommesseDisponibili/tennis.xml") as $node ) {
         $anno_mese_giorno = trim($annoValue)."-".trim($meseValue)."-".trim($giornoValue);
 
         // cliccando sulla quota, mi rimanda alla pagina piazzaScommessa.php dove so quale quota ho cliccato e di quale squadra
+        if ($eliminato == "0"){
 		$elenco.="\n<tr>
 						<td>$idNumber</td>
                         <td>$anno_mese_giorno</td>
@@ -298,10 +362,23 @@ foreach ( file("fileXML/scommesseDisponibili/tennis.xml") as $node ) {
 								<input type=\"hidden\" name=\"giocatoreTrasferta\" value=\"$giocatoreTrasfertaValue\">
 								<input type=\"hidden\" name=\"quota\" value=\"$quota2Value\"> </form>
 						 </td>
-                         <td> $puntiGiocatoreCasaValue - $puntiGiocatoreTrasfertaValue </td>
-					</tr>\n";
+                         <td> $puntiGiocatoreCasaValue - $puntiGiocatoreTrasfertaValue </td>";
+                         
+						$current_date = date("Y-m-d");
+						$current_time = date("H:i:s");
+						//se evento non svolto mostro il bottone per eliminare
+						if ( ($current_date < $anno_mese_giorno) || (($current_date == $anno_mese_giorno) && ($current_time < $oraFineValue)) ) {
+							
+						$elenco.="<td> 
+								<form method=\"post\" action=\"\"> 
+								<button type=\"submit\" name=\"elimina\" value=\"elimina\" class=\"link-button\">  $eliminato_button  </button>
+								<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\"> </form>
+						</td>";
+						}
+						$elenco.="</tr>\n";
 
    }
+}
 
 echo "$elenco";
 echo "</tbody>\n</table>";
