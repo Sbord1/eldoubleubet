@@ -4,6 +4,9 @@
 <!ELEMENT tennis (scommessa*)>
 <!ELEMENT scommessa (id, nome, quotaTennis, ora, data, puntata, risultato)>
 
+<!ATTLIST scommessa
+              eliminato (1 | 0) "0"> 
+
 <!ELEMENT id (#PCDATA)>
 
 <!ELEMENT nome (giocatoreCasa, giocatoreTrasferta)>
