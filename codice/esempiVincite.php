@@ -407,7 +407,6 @@
                     <td>$vincitaValue &euro;</td>
                     <td>$stato</td>
                     <td>$esito</td>
-                    <td>$richiesta_vincita</td>
                 </tr>\n
                 ";
            }
@@ -789,7 +788,6 @@
 					<td>$vincitaValue &euro;</td>
                     <td>$stato</td>
                     <td>$esito</td>
-                    <td>$richiesta_vincita</td>
                 </tr>\n
                 ";
             }
@@ -1007,7 +1005,6 @@
                     <td>$vincitaValue &euro;</td>
                     <td>$stato</td>
                     <td>$esito</td>
-					<td>$richiesta_vincita</td>
                 </tr>\n
                 ";
             }
