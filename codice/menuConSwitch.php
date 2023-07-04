@@ -121,7 +121,7 @@ else {
         |
 	      <li><a href="proposteScommessa.php">Inserimento scommessa</a></li>
         |
-        <li><a href="#">Scommesse eliminate</a></li>
+        <li><a href="scommesseEliminate.php">Scommesse eliminate</a></li>
         |
         <li><a href="inserisciRisultati.php">Inserisci risultati</a></li>
         |
