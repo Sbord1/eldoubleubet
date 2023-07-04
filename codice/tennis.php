@@ -272,21 +272,6 @@ foreach ( file("fileXML/scommesseDisponibili/tennis.xml") as $node ) {
 			}
 		}//fine for each
 		
-		require_once("./connection.php");
-					
-					//aggiorno credito utente
-  					$sqlQuery = "UPDATE $DBuser_table
-					set credito= credito + $puntataScommettitore
-					where username = \"$nomeScommettitore\"";
-					
-					$resultQ = mysqli_query($mysqliConnection, $sqlQuery);
-					
-					if (!$resultQ) {
-   						printf("Oops! La query inviata non ha avuto successo!\n");
-						exit();
-					}
-		
-		
 		$doc2->save("fileXML/scommesseUtenti/scommesseTennis.xml");	
 	}	//fine if elimina
 	
