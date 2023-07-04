@@ -239,6 +239,7 @@
                             <td class=\"head\">Quota</td>
                             <td class=\"head\">Potenziale Vincita</td>
                             <td class=\"head\">Esito</td>
+                            <td class=\"head\">Eliminata</td>
 					    </tr>\n";
 
 		$tot_puntate_calcio = 0;
@@ -247,6 +248,15 @@
         for ($i=0; $i<$lunghezza; $i++) {
 
 			$scommessa = $scommesseCalcio->item($i);
+
+            $e = $scommessa->getAttribute("eliminato");
+
+            if($e=="0") {
+                $eliminata = "No";
+            }
+            elseif($e=="1"){
+                $eliminata = "Si";
+            }
 
             // Se una scommessa e' stata pagata allora significa che e' stata vinta
             // --> utilizziamo l'attributo "pagata" per determinare se un utente ha vinto una scommessa oppure no
@@ -301,6 +311,7 @@
                     <td>$quotaValue</td>
                     <td>$vincitaValue &euro;</td>
                     <td>$esito</td>
+                    <td>$eliminata</td>
                 </tr>\n
                 ";
 
@@ -367,6 +378,7 @@
                             <td class=\"head\">Quota</td>
                             <td class=\"head\">Potenziale Vincita</td>
                             <td class=\"head\">Esito</td>
+                            <td class=\"head\">Eliminata</td>
 					    </tr>\n";
 
 		$tot_puntate_basket = 0;
@@ -375,6 +387,15 @@
         for ($i=0; $i<$lunghezza; $i++) {
 
 			$scommessa = $scommesseBasket->item($i);
+
+            $e = $scommessa->getAttribute("eliminato");
+
+            if($e=="0") {
+                $eliminata = "No";
+            }
+            elseif($e=="1"){
+                $eliminata = "Si";
+            }
 
             // Se una scommessa e' stata pagata allora significa che e' stata vinta
             // --> utilizziamo l'attributo "pagata" per determinare se un utente ha vinto una scommessa oppure no
@@ -429,6 +450,7 @@
                     <td>$quotaValue</td>
                     <td>$vincitaValue &euro;</td>
                     <td>$esito</td>
+                    <td>$eliminata</td>
                 </tr>\n
                 ";
 
@@ -492,6 +514,7 @@
                             <td class=\"head\">Quota</td>
                             <td class=\"head\">Potenziale Vincita</td>
                             <td class=\"head\">Esito</td>
+                            <td class=\"head\">Eliminata</td>
 					    </tr>\n";
 
 		$tot_puntate_tennis = 0;
@@ -500,6 +523,15 @@
         for ($i=0; $i<$lunghezza; $i++) {
 
 			$scommessa = $scommesseTennis->item($i);
+
+            $e = $scommessa->getAttribute("eliminato");
+
+            if($e=="0") {
+                $eliminata = "No";
+            }
+            elseif($e=="1"){
+                $eliminata = "Si";
+            }
 
             // Se una scommessa e' stata pagata allora significa che e' stata vinta
             // --> utilizziamo l'attributo "pagata" per determinare se un utente ha vinto una scommessa oppure no
@@ -554,6 +586,7 @@
                     <td>$quotaValue</td>
                     <td>$vincitaValue &euro;</td>
                     <td>$esito</td>
+                    <td>$eliminata</td>
                 </tr>\n
                 ";
 
@@ -616,6 +649,7 @@
                             <td class=\"head\">Quota</td>
                             <td class=\"head\">Potenziale Vincita</td>
                             <td class=\"head\">Esito</td>
+                            <td class=\"head\">Eliminata</td>
 					    </tr>\n";
 
 		$tot_puntate_ippica = 0;
@@ -624,6 +658,15 @@
         for ($i=0; $i<$lunghezza; $i++) {
 
 			$scommessa = $scommesseIppica->item($i);
+
+            $e = $scommessa->getAttribute("eliminato");
+
+            if($e=="0") {
+                $eliminata = "No";
+            }
+            elseif($e=="1"){
+                $eliminata = "Si";
+            }
 
             // Se una scommessa e' stata pagata allora significa che e' stata vinta
             // --> utilizziamo l'attributo "pagata" per determinare se un utente ha vinto una scommessa oppure no
@@ -693,6 +736,7 @@
                     <td>$quotaValue</td>
                     <td>$vincitaValue &euro;</td>
                     <td>$esito</td>
+                    <td>$eliminata</td>
                 </tr>\n
                 ";
 
