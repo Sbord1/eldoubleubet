@@ -2,7 +2,7 @@
 <!DOCTYPE calcio SYSTEM "calcio.dtd">
 <!-- Esempi di 3 partite di calcio -->
 <calcio>
-  <scommessa>
+  <scommessa terminato="0">
     <id> 1 </id>
     <nome>
       <squadraCasa> Milan </squadraCasa>
@@ -35,7 +35,7 @@
       <puntiSquadraTrasferta>1</puntiSquadraTrasferta>
     </risultato>
   </scommessa>
-  <scommessa>
+  <scommessa terminato="0">
     <id> 2 </id>
     <nome>
       <squadraCasa> Roma </squadraCasa>
@@ -68,7 +68,7 @@
       <puntiSquadraTrasferta>2</puntiSquadraTrasferta>
     </risultato>
   </scommessa>
-  <scommessa>
+  <scommessa terminato="0">
     <id> 3 </id>
     <nome>
       <squadraCasa> Juventus </squadraCasa>
@@ -101,7 +101,7 @@
       <puntiSquadraTrasferta>2</puntiSquadraTrasferta>
     </risultato>
   </scommessa>
-  <scommessa>
+  <scommessa terminato="0">
     <id> 4 </id>
     <nome>
       <squadraCasa> Milan </squadraCasa>
@@ -134,7 +134,7 @@
       <puntiSquadraTrasferta></puntiSquadraTrasferta>
     </risultato>
   </scommessa>
-    <scommessa>
+    <scommessa terminato="0">
     <id> 5 </id>
     <nome>
       <squadraCasa> Juventus </squadraCasa>
