@@ -90,7 +90,7 @@ else {
         |
         <li><a href="proposteScommessa.php">Inserimento scommessa</a></li>
         |
-        <li><a href="#">Riepilogo</a></li>
+        <li><a href="riepilogoGestore.php">Riepilogo</a></li>
         |
         <li><a href="inserisciRisultati.php">Inserisci risultati</a></li>
       </ul>
