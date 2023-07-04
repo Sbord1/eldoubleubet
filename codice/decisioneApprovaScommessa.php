@@ -1,5 +1,7 @@
 <?php 
-		session_start();
+	session_start();
+	
+
 		//controllo se ho cliccato il bottone per rifiutare o accettare proposta
 		//Se accettata devo inserirla nell'apposito file xml e rimuovere la proposta nel file xml delle proposte
 		if (isset($_POST['accetta']) || (isset($_POST['rifiuta']))){
@@ -522,6 +524,8 @@
 				$cavalloTerzo->appendChild($quoteTerzo);
 			$cavalli->appendChild($cavalloTerzo);
 			
+		
+			
 			$cavalloQuarto = $doc->CreateElement("cavallo"); //quarto cavallo
 				$nomeQuarto = $doc->createElement("nome",$_POST['nomeQuarto']);
 				$cavalloQuarto->appendChild($nomeQuarto);
@@ -594,7 +598,7 @@
 					$quoteOttavo->appendChild($quotaOttavo2);
 					$quotaOttavo3 = $doc->createElement("quota3",$_POST['quotaOttavo3']);
 					$quoteOttavo->appendChild($quotaOttavo3);
-				$cavalloOttavo->appendChild($quotePrimo);
+				$cavalloOttavo->appendChild($quoteOttavo);
 			$cavalli->appendChild($cavalloOttavo);
 		$scommessa->appendChild($cavalli);
 	
@@ -632,22 +636,22 @@
 					} //FINE ACCETTA
 			
 					//ora cancello la proposta
-					$xml_file_name = "fileXML/proposte/proposteScommessaIppica.xml";
-					$xmlString="";
-					foreach ( file("$xml_file_name") as $node ) {
-						$xmlString .= trim($node);
+					$xml_file_name2 = "fileXML/proposte/proposteScommessaIppica.xml";
+					$xmlString2="";
+					foreach ( file("$xml_file_name2") as $node ) {
+						$xmlString2 .= trim($node);
 					}
 		
-					$doc = new DOMdocument();
-					$doc->loadXML($xmlString);
-					$proposteScommessaIppica = $doc->documentElement;
+					$doc2 = new DOMdocument();
+					$doc2->loadXML($xmlString2);
+					$proposteScommessaIppica2 = $doc2->documentElement;
 
-					if (!$doc->loadXML($xmlString)) {
+					if (!$doc2->loadXML($xmlString2)) {
 						die ("Error mentre si andava parsando il documento\n");
 					}
 					
 					//trovo il nodo in questione
-					$lista = $doc->getElementsByTagName("id");
+					$lista = $doc2->getElementsByTagName("id");
 					foreach ($lista as $l){
 						if ($l->nodeValue == $_POST['id']){
 							$l->parentNode->parentNode->removeChild($l->parentNode);
@@ -655,7 +659,7 @@
 							
 					}
 			
-					$doc->save($xml_file_name);
+					$doc2->save($xml_file_name2);
 					
 		
 				break;
@@ -811,7 +815,8 @@
 			}
 	?>
 	</h3>
-    
+    <table border="1" cellpadding="5" style="border-color: black; margin-left: auto; margin-right: auto;">
+    	<tbody>
     	
     <h3 style="text-align: center;">
             <a href="inizio.php" alt="Home">Homepage</a>
