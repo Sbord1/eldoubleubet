@@ -2,7 +2,7 @@
 <!DOCTYPE basket SYSTEM "basket.dtd">
 <!-- Esempi di 3 partite di basket -->
 <basket>
-  <scommessa>
+  <scommessa terminato="0">
     <id> 1 </id>
     <nome>
       <squadraCasa> Boston Celtics </squadraCasa>
@@ -30,7 +30,7 @@
       <puntiSquadraTrasferta> 45 </puntiSquadraTrasferta>
     </risultato>
   </scommessa>
-  <scommessa>
+  <scommessa terminato="0">
     <id> 2 </id>
     <nome>
       <squadraCasa> Philadelphia 76ers </squadraCasa>
@@ -58,7 +58,7 @@
       <puntiSquadraTrasferta> 102 </puntiSquadraTrasferta>
     </risultato>
   </scommessa>
-  <scommessa>
+  <scommessa terminato="0">
     <id> 3 </id>
     <nome>
       <squadraCasa> Toronto Raptors </squadraCasa>
