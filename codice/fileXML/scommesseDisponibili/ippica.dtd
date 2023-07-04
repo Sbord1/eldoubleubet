@@ -4,6 +4,9 @@
 
 <!ELEMENT scommessa (id, data, ora, cavalli, distanza, puntata, risultato)>
 
+<!ATTLIST scommessa
+              eliminato (1 | 0) "0"> 
+
 <!ELEMENT data (giorno, mese, anno)>
 
 <!ELEMENT ora (oraInizio, oraFine)>
