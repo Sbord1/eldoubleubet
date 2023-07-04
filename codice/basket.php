@@ -6,7 +6,7 @@
 	
 	//se sei gestore appare un buttone per eliminare le scommesse
 	$eliminato_button="";
-	if ($_SESSION['tipologia']=="gestore"){
+	if (isset($_SESSION['tipologia']) && $_SESSION['tipologia']=="gestore"){
 		$eliminato_button="Elimina";}
 ?>
 
@@ -253,10 +253,8 @@ foreach ( file("fileXML/scommesseDisponibili/basket.xml") as $node ) {
 			$nomeScommettitore = $su->childNodes[2]->nodeValue;
 			$puntataScommettitore = $su->childNodes[4]->nodeValue;
 			$su->setAttribute("eliminato","1");
-			}
-		}//fine for each
-		
-		require_once("./connection.php");
+			
+			require_once("./connection.php");
 					
 					//aggiorno credito utente
   					$sqlQuery = "UPDATE $DBuser_table
@@ -270,6 +268,11 @@ foreach ( file("fileXML/scommesseDisponibili/basket.xml") as $node ) {
 						exit();
 					}
 					
+					
+			}
+		}//fine for each
+		
+		
 		$doc2->save("fileXML/scommesseUtenti/scommesseBasket.xml");	
 	}	//fine if elimina
 	
