@@ -21,7 +21,7 @@ if (!isset($_SESSION['tipologia'])) { //no login
         |
         <li><a href="ippica.php">Ippica</a></li>
         |
-        <li><a href="#">Vincite</a></li>
+        <li><a href="esempiVincite.php">Vincite</a></li>
       </ul>
     </nav>
 
@@ -92,7 +92,7 @@ else {
         |
         <li><a href="#">Riepilogo</a></li>
         |
-        <li><a href="#">Inserisci risultati</a></li>
+        <li><a href="inserisciRisultati.php">Inserisci risultati</a></li>
       </ul>
     </nav>
 
