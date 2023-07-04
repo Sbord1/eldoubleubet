@@ -53,7 +53,7 @@
 			//ciclo per ottenere info su tutte le proposte di una stessa categoria
 			for ($i=0; $i<$lunghezza; $i++) {
 
-				$proposteScommessa = $proposteScommessaCalcio->item($i); //è uno dei record
+				$proposteScommessa = $proposteScommessaCalcio->item($i); //Ã‹ uno dei record
 	
 				$id = $proposteScommessa->firstChild; //id primo child
 				$idNumber = $id->textContent;
@@ -183,7 +183,7 @@
 			//ciclo per ottenere info su tutte le proposte di una stessa categoria
 			for ($i=0; $i<$lunghezza; $i++) {
 
-				$proposteScommessa = $proposteScommessaBasket->item($i); //è uno dei record
+				$proposteScommessa = $proposteScommessaBasket->item($i); //Ã‹ uno dei record
 	
 				$id = $proposteScommessa->firstChild; 
 				$idNumber = $id->textContent;
@@ -284,7 +284,7 @@
 			//ciclo per ottenere info su tutte le proposte di una stessa categoria
 			for ($i=0; $i<$lunghezza; $i++) {
 
-				$proposteScommessa = $proposteScommessaTennis->item($i); //è uno dei record
+				$proposteScommessa = $proposteScommessaTennis->item($i); //Ã‹ uno dei record
 	 
 	
 				$id = $proposteScommessa->firstChild; 
@@ -390,7 +390,7 @@
 			//ciclo per ottenere info su tutte le proposte di una stessa categoria
 			for ($i=0; $i<$lunghezza; $i++) {
 
-				$proposteScommessa = $proposteScommessaIppica->item($i); //è uno dei record
+				$proposteScommessa = $proposteScommessaIppica->item($i); //Ã‹ uno dei record
 	
 	
 				$id = $proposteScommessa->firstChild; 
@@ -533,7 +533,7 @@
 				
 				$utente = $proposteScommessa->lastChild;
 				$utenteValue = $utente->textContent;
-
+				
 				// cliccando sulla quota, mi rimanda alla pagina piazzaScommessa.php dove so quale quota ho cliccato e di quale squadra
 				$elenco.="\n<tr>
 				<td rowspan=\"8\">$idNumber</td>
@@ -580,7 +580,7 @@
 									<input type=\"hidden\" name=\"numeroQuarto\" value=\"$numeroCavallo4Value\">
 									<input type=\"hidden\" name=\"quotaQuarto1\" value=\"$quoteCavallo4_quota1Value\">
 									<input type=\"hidden\" name=\"quotaQuarto2\" value=\"$quoteCavallo4_quota2Value\">
-									<input type=\"hidden\" name=\"quoataQuarto3\" value=\"$quoteCavallo4_quota3Value\">
+									<input type=\"hidden\" name=\"quotaQuarto3\" value=\"$quoteCavallo4_quota3Value\">
 									
 									<input type=\"hidden\" name=\"nomeQuinto\" value=\"$nomeCavallo5Value\">
 									<input type=\"hidden\" name=\"numeroQuinto\" value=\"$numeroCavallo5Value\">
@@ -619,6 +619,7 @@
 					<td> $quoteCavallo2_quota1Value </td>
 					<td> $quoteCavallo2_quota2Value </td>
 					<td> $quoteCavallo2_quota3Value </td>
+				
 				</tr>\n
 
 				<tr>
@@ -703,12 +704,13 @@
 		
 
 		.tablecenter{
-					padding: 10px;
-					margin-right: auto;
-					margin-left: auto;
-					width: 75%;
-					
-					}
+			padding: 10px;
+			margin-right: auto;
+			margin-left: auto;
+			width: 75%;
+			padding-bottom: 15px;
+            border: 1px solid black;
+		}
 		.link-button {
   					background: none;
   					border: none;
@@ -810,6 +812,11 @@
             padding: 10px;
             text-align: center;
             }
+            tr {
+	
+			height: 30px;
+			text-align:center;
+		}
        
   
 		</style>
