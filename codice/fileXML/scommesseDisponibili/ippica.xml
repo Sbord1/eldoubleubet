@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ippica SYSTEM "ippica.dtd">
 <ippica>
-  <scommessa>
+  <scommessa eliminato="0">
     <id>1</id>
     <data>
       <giorno>18</giorno>
@@ -97,7 +97,7 @@
       <terzo></terzo>
     </risultato>
   </scommessa>
-  <scommessa>
+  <scommessa eliminato="0">
     <id>2</id>
     <data>
       <giorno>14</giorno>
