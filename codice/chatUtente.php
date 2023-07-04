@@ -71,7 +71,7 @@ for ($i=0; $i<$elementi->length; $i++) {
 // Comparison function per ordinare i messaggi in ordine cronologico
 function date_compare($element1, $element2) {
     // We use strtotime to convert given time string to a timestamp object. Once we have timestamps, we subtract them to decide greater.
-    // Il terzo elemento e' datetime
+    // Il quarto elemento e' datetime
     $datetime1 = strtotime($element1[3]);
     $datetime2 = strtotime($element2[3]);
     return $datetime1 - $datetime2;
