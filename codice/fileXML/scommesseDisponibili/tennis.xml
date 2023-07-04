@@ -2,7 +2,7 @@
 <!DOCTYPE tennis SYSTEM "tennis.dtd">
 <!-- Esempi di 3 partite di tennis -->
 <tennis>
- <scommessa>
+ <scommessa eliminato="0">
   	<id> 1 </id>
 	<nome>
 		<giocatoreCasa> Alcaraz C. </giocatoreCasa>
@@ -30,7 +30,7 @@
 		 <puntiGiocatoreTrasferta> 3 </puntiGiocatoreTrasferta>
 	 </risultato>
 </scommessa>
-<scommessa>
+<scommessa eliminato="0">
   	<id> 2 </id>
 	<nome>
 		<giocatoreCasa> Medvedev D. </giocatoreCasa>
@@ -58,7 +58,7 @@
 		 <puntiGiocatoreTrasferta> 2 </puntiGiocatoreTrasferta>
 	 </risultato>
 </scommessa>
-<scommessa>
+<scommessa eliminato="0">
   	<id> 3 </id>
 	<nome>
 		<giocatoreCasa> Rune H. </giocatoreCasa>
