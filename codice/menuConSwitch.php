@@ -93,8 +93,6 @@ else {
         <li><a href="riepilogoGestore.php">Riepilogo</a></li>
         |
         <li><a href="inserisciRisultati.php">Inserisci risultati</a></li>
-        |
-        <li><a href="#">Elimina scommesse</a></li>
       </ul>
     </nav>
 
@@ -119,7 +117,7 @@ else {
         |
         <li><a href="approvaScommessa.php">Approva scommesse</a></li>
         |
-	      <li><a href="proposteScommessa.php">Inserimento scommessa</a></li>
+	<li><a href="proposteScommessa.php">Inserimento scommessa</a></li>
         |
         <li><a href="scommesseEliminate.php">Scommesse eliminate</a></li>
         |
