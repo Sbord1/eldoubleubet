@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE scommesseBasket SYSTEM "scommesseBasket.dtd">
-<!-- Esempi di 3 scommesse di tennis -->
+<!-- Esempi di 3 scommesse di basket -->
 <scommesseBasket>
   <scommessa eliminato="0" pagata="0">
     <idPartita>1</idPartita>
