@@ -32,10 +32,10 @@ if (!isset($_SESSION['accessoPermesso'])) header('Location: loginPage.html');
 		
 		
 		//Inserisco alla fine la nuova richiesta
-		$proposteScommessa = $doc->createElement("proposteScommessa");
+		$propostaScommessa = $doc->createElement("propostaScommessa");
 	
 		$id = $doc->createElement("id","$h1"); //creo elemento id
-		$proposteScommessa->appendChild($id);
+		$propostaScommessa->appendChild($id);
 		
 		//calcolo data
 		$giornoValue = date("d",strtotime($_POST['data']));
@@ -50,7 +50,7 @@ if (!isset($_SESSION['accessoPermesso'])) header('Location: loginPage.html');
 		$data->appendChild($mese);
 		$anno = $doc->createElement("anno","$annoValue");
 		$data->appendChild($anno);
-		$proposteScommessa->appendChild($data);
+		$propostaScommessa->appendChild($data);
 		
 			
 		$ora = $doc->createElement("ora"); //creo elemento ora
@@ -58,7 +58,7 @@ if (!isset($_SESSION['accessoPermesso'])) header('Location: loginPage.html');
 		$ora->appendChild($oraInizio);
 		$oraFine = $doc->createElement("oraFine",$_POST['oraFine']);
 		$ora->appendChild($oraFine);
-		$proposteScommessa->appendChild($ora);
+		$propostaScommessa->appendChild($ora);
 	
 	
 		$cavalli = $doc->createElement("cavalli"); //creo elemento cavalli
@@ -181,13 +181,13 @@ if (!isset($_SESSION['accessoPermesso'])) header('Location: loginPage.html');
 					$quoteOttavo->appendChild($quotaOttavo2);
 					$quotaOttavo3 = $doc->createElement("quota3",$_POST['quotaOttavo3']);
 					$quoteOttavo->appendChild($quotaOttavo3);
-				$cavalloOttavo->appendChild($quotePrimo);
+				$cavalloOttavo->appendChild($quoteOttavo);
 			$cavalli->appendChild($cavalloOttavo);
-		$proposteScommessa->appendChild($cavalli);
+		$propostaScommessa->appendChild($cavalli);
 	
 	
 		$distanza = $doc->createElement("distanza",$_POST['distanza']); //creo elemento distanza
-		$proposteScommessa->appendChild($distanza);
+		$propostaScommessa->appendChild($distanza);
 				
 
 		$puntata = $doc->createElement("puntata"); //creo elemento puntata
@@ -195,16 +195,16 @@ if (!isset($_SESSION['accessoPermesso'])) header('Location: loginPage.html');
 		$puntata->appendChild($minima);
 		$massima = $doc->createElement("puntata","9999");
 		$puntata->appendChild($massima);
-		$proposteScommessa->appendChild($puntata);
+		$propostaScommessa->appendChild($puntata);
 	
 			
 	
 		$utente = $doc->createElement("utente",$_SESSION['userName']); //creo elemento utente
-		$proposteScommessa->appendChild($utente);
+		$propostaScommessa->appendChild($utente);
 		
 		
 				
-		$proposteScommessaIppica->appendChild($proposteScommessa);
+		$proposteScommessaIppica->appendChild($propostaScommessa);
 	
 
 		# Salvataggio del file XML
