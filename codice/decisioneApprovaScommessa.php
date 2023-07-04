@@ -39,7 +39,8 @@
 		
 						//Inserisco alla fine la nuova richiesta
 						$scommessa = $doc->createElement("scommessa");
-				
+						$scommessa ->setAttribute("eliminato","0");
+						
 						$id = $doc->createElement("id","$h1");
 						$scommessa->appendChild($id);
 		
@@ -185,7 +186,8 @@
 		
 					//Inserisco alla fine la nuova richiesta
 					$scommessa = $doc->createElement("scommessa");
-	
+					$scommessa->setAttribute("eliminato","0");
+					
 					$id = $doc->createElement("id","$h1"); //creo elemento id
 					$scommessa->appendChild($id);
 		
@@ -309,7 +311,7 @@
 				
 					$tennis = $doc->documentElement; //root
 					$lunghezza = $tennis->childNodes->length;  //lunghezza corrisponde a quante richieste ci sono
-		
+	
 					//Ottengo l'id dell'ultimo nodo, questo perchè il nuovo nodo deve avere id+1
 					$h1 = $doc->getElementsByTagName("id")[$lunghezza-1]->nodeValue;
 					$h1 = $h1 + 1;
@@ -317,7 +319,8 @@
 		
 					//Inserisco alla fine la nuova richiesta
 					$scommessa = $doc->createElement("scommessa");
-	
+					$scommessa->setAttribute("eliminato","0");
+					
 					$id = $doc->createElement("id","$h1"); //creo elemento id
 					$scommessa->appendChild($id);
 		
@@ -448,7 +451,8 @@
 		
 		//Inserisco alla fine la nuova richiesta
 		$scommessa = $doc->createElement("scommessa");
-	
+		$scommessa->setAttribute("eliminato","0");
+		
 		$id = $doc->createElement("id","$h1"); //creo elemento id
 		$scommessa->appendChild($id);
 		
