@@ -2,16 +2,19 @@
 
 <!ELEMENT scommesseIppica (scommessa*)>
 
-<!ELEMENT scommessa (id, scommettitore, risultato, puntata)>
+<!ELEMENT scommessa (idPartita, idScommessa, scommettitore, risultato, puntata, quota, vincita)>
 
 <!ATTLIST scommessa
-            eliminato (0 | 1) "0">
+            eliminato (0 | 1) "0"
+            pagata (0 | 1) "0">
 
-<!ELEMENT risultato (primo, secondo, terzo)>
+<!ELEMENT idPartita (#PCDATA)>
 
-<!ELEMENT id (#PCDATA)>
+<!ELEMENT idScommessa (#PCDATA)>
 
 <!ELEMENT scommettitore (#PCDATA)>
+
+<!ELEMENT risultato (primo, secondo, terzo)>
 
 <!ELEMENT primo (#PCDATA)>
 
@@ -20,6 +23,11 @@
 <!ELEMENT terzo (#PCDATA)>
 
 <!ELEMENT puntata (#PCDATA)>
+
+<!ELEMENT quota (#PCDATA)>
+
+<!ELEMENT vincita (#PCDATA)>
+
 
 
 
