@@ -3,7 +3,7 @@
 <!-- Esempio di 1 proposta di partita di tennis dall'utente mario -->
 
 <proposteScommessaTennis>
- <proposteScommessa>
+ <propostaScommessa>
   	<id> 10 </id>
 	<nome>
 		<giocatoreCasa> Fritz T. </giocatoreCasa>
@@ -27,5 +27,5 @@
 		    <massima> 9999 </massima>
 	</puntata>
 	<utente> mario </utente>
-</proposteScommessa>
+</propostaScommessa>
 </proposteScommessaTennis>
