@@ -376,9 +376,9 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
                     <td>$squadraCasaValue - $squadraTrasfertaValue</td>
                     <td>
                         <form method=\"post\" action=\"aggiuntaRisultato.php\"> 
-                        <input type=\"text\" name=\"risultato1\" value=\"29\" minlength=\"2\" maxlength=\"3\" size=\"1\">
+                        <input type=\"text\" name=\"risultato1\" value=\"29\" minlength=\"2\" maxlength=\"3\" size=\"3\">
                         -
-                        <input type=\"text\" name=\"risultato2\" value=\"45\" minlength=\"2\" maxlength=\"3\" size=\"1\">
+                        <input type=\"text\" name=\"risultato2\" value=\"45\" minlength=\"2\" maxlength=\"3\" size=\"3\">
                         <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">Inserisci</button>
                         <input type=\"hidden\" name=\"category\" value=\"basket\">
                         <input type=\"hidden\" name=\"idPartita\" value=\"$idPartitaValue\">
