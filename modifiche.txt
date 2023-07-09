@@ -1,6 +1,6 @@
 Modifiche da fare:
 
-- aggiungere i seguenti dati nella tabella degli utenti e richiederli in fase di regsitrazione:
+[done] aggiungere i seguenti dati nella tabella degli utenti e richiederli in fase di regsitrazione:
   indirizzo, telefono, email, codice fiscale (con controllo tramite espressione regolare)
 
 - controllare che l'username sia univoco in fase di registrazione;
