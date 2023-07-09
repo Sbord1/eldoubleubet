@@ -305,8 +305,11 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 					<td class=\"head\"> Risultato </td>
 					</tr>\n";
 
+	$current_date = date("Y-m-d");
+	$current_time = date("H:i:s");
+
 	//ciclo per ottenere info su tutte le scommesse di calcio
-   for ($i=0; $i<$lunghezza; $i++) {
+    for ($i=0; $i<$lunghezza; $i++) {
 	
 		$scommessa = $calcio->item($i); //e' uno dei record
 		$eliminato = $scommessa->getAttribute("eliminato");
@@ -364,11 +367,15 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 		$puntiSquadraTrasfertaValue = $puntiSquadraTrasferta->textContent;
 
 		$anno_mese_giorno = trim($annoValue)."-".trim($meseValue)."-".trim($giornoValue);
+
+
 	
 
 // cliccando sulla quota, mi rimanda alla pagina piazzaScommessa.php dove so quale quota ho cliccato e di quale squadra
-		if ($eliminato == "0"){
-		$elenco.="\n<tr>
+	if ($eliminato == "0"){
+			// Possiamo scommettere solo su partite non ancora iniziate
+			if (($current_date < $anno_mese_giorno) || (($current_date==$anno_mese_giorno) && ($current_time < $oraInizioValue))) {
+					$elenco.="\n<tr>
 						<td>$idNumber</td>
 						<td>$anno_mese_giorno</td>
 						<td> $oraInizioValue </td>
@@ -446,18 +453,36 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 						</td>
 						<td> $puntiSquadraCasaValue - $puntiSquadraTrasfertaValue </td>";
 						
-						$current_date = date("Y-m-d");
-						$current_time = date("H:i:s");
+						
 						//se evento non svolto mostro il bottone per eliminare
-						if ( ($current_date < $anno_mese_giorno) || (($current_date == $anno_mese_giorno) && ($current_time < $oraFineValue)) ) {
-							
 						$elenco.="<td> 
 								<form method=\"post\" action=\"\"> 
 								<button type=\"submit\" name=\"elimina\" value=\"elimina\" class=\"link-button\">  $eliminato_button  </button>
 								<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\"> </form>
 						</td>";
-						}
 						$elenco.="</tr>\n";
+		}
+		else {
+			$elenco.="
+			<tr>
+				<td>$idNumber</td>
+				<td>$anno_mese_giorno</td>
+				<td> $oraInizioValue </td>
+				<td> $oraFineValue </td>
+				<td> $squadraCasaValue - $squadraTrasfertaValue </td>
+				<td> $quota1Value </td>
+				<td> $quotaxValue </td>
+				<td> $quota2Value </td>
+				<td> $quotaUnderValue </td>
+				<td> $quotaOverValue </td>
+				<td> $quotaGGValue </td>
+				<td> $quotaNGValue </td>
+				<td> $puntiSquadraCasaValue - $puntiSquadraTrasfertaValue </td>
+			</tr>
+			";
+
+		}
+
 	}		
 }
 	echo "$elenco";
