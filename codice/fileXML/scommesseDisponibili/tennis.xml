@@ -86,4 +86,32 @@
 		 <puntiGiocatoreTrasferta></puntiGiocatoreTrasferta>
 	 </risultato>
 </scommessa>
+<scommessa eliminato="0">
+  	<id> 4 </id>
+	<nome>
+		<giocatoreCasa> Pegula J. </giocatoreCasa>
+		<giocatoreTrasferta> Tsurenko L. </giocatoreTrasferta>
+	</nome>
+	<quotaTennis>
+      		<quota1> 1.25 </quota1>
+      		<quota2> 2.32 </quota2>
+      	</quotaTennis>
+    	<ora>
+        	<oraInizio> 16:00 </oraInizio>
+        	<oraFine> 18:00 </oraFine>
+	</ora>
+  	<data>
+    		<giorno> 15 </giorno>
+    		<mese> 08 </mese>
+    		<anno> 2023 </anno>
+  	</data>
+	<puntata>
+		<minima> 1 </minima>
+		<massima> 9999 </massima>
+	</puntata>
+	<risultato>
+		 <puntiGiocatoreCasa></puntiGiocatoreCasa>
+		 <puntiGiocatoreTrasferta></puntiGiocatoreTrasferta>
+	 </risultato>
+</scommessa>
 </tennis>
