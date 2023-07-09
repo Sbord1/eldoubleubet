@@ -7,10 +7,10 @@ Modifiche da fare:
 
 [done] fare in modo che non si possa scommettere su partite già terminate;
 
-- utitlizzare le dialog box per comunicare gli errori (invece delle semplici pagine bianche);
+[done] utitlizzare le dialog box per comunicare gli errori (invece delle semplici pagine bianche);
 
 [done] cambiare la pagina degli scommettitori per riscuotere la vincita ("riscuoti" invece di "No");
 
-- migliorare la pagina per l'inserimento dei risultati:
+[done] migliorare la pagina per l'inserimento dei risultati:
   --> migliorare il controllo tramite espressione regolare
   --> modificare l'inserimento dei risultati per le partite ippiche utilizzando 3 select con il numero del cavallo
