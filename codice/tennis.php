@@ -290,6 +290,9 @@ foreach ( file("fileXML/scommesseDisponibili/tennis.xml") as $node ) {
 					
                 </tr>\n";
 
+	$current_date = date("Y-m-d");
+	$current_time = date("H:i:s");
+
 	//ciclo per ottenere info su tutte le scommesse di calcio
    for ($i=0; $i<$lunghezza; $i++) {
 	
@@ -337,7 +340,9 @@ foreach ( file("fileXML/scommesseDisponibili/tennis.xml") as $node ) {
 
         // cliccando sulla quota, mi rimanda alla pagina piazzaScommessa.php dove so quale quota ho cliccato e di quale squadra
         if ($eliminato == "0"){
-		$elenco.="\n<tr>
+			// Possiamo scommettere solo su partite non ancora iniziate
+			if (($current_date < $anno_mese_giorno) || (($current_date==$anno_mese_giorno) && ($current_time < $oraInizioValue))) {
+					$elenco.="\n<tr>
 						<td>$idNumber</td>
                         <td>$anno_mese_giorno</td>
                         <td> $oraInizioValue </td>
@@ -365,18 +370,30 @@ foreach ( file("fileXML/scommesseDisponibili/tennis.xml") as $node ) {
 						 </td>
                          <td> $puntiGiocatoreCasaValue - $puntiGiocatoreTrasfertaValue </td>";
                          
-						$current_date = date("Y-m-d");
-						$current_time = date("H:i:s");
-						//se evento non svolto mostro il bottone per eliminare
-						if ( ($current_date < $anno_mese_giorno) || (($current_date == $anno_mese_giorno) && ($current_time < $oraFineValue)) ) {
-							
+						
+						//se evento non svolto mostro il bottone per eliminare	
 						$elenco.="<td> 
 								<form method=\"post\" action=\"\"> 
 								<button type=\"submit\" name=\"elimina\" value=\"elimina\" class=\"link-button\">  $eliminato_button  </button>
 								<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\"> </form>
 						</td>";
-						}
+						
 						$elenco.="</tr>\n";
+		}
+		else {
+			$elenco.="
+			<tr>
+				<td>$idNumber</td>
+				<td>$anno_mese_giorno</td>
+				<td> $oraInizioValue </td>
+				<td> $oraFineValue </td>
+				<td> $giocatoreCasaValue - $giocatoreTrasfertaValue </td>
+				<td> $quota1Value </td>
+				<td> $quota2Value </td>
+				<td> $puntiGiocatoreCasaValue - $puntiGiocatoreTrasfertaValue </td>
+			</tr>
+			";
+		}
 
    }
 }
