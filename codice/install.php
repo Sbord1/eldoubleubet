@@ -52,11 +52,15 @@ $sqlQuery.= "id int NOT NULL auto_increment, primary key (id), ";
 $sqlQuery.= "nome varchar (50) NOT NULL, ";
 $sqlQuery.= "cognome varchar (50) NOT NULL, ";
 $sqlQuery.= "dataNascita varchar (50) NOT NULL, ";
-$sqlQuery.= "username varchar (50) NOT NULL, ";
+$sqlQuery.= "username varchar (50) NOT NULL UNIQUE, ";
 $sqlQuery.= "password varchar (32) NOT NULL, ";
 $sqlQuery.= "credito float NOT NULL, ";
 $sqlQuery.= "tipologia varchar(20) NOT NULL,";// scommettitore, gestore o admin
-$sqlQuery.= "account varchar (15) NOT NULL "; 
+$sqlQuery.= "account varchar (15) NOT NULL, "; 
+$sqlQuery.= "indirizzo varchar (100) NOT NULL, ";
+$sqlQuery.= "telefono varchar (50) NOT NULL, ";
+$sqlQuery.= "email varchar (100) NOT NULL, ";
+$sqlQuery.= "codiceFiscale varchar (50) NOT NULL UNIQUE";    
 $sqlQuery.= ");";
 
 echo "<P>$sqlQuery</P>";
@@ -75,9 +79,9 @@ else {
 
 // Inserimento admin
 $sql = "INSERT INTO $DBuser_table
-	(nome, cognome, dataNascita, username, password, credito, tipologia, account)
+	(nome, cognome, dataNascita, username, password, credito, tipologia, account, indirizzo, telefono, email, codiceFiscale)
 	VALUES
-	(\"Francesco\", \"Sbordone\", \"20/03/2001\", \"sbord1\", \"sbord1\", \"99999\", \"admin\", \"attivo\")
+	(\"Francesco\", \"Sbordone\", \"20/03/2001\", \"sbord1\", \"sbord1\", \"99999\", \"admin\", \"attivo\", \"via delle prate\", \"3234507689\", \"sbord1@gmail.com\", \"SBRFNC01C20D810E\")
 	";
 echo "<P>$sql</P>";
 
@@ -90,9 +94,9 @@ else {
 
 // Inserimento admin
 $sql = "INSERT INTO $DBuser_table
-	(nome, cognome, dataNascita, username, password, credito, tipologia, account)
+	(nome, cognome, dataNascita, username, password, credito, tipologia, account, indirizzo, telefono, email, codiceFiscale)
 	VALUES
-	(\"Riccardo\", \"Tuzzolino\", \"18/01/2002\", \"tuzzo18\", \"tuzzo18\", \"99999\", \"admin\", \"attivo\")
+	(\"Riccardo\", \"Tuzzolino\", \"18/01/2002\", \"tuzzo18\", \"tuzzo18\", \"99999\", \"admin\", \"attivo\", \"via delle rose\", \"3210021246\", \"tuzzo18@gmail.com\", \"TZLRCR01D18B412P\")
 	";
 echo "<P>$sql</P>";
 
@@ -105,9 +109,9 @@ else {
 
 // Inserimento gestore
 $sql = "INSERT INTO $DBuser_table
-	(nome, cognome, dataNascita, username, password, credito, tipologia, account)
+	(nome, cognome, dataNascita, username, password, credito, tipologia, account, indirizzo, telefono, email, codiceFiscale)
 	VALUES
-	(\"Tizio\", \"Gracco\", \"30/05/1995\", \"tizio\", \"tizio\", \"99999\", \"gestore\", \"attivo\")
+	(\"Tizio\", \"Gracco\", \"30/05/1995\", \"tizio\", \"tizio\", \"99999\", \"gestore\", \"attivo\", \"via torrente\", \"3322578382\", \"tizio@gmail.com\", \"EMRSTC02D10D710E\")
 	";
 echo "<P>$sql</P>";
 
@@ -120,9 +124,9 @@ else {
 
 // Inserimento gestore
 $sql = "INSERT INTO $DBuser_table
-	(nome, cognome, dataNascita, username, password, credito, tipologia, account)
+	(nome, cognome, dataNascita, username, password, credito, tipologia, account, indirizzo, telefono, email, codiceFiscale)
 	VALUES
-	(\"Caio\", \"Gracco\", \"30/05/1995\", \"caio\", \"caio\", \"99999\", \"gestore\", \"attivo\")
+	(\"Caio\", \"Gracco\", \"30/05/1995\", \"caio\", \"caio\", \"99999\", \"gestore\", \"attivo\", \"via aristotele\", \"3358457689\", \"caio@gmail.com\", \"CGRCFC11C10D560E\")
 	";
 echo "<P>$sql</P>";
 
@@ -135,9 +139,9 @@ else {
 
 // Inserimento scommettitore
 $sql = "INSERT INTO $DBuser_table
-	(nome, cognome, dataNascita, username, password, credito, tipologia, account)
+	(nome, cognome, dataNascita, username, password, credito, tipologia, account, indirizzo, telefono, email, codiceFiscale)
 	VALUES
-	(\"Mario\", \"Rossi\", \"09/03/2001\", \"mario\", \"mario\", \"50\", \"scommettitore\", \"attivo\")
+	(\"Mario\", \"Rossi\", \"09/03/2001\", \"mario\", \"mario\", \"50\", \"scommettitore\", \"attivo\", \"via aldo moro\", \"3652477689\", \"mario@gmail.com\", \"MRRRPS02C10D421R\")
 	";
 echo "<P>$sql</P>";
 
@@ -150,9 +154,9 @@ else {
 
 // Inserimento scommettitore
 $sql = "INSERT INTO $DBuser_table
-	(nome, cognome, dataNascita, username, password, credito, tipologia, account)
+	(nome, cognome, dataNascita, username, password, credito, tipologia, account, indirizzo, telefono, email, codiceFiscale)
 	VALUES
-	(\"Ciro\", \"Esposito\", \"28/02/1999\", \"ciruzzo\", \"ciruzzo\", \"250\", \"scommettitore\", \"attivo\")
+	(\"Ciro\", \"Esposito\", \"28/02/1999\", \"ciruzzo\", \"ciruzzo\", \"250\", \"scommettitore\", \"attivo\", \"via tufetti\", \"3212457689\", \"ciruzzo@gmail.com\", \"CRZSPS02W20E810E\")
 	";
 echo "<P>$sql</P>";
 
