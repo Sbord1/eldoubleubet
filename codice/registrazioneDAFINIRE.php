@@ -37,10 +37,13 @@
 			";
 
 			// Il risultato della query va in $resultQ
-			$resultQ = mysqli_query($mysqliConnection, $sql);
-			if (!$resultQ){
-   				printf("Errore\n");
-  				exit();}
+			try{
+				$resultQ = mysqli_query($mysqliConnection, $sql);}
+				catch (mysqli_sql_exception $e){
+					$error = $e->getMessage();
+					echo ("<dialog open> $error </dialog>");
+					}
+				
 			
 			$_POST['invio']="j";
 		}
