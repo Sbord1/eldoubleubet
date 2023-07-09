@@ -9,7 +9,7 @@ Modifiche da fare:
 
 - utitlizzare le dialog box per comunicare gli errori (invece delle semplici pagine bianche);
 
-- cambiare la pagina degli scommettitori per riscuotere la vincita ("riscuoti" invece di "No");
+[done] cambiare la pagina degli scommettitori per riscuotere la vincita ("riscuoti" invece di "No");
 
 - migliorare la pagina per l'inserimento dei risultati:
   --> migliorare il controllo tramite espressione regolare
