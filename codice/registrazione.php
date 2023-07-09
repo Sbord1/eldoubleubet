@@ -4,35 +4,63 @@
 	
 
 	if (isset($_POST['invio']) && $_POST['invio']=="Aggiungi" && $_POST['nome'] && $_POST['password']) {
-		
-		
-		$dataNascita = strtotime($_POST['dataNascita']);		
+
+        $dataNascita = strtotime($_POST['dataNascita']);		
 		$now= time(); //data di oggi
 
 		$maggiorenne = strtotime('-18 years', $now); //data di 18 anni fa
 		
 		if ($dataNascita > $maggiorenne){
-			echo "<h1> Non sei maggiorenne! </h1>";
-			}
-			
-		else{
-			// Query per l'aggiunta dell' utente
-			$sql= "INSERT INTO $DBuser_table
-			(nome, cognome, dataNascita, username, password, credito, tipologia, account)
-			VALUES
-			('{$_POST['nome']}', '{$_POST['cognome']}', '{$_POST['dataNascita']}','{$_POST['username']}','{$_POST['password']}', \"0\", \"scommettitore\", \"disattivo\")
-			";
-
-			// Il risultato della query va in $resultQ
-			if (!$resultQ = mysqli_query($mysqliConnection, $sql)) {
-				printf("Can't execute query.\n");
-			exit();
+			?>
+            <script>
+                alert("Non sei maggiorenne! Non puoi registrarti su questo sito.");
+                window.location = 'inizio.php';
+            </script>
+            <?php
+            exit();
 			}
 
-	
-			$_POST['invio']="j";
+        $patternTelefono="^[0-9]{10}$^";
+		if(preg_match($patternTelefono, $_POST['telefono'])!=1) {
+            ?>
+            <script>
+                alert("Errore nell'inserimento del telefono! Fai attenzione a matchare il pattern.");
+                window.location = 'registrazione.php';
+            </script>
+            <?php
+            exit();
+            };
+		
+		$patternCod="^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]$^";
+		if(preg_match($patternCod, $_POST['codiceFiscale'])!=1) {
+            ?>
+            <script>
+                alert("Errore nell'inserimento del codice fiscale! Fai attenzione a matchare il pattern.");
+                window.location = 'registrazione.php';
+            </script>
+            <?php
+            exit();
+            };
+            
+		
+        // Query per l'aggiunta dell' utente
+        $sql= "INSERT INTO $DBuser_table
+        (nome, cognome, dataNascita, username, password, credito, tipologia, account, indirizzo, telefono, email, codiceFiscale)
+        VALUES
+        ('{$_POST['nome']}', '{$_POST['cognome']}', '{$_POST['dataNascita']}','{$_POST['username']}','{$_POST['password']}', \"0\", \"scommettitore\", \"disattivo\", '{$_POST['indirizzo']}', '{$_POST['telefono']}', '{$_POST['email']}', '{$_POST['codiceFiscale']}')
+        ";
+
+        // Il risultato della query va in $resultQ
+        try{
+            $resultQ = mysqli_query($mysqliConnection, $sql);}
+            catch (mysqli_sql_exception $e){
+                $error = $e->getMessage();
+                echo ("<dialog open> $error </dialog>");
+                }
+            
+        $_POST['invio']="j";
 		}
-}
+
 
 // Chiudiamo la connessione, tanto il db non serve piu' in questo script
 	$mysqliConnection->close();
@@ -101,6 +129,22 @@
             
             <p style="text-align: center;">
                 Data di Nascita: <input type="date" size="30" name="dataNascita" required>
+            </p>
+            
+            <p style="text-align: center;">
+                Indirizzo: <input type="text" size="30" name="indirizzo" required>
+            </p>
+            
+            <p style="text-align: center;">
+                Telefono: <input type="text" size="30" name="telefono" required>
+            </p>
+            
+            <p style="text-align: center;">
+                Email: <input type="text" size="30" name="email" required>
+            </p>
+            
+            <p style="text-align: center;">
+                Codice Fiscale: <input type="text" size="30" name="codiceFiscale" required>
             </p>
             
             <p style="text-align: center;">
