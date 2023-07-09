@@ -35,8 +35,11 @@
 
         // Verifichiamo che il credito dell'utente non sia insufficiente
         if ($credito_utente < $puntata) {
-            echo "Denaro insufficiente! Ricarica il conto e poi torna a piazzare la scommessa.";
-            echo "<a href=\"inizio.php\" alt=\"Home\">Homepage</a>";
+            $error_message = "Errore: denaro insufficiente!!! Ricarica il conto e poi torna a piazzare la scommessa.";
+            echo "<script>
+                alert('$error_message');
+                window.location = 'conto.php';
+                </script>";
             exit();
         }
 
