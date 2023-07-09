@@ -5,7 +5,7 @@ Modifiche da fare:
 
 - controllare che l'username sia univoco in fase di registrazione;
 
-- fare in modo che non si possa scommettere su partite già terminate;
+[done] fare in modo che non si possa scommettere su partite già terminate;
 
 - utitlizzare le dialog box per comunicare gli errori (invece delle semplici pagine bianche);
 
