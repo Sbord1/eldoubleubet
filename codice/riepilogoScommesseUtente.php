@@ -430,7 +430,7 @@
 						// form per accreditare i soldi vinti sul conto dell'utente
 						$richiesta_vincita = "
 						<form method=\"post\" action=\"pagamentoVincita.php\"> 
-						<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">$pagamento_effettuato</button>
+						<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">riscuoti</button>
 						<input type=\"hidden\" name=\"idScommessa\" value=\"$id_scommessa_value\">
 						<input type=\"hidden\" name=\"category\" value=\"scommesseCalcio\">
 						<input type=\"hidden\" name=\"vincita\" value=\"$vincitaValue\">
@@ -654,7 +654,7 @@
 						// form per accreditare i soldi vinti sul conto dell'utente
 						$richiesta_vincita = "
 						<form method=\"post\" action=\"pagamentoVincita.php\"> 
-						<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">$pagamento_effettuato</button>
+						<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">riscuoti</button>
 						<input type=\"hidden\" name=\"idScommessa\" value=\"$id_scommessa_value\">
 						<input type=\"hidden\" name=\"category\" value=\"scommesseBasket\">
 						<input type=\"hidden\" name=\"vincita\" value=\"$vincitaValue\">
@@ -877,7 +877,7 @@
 						// form per accreditare i soldi vinti sul conto dell'utente
 						$richiesta_vincita = "
 						<form method=\"post\" action=\"pagamentoVincita.php\"> 
-						<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">$pagamento_effettuato</button>
+						<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">riscuoti</button>
 						<input type=\"hidden\" name=\"idScommessa\" value=\"$id_scommessa_value\">
 						<input type=\"hidden\" name=\"category\" value=\"scommesseTennis\">
 						<input type=\"hidden\" name=\"vincita\" value=\"$vincitaValue\">
@@ -1127,7 +1127,7 @@
 						// form per accreditare i soldi vinti sul conto dell'utente
 						$richiesta_vincita = "
 						<form method=\"post\" action=\"pagamentoVincita.php\"> 
-						<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">$pagamento_effettuato</button>
+						<button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">riscuoti</button>
 						<input type=\"hidden\" name=\"idScommessa\" value=\"$id_scommessa_value\">
 						<input type=\"hidden\" name=\"category\" value=\"scommesseIppica\">
 						<input type=\"hidden\" name=\"vincita\" value=\"$vincitaValue\">
