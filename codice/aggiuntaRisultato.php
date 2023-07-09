@@ -8,18 +8,34 @@ if(isset($_POST['submit']) && $_POST['submit']=='submit') {
 
         case 'calcio':
 
-            $pattern = "/[0-9]-[0-9]/";
-            if(preg_match($pattern, $_POST['risultato'])!=1) {
-                echo ("Errore nell'inserimento del risultato! Fai attenzione a matchare il pattern.");
-                echo "<a href=\"inserisciRisultati.php\" alt=\"Home\">Go Back</a>";
+            $pattern = "/^[0-9]{1,2}$/";
+
+            if(preg_match($pattern, $_POST['risultato1'])!=1) {
+                ?>
+                <script>
+                    alert("Errore nell'inserimento del primo risultato! Fai attenzione a matchare il pattern.");
+                    window.location = 'inserisciRisultati.php';
+                </script>
+                <?php
                 exit();
-            };
+            }
+
+            if(preg_match($pattern, $_POST['risultato2'])!=1) {
+                ?>
+                <script>
+                    alert("Errore nell'inserimento del secondo risultato! Fai attenzione a matchare il pattern.");
+                    window.location = 'inserisciRisultati.php';
+                </script>
+                <?php
+                exit();
+            }
 
             $idPartitaForm = $_POST['idPartita'];
-            $risultato = $_POST['risultato'];
+            $risultato1 = $_POST['risultato1'];
+            $risultato2 = $_POST['risultato2'];
 
-            $goalSquadraCasa = substr($risultato, 0, 1);
-            $goalSquadraTrasferta = substr($risultato, 2, 1);
+            $goalSquadraCasa = $risultato1;
+            $goalSquadraTrasferta = $risultato2;
 
             /////////////////////////////////////////////////////////////////////////
             # Lettura file "calcio.xml"
@@ -75,18 +91,41 @@ if(isset($_POST['submit']) && $_POST['submit']=='submit') {
     
         case 'basket':
 
-            $pattern = "/[0-9]-[0-9]/";
-            if(preg_match($pattern, $_POST['risultato'])!=1) {
-                echo ("Errore nell'inserimento del risultato! Fai attenzione a matchare il pattern.");
-                echo "<a href=\"inserisciRisultati.php\" alt=\"Home\">Go Back</a>";
+            $pattern = "/^[0-9]{2,3}$/";
+            if(preg_match($pattern, $_POST['risultato1'])!=1) {
+                ?>
+                <script>
+                    alert("Errore nell'inserimento del primo risultato! Fai attenzione a matchare il pattern.");
+                    window.location = 'inserisciRisultati.php';
+                </script>
+                <?php
+                exit();
+            };
+            if(preg_match($pattern, $_POST['risultato2'])!=1) {
+                ?>
+                <script>
+                    alert("Errore nell'inserimento del secondo risultato! Fai attenzione a matchare il pattern.");
+                    window.location = 'inserisciRisultati.php';
+                </script>
+                <?php
                 exit();
             };
 
             $idPartitaForm = $_POST['idPartita'];
             $risultato = $_POST['risultato'];
 
-            $puntiSquadraCasaForm = substr($risultato, 0, 1);
-            $puntiSquadraTrasfertaForm = substr($risultato, 2, 1);
+            $puntiSquadraCasaForm = $_POST['risultato1'];
+            $puntiSquadraTrasfertaForm = $_POST['risultato2'];
+
+            if($puntiSquadraCasaForm == $puntiSquadraTrasfertaForm) {
+                ?>
+                <script>
+                    alert("Le partite di basket non possono finire in pareggio.");
+                    window.location = 'inserisciRisultati.php';
+                </script>
+                <?php
+                exit();
+            }
 
             /////////////////////////////////////////////////////////////////////////
             # Lettura file "basket.xml"
@@ -142,18 +181,42 @@ if(isset($_POST['submit']) && $_POST['submit']=='submit') {
     
         case 'tennis':
 
-            $pattern = "/[0-9]-[0-9]/";
-            if(preg_match($pattern, $_POST['risultato'])!=1) {
-                echo ("Errore nell'inserimento del risultato! Fai attenzione a matchare il pattern.");
-                echo "<a href=\"inserisciRisultati.php\" alt=\"Home\">Go Back</a>";
+            $pattern = "/^[0-9]{1}$/";
+            if(preg_match($pattern, $_POST['risultato1'])!=1) {
+                ?>
+                <script>
+                    alert("Errore nell'inserimento del primo risultato! Fai attenzione a matchare il pattern.");
+                    window.location = 'inserisciRisultati.php';
+                </script>
+                <?php
+                exit();
+            };
+
+            if(preg_match($pattern, $_POST['risultato2'])!=1) {
+                ?>
+                <script>
+                    alert("Errore nell'inserimento del secondo risultato! Fai attenzione a matchare il pattern.");
+                    window.location = 'inserisciRisultati.php';
+                </script>
+                <?php
                 exit();
             };
 
             $idPartitaForm = $_POST['idPartita'];
             $risultato = $_POST['risultato'];
 
-            $puntiGiocatoreCasaForm = substr($risultato, 0, 1);
-            $puntiGiocatoreTrasfertaForm = substr($risultato, 2, 1);
+            $puntiGiocatoreCasaForm = $_POST['risultato1'];
+            $puntiGiocatoreTrasfertaForm = $_POST['risultato2'];
+
+            if($puntiGiocatoreCasaForm == $puntiGiocatoreTrasfertaForm) {
+                ?>
+                <script>
+                    alert("Le partite di tennis non possono finire in pareggio.");
+                    window.location = 'inserisciRisultati.php';
+                </script>
+                <?php
+                exit();
+            }
 
             /////////////////////////////////////////////////////////////////////////
             # Lettura file "tenni.xml"
@@ -209,19 +272,22 @@ if(isset($_POST['submit']) && $_POST['submit']=='submit') {
     
         case 'ippica':
 
-            $pattern = "/[1-8]-[1-8]-[1-8]/";
-            if(preg_match($pattern, $_POST['risultato'])!=1) {
-                echo ("Errore nell'inserimento del risultato! Fai attenzione a matchare il pattern.");
-                echo "<a href=\"inserisciRisultati.php\" alt=\"Home\">Go Back</a>";
+            if(($_POST['cavallo1posto']==$_POST['cavallo2posto']) || ($_POST['cavallo2posto']==$_POST['cavallo3posto']) || ($_POST['cavallo1posto']==$_POST['cavallo3posto'])) {
+                ?>
+                <script>
+                    alert("Errore nell'inserimento del risultato! Controllare che un cavallo non sia arrivato in diverse posizioni.");
+                    window.location = 'inserisciRisultati.php';
+                </script>
+                <?php
                 exit();
-            };
+            }
 
             $idCorsaForm = $_POST['idCorsa'];
             $risultato = $_POST['risultato'];
 
-            $primoForm = substr($risultato, 0, 1);
-            $secondoForm = substr($risultato, 2, 1);
-            $terzoForm = substr($risultato, 4, 1);
+            $primoForm = $_POST['cavallo1posto'];
+            $secondoForm = $_POST['cavallo2posto'];
+            $terzoForm = $_POST['cavallo3posto'];
 
             /////////////////////////////////////////////////////////////////////////
             # Lettura file "ippica.xml"
