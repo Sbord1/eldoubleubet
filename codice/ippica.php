@@ -275,7 +275,8 @@ foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
 		$doc2->save("fileXML/scommesseUtenti/scommesseIppica.xml");	
 	}	//fine if elimina
 	
-	
+	$current_date = date("Y-m-d");
+	$current_time = date("H:i:s");
 
 	//ciclo per ottenere info su tutte le scommesse di calcio
    for ($i=0; $i<$lunghezza; $i++) {
@@ -433,6 +434,8 @@ foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
         $anno_mese_giorno = trim($annoValue)."-".trim($meseValue)."-".trim($giornoValue);
         
 		if ($eliminato == "0"){
+            // Possiamo scommettere solo su partite non ancora iniziate
+			if (($current_date < $anno_mese_giorno) || (($current_date==$anno_mese_giorno) && ($current_time < $oraInizioValue))) {
         // Costruiamo i titoli delle colonne della tabella che conterra' le scommesse di ippica estratte da ippica.xml
         $elenco = "
         <table class=\"tablecenter\">
@@ -491,17 +494,15 @@ foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
         <td rowspan=\"8\">$risultatoPrimoValue - $risultatoSecondoValue - $risultatoTerzoValue</td>
         <td rowspan=\"8\">$idNumber</td>
         <td rowspan=\"8\">$distanzaValue"."m</td>";
-		$current_date = date("Y-m-d");
-		$current_time = date("H:i:s");
+		
 		//se evento non svolto mostro il bottone per eliminare
-		if ( ($current_date < $anno_mese_giorno) || (($current_date == $anno_mese_giorno) && ($current_time < $oraFineValue)) ) {
 							
 		$elenco.="<td rowspan=\"8\">
 							<form method=\"post\" action=\"\"> 
 							<button type=\"submit\" name=\"elimina\" value=\"elimina\" class=\"link-button\">  $eliminato_button  </button>
 							<input type=\"hidden\" name=\"idPartita\" value=\"$idNumber\"> </form>
 					</td>";
-					}
+					
 		$elenco.="</tr>\n";
 		
 
@@ -776,6 +777,123 @@ foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
         ";
 
         echo "$elenco";
+        }
+        else {
+        $elenco = "
+        <table class=\"tablecenter\">
+            <tbody>
+                <tr>
+                <td class=\"head\"> Data </td>
+                <td class=\"head\"> Ora di inizio </td>
+                <td class=\"head\"> Ora di fine </td>
+                <td class=\"head\"> Cavalli </td>
+                <td class=\"head\"> Numero </td>
+                <td class=\"head\"> 1&deg; posto</td>
+                <td class=\"head\"> 2&deg; posto </td>
+                <td class=\"head\"> 3&deg; posto </td>
+                <td class=\"head\"> Risultato </td>
+                <td class=\"head\"> ID </td>
+                <td class=\"head\"> Distanza </td>
+                </tr>\n";
+
+        $elenco .= "
+        <tr>
+        <td>$anno_mese_giorno</td>
+        <td>$oraInizioValue</td>
+        <td>$oraFineValue</td>
+        <td>$nomeCavallo1Value</td>
+        <td>$numeroCavallo1Value</td>
+        <td>$quoteCavallo1_quota1Value</td>
+        <td>$quoteCavallo1_quota2Value</td>
+        <td>$quoteCavallo1_quota3Value</td>
+        <td rowspan=\"8\">$risultatoPrimoValue - $risultatoSecondoValue - $risultatoTerzoValue</td>
+        <td rowspan=\"8\">$idNumber</td>
+        <td rowspan=\"8\">$distanzaValue"."m</td>
+        </tr>
+
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>$nomeCavallo2Value</td>
+        <td>$numeroCavallo2Value</td>
+        <td>$quoteCavallo2_quota1Value</td>
+        <td>$quoteCavallo2_quota2Value</td>
+        <td>$quoteCavallo2_quota3Value</td>
+        </tr>
+
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>$nomeCavallo3Value</td>
+        <td>$numeroCavallo3Value</td>
+        <td>$quoteCavallo3_quota1Value</td>
+        <td>$quoteCavallo3_quota2Value</td>
+        <td>$quoteCavallo3_quota3Value</td>
+        </tr>
+
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>$nomeCavallo4Value</td>
+        <td>$numeroCavallo4Value</td>
+        <td>$quoteCavallo4_quota1Value</td>
+        <td>$quoteCavallo4_quota2Value</td>
+        <td>$quoteCavallo4_quota3Value</td>
+        </tr>
+
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>$nomeCavallo5Value</td>
+        <td>$numeroCavallo5Value</td>
+        <td>$quoteCavallo5_quota1Value</td>
+        <td>$quoteCavallo5_quota2Value</td>
+        <td>$quoteCavallo5_quota3Value</td>
+        </tr>
+
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>$nomeCavallo6Value</td>
+        <td>$numeroCavallo6Value</td>
+        <td>$quoteCavallo6_quota1Value</td>
+        <td>$quoteCavallo6_quota2Value</td>
+        <td>$quoteCavallo6_quota3Value</td>
+        </tr>
+
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>$nomeCavallo7Value</td>
+        <td>$numeroCavallo7Value</td>
+        <td>$quoteCavallo7_quota1Value</td>
+        <td>$quoteCavallo7_quota2Value</td>
+        <td>$quoteCavallo7_quota3Value</td>
+        </tr>
+
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>$nomeCavallo8Value</td>
+        <td>$numeroCavallo8Value</td>
+        <td>$quoteCavallo8_quota1Value</td>
+        <td>$quoteCavallo8_quota2Value</td>
+        <td>$quoteCavallo8_quota3Value</td>
+        </tr>
+
+        </tbody>
+        </table>
+        ";
+
+        echo "$elenco";
+        }
 }
 }
 
@@ -797,4 +915,3 @@ Authors: Francesco Sbordone, Riccardo Tuzzolino
 </body>
 </html>
 
-   }
