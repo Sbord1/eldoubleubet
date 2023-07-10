@@ -2,8 +2,8 @@
 <!DOCTYPE proposteScommessaCalcio SYSTEM "proposteScommessaCalcio.dtd">
 <!-- Esempi di 1 proposta di partita di calcio dall'utente tuzzo18 -->
 
-<propostaScommessaCalcio>
-	<proposteScommessa>
+<proposteScommessaCalcio>
+	<propostaScommessa>
 		<id> 10 </id>
 		<nome>
 			<squadraCasa> Palermo </squadraCasa>
