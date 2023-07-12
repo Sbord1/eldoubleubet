@@ -4,7 +4,7 @@ session_start();
 
 if (isset($_POST['invio']) && $_POST['invio']=="Invia" && $_POST['messaggio']) {
 
-
+    $_SESSION['receiver']=$_POST['receiver'];
 
     $doc = new DOMDocument();
     $doc->load("fileXML/chat/chat.xml");
@@ -40,7 +40,7 @@ if (isset($_POST['invio']) && $_POST['invio']=="Invia" && $_POST['messaggio']) {
     $root->appendChild($newRecord);
     $doc->save('fileXML/chat/chat.xml');
 
-    header('Location: chat.php');
+    header('Location: chatUtente.php');
 
 }
 
