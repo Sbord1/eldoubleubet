@@ -4,7 +4,7 @@
   <scommessa eliminato="0">
     <id>1</id>
     <data>
-      <giorno>18</giorno>
+      <giorno>10</giorno>
       <mese>07</mese>
       <anno>2023</anno>
     </data>
@@ -92,9 +92,9 @@
       <massima>9999</massima>
     </puntata>
     <risultato>
-      <primo></primo>
-      <secondo></secondo>
-      <terzo></terzo>
+      <primo>8</primo>
+      <secondo>3</secondo>
+      <terzo>1</terzo>
     </risultato>
   </scommessa>
   <scommessa eliminato="0">
@@ -188,9 +188,9 @@
       <massima>9999</massima>
     </puntata>
     <risultato>
-      <primo>8</primo>
-      <secondo>3</secondo>
-      <terzo>1</terzo>
+      <primo></primo>
+      <secondo></secondo>
+      <terzo></terzo>
     </risultato>
   </scommessa>
 </ippica>
