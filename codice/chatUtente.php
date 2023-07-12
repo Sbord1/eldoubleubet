@@ -6,10 +6,14 @@ session_start();
 
 $sender = $_SESSION['userName'];
 
-
-
-// Recuperato dall'hidden field nella tabella degli utenti scommettitori (in "chat.php") con cui poter chattare
-$receiver = $_POST['receiver'];
+if (isset($_POST['receiver'])) {
+    // Recuperato dall'hidden field nella tabella degli utenti scommettitori (in "chat.php") con cui poter chattare
+    $receiver = $_POST['receiver'];
+}
+else {
+    // Veniamo da "aggiuntaMessaggio.php" in cui abbiamo definito la variabile $_SESSION['receiver']
+    $receiver = $_SESSION['receiver'];
+}
 
 
 /* 
