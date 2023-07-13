@@ -3,11 +3,11 @@
 	session_start();
 	if (!isset($_SESSION['accessoPermesso'])) header('Location: loginPage.html');
 
-	
-	
-?>
-<?php
+    $_SESSION['richiestaAccreditoInviata'] = 0;
+
 	if (isset($_POST['ricarica'])){
+
+        $_SESSION['richiestaAccreditoInviata'] = 1;
 
 		$xmlString="";
 		# Name of the output file
@@ -198,6 +198,12 @@
               </div> 
               <?php require_once("./menuConSwitch.php"); ?>           
         </header>
+
+        <?php
+            if($_SESSION['richiestaAccreditoInviata']==1) {
+                echo "<h2 style=\"text-align: center; color: red;\">Richiesta di accredito inviata!</h2>";
+            }
+        ?>
 
         <hr />
 
