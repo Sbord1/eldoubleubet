@@ -12,4 +12,4 @@
 
 [done] aggiungere la chat per admin/gestore
 
-- modificare il select in inserimento risultati (prima riga vuota)
+[done] modificare il select in inserimento risultati (prima riga vuota)
