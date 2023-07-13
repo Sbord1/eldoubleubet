@@ -2,6 +2,9 @@
 
 	require_once("./connection.php");
 	
+    $_SESSION['telefonoErrato'] = 0;
+    $_SESSION['codiceFiscaleErrato'] = 0;
+    $_SESSION['utenteInserito'] = 0;
 
 	if (isset($_POST['invio']) && $_POST['invio']=="Aggiungi" && $_POST['nome'] && $_POST['password']) {
 
@@ -22,44 +25,46 @@
 
         $patternTelefono="^[0-9]{10}$^";
 		if(preg_match($patternTelefono, $_POST['telefono'])!=1) {
+            $_SESSION['telefonoErrato'] = 1;
             ?>
             <script>
                 alert("Errore nell'inserimento del telefono! Fai attenzione a matchare il pattern.");
-                window.location = 'registrazione.php';
             </script>
             <?php
-            exit();
             };
 		
 		$patternCod="^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]$^";
 		if(preg_match($patternCod, $_POST['codiceFiscale'])!=1) {
+            $_SESSION['codiceFiscaleErrato'] = 1;
             ?>
             <script>
                 alert("Errore nell'inserimento del codice fiscale! Fai attenzione a matchare il pattern.");
-                window.location = 'registrazione.php';
             </script>
             <?php
-            exit();
             };
             
-		
-        // Query per l'aggiunta dell' utente
-        $sql= "INSERT INTO $DBuser_table
-        (nome, cognome, dataNascita, username, password, credito, tipologia, account, indirizzo, telefono, email, codiceFiscale)
-        VALUES
-        ('{$_POST['nome']}', '{$_POST['cognome']}', '{$_POST['dataNascita']}','{$_POST['username']}','{$_POST['password']}', \"0\", \"scommettitore\", \"disattivo\", '{$_POST['indirizzo']}', '{$_POST['telefono']}', '{$_POST['email']}', '{$_POST['codiceFiscale']}')
-        ";
+        if((preg_match($patternTelefono, $_POST['telefono'])==1) && (preg_match($patternCod, $_POST['codiceFiscale'])==1)) {
+            // Query per l'aggiunta dell' utente
+            $sql= "INSERT INTO $DBuser_table
+            (nome, cognome, dataNascita, username, password, credito, tipologia, account, indirizzo, telefono, email, codiceFiscale)
+            VALUES
+            ('{$_POST['nome']}', '{$_POST['cognome']}', '{$_POST['dataNascita']}','{$_POST['username']}','{$_POST['password']}', \"0\", \"scommettitore\", \"disattivo\", '{$_POST['indirizzo']}', '{$_POST['telefono']}', '{$_POST['email']}', '{$_POST['codiceFiscale']}')
+            ";
 
-        // Il risultato della query va in $resultQ
-        try{
-            $resultQ = mysqli_query($mysqliConnection, $sql);}
-            catch (mysqli_sql_exception $e){
-                $error = $e->getMessage();
-                echo ("<dialog open> $error </dialog>");
-                }
-            
-        $_POST['invio']="j";
+            // Il risultato della query va in $resultQ
+            try{
+                $resultQ = mysqli_query($mysqliConnection, $sql);
+                $_SESSION['utenteInserito'] = 1;
+            }
+                catch (mysqli_sql_exception $e){
+                    $error = $e->getMessage();
+                    echo ("<dialog open> $error </dialog>");
+                    }
+                
+            $_POST['invio']="j";
 		}
+
+    }
 
 
 // Chiudiamo la connessione, tanto il db non serve piu' in questo script
@@ -112,6 +117,12 @@
               </div>            
         </header>
 
+        <?php
+        if ($_SESSION['utenteInserito']==1) {
+            echo "<h2 style=\"text-align: center; color: red;\">Utente inserito con successo!</h2>";
+        }
+        ?>
+
         <hr />
 
         <h3 style="text-align: center;">Registrazione</h3>
@@ -120,39 +131,131 @@
     
 
             <p style="text-align: center;">
-                Nome: <input type="text" name="nome" size="30" required>
+                <!-- Display the data in the name field if $_POST['name'] is set, otherwise leave it empty -->
+                Nome: <input type="text" name="nome"
+                value="<?php 
+                if(isset($_POST['nome']) && $_SESSION['utenteInserito']==0) {
+                    echo $_POST['nome'];
+                }
+                else {
+                    echo '';
+                }
+                ?>"
+                size="30" required>
             </p>
 			
 			<p style="text-align: center;">
-                Cognome: <input type="text" name="cognome" size="30" required>
+                Cognome: <input type="text" name="cognome"
+                value="<?php 
+                if(isset($_POST['cognome']) && $_SESSION['utenteInserito']==0) {
+                    echo $_POST['cognome'];
+                }
+                else {
+                    echo '';
+                }
+                ?>"
+                size="30" required>
             </p>
             
             <p style="text-align: center;">
-                Data di Nascita: <input type="date" size="30" name="dataNascita" required>
+                Data di Nascita: <input type="date" size="30" name="dataNascita"
+                value="<?php 
+                if(isset($_POST['dataNascita']) && $_SESSION['utenteInserito']==0) {
+                    echo $_POST['dataNascita'];
+                }
+                else {
+                    echo '';
+                }
+                ?>"
+                required>
             </p>
             
             <p style="text-align: center;">
-                Indirizzo: <input type="text" size="30" name="indirizzo" required>
+                Indirizzo: <input type="text" size="30" name="indirizzo"
+                value="<?php 
+                if(isset($_POST['indirizzo']) && $_SESSION['utenteInserito']==0) {
+                    echo $_POST['indirizzo'];
+                }
+                else {
+                    echo '';
+                }
+                ?>"
+                required>
+            </p>
+            
+            <?php 
+                if($_SESSION['telefonoErrato'] == 1) {
+                    echo "<p style=\"color: red; text-align: center;\">Errore nel numero di telefono!</p>";
+                }
+            ?>
+            <p style="text-align: center;">
+                Telefono: <input type="text" size="30" name="telefono"
+                value="<?php 
+                if(isset($_POST['telefono']) && $_SESSION['utenteInserito']==0) {
+                    echo $_POST['telefono'];
+                }
+                else {
+                    echo '';
+                }
+                ?>"
+                required>
             </p>
             
             <p style="text-align: center;">
-                Telefono: <input type="text" size="30" name="telefono" required>
+                Email: <input type="text" size="30" name="email"
+                value="<?php 
+                if(isset($_POST['email']) && $_SESSION['utenteInserito']==0) {
+                    echo $_POST['email'];
+                }
+                else {
+                    echo '';
+                }
+                ?>"
+                required>
+            </p>
+            
+            <?php 
+                if($_SESSION['codiceFiscaleErrato'] == 1) {
+                    echo "<p style=\"color: red; text-align: center;\">Errore nel codice fiscale!</p>";
+                }
+            ?>
+            <p style="text-align: center;">
+                Codice Fiscale: <input type="text" size="30" name="codiceFiscale"
+                value="<?php 
+                if(isset($_POST['codiceFiscale']) && $_SESSION['utenteInserito']==0) {
+                    echo $_POST['codiceFiscale'];
+                }
+                else {
+                    echo '';
+                }
+                ?>"
+                required>
             </p>
             
             <p style="text-align: center;">
-                Email: <input type="text" size="30" name="email" required>
+                Username: <input type="text" name="username"
+                value="<?php 
+                if(isset($_POST['username']) && $_SESSION['utenteInserito']==0) {
+                    echo $_POST['username'];
+                }
+                else {
+                    echo '';
+                }
+                ?>"
+                size="30" required>
             </p>
             
             <p style="text-align: center;">
-                Codice Fiscale: <input type="text" size="30" name="codiceFiscale" required>
-            </p>
-            
-            <p style="text-align: center;">
-                Username: <input type="text" name="username" size="30" required>
-            </p>
-            
-            <p style="text-align: center;">
-                Password: <input type="password" name="password" size="30" required>
+                Password: <input type="password" name="password"
+                value="<?php 
+                if(isset($_POST['password']) && $_SESSION['utenteInserito']==0) {
+                    echo $_POST['password'];
+                }
+                else {
+                    echo '';
+                }
+                ?>"
+                size="30" required>
             </p>
             
             <div style="text-align: center; padding: 10px">
