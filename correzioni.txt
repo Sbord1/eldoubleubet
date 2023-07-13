@@ -1,0 +1,8 @@
+- correggere la form per la registrazione mantenendo i dati che non sono errati
+- mostrare il successo di un'operazione eseguita (es: quando si invia una richiesta di accredito)
+- quando l'admin fa login avvisarlo delle richieste di accredito presenti 
+(pallino rosso vicino richieste di accredito)
+- modificare lo script per l'alert 18+
+- aggiungere la visualizzazione delle proposte da parte dell'utente
+- aggiungere la chat per admin/gestore
+- modificare il select in inserimento risultati (prima riga vuota)
