@@ -1,4 +1,4 @@
-- correggere la form per la registrazione mantenendo i dati che non sono errati
+[done] correggere la form per la registrazione mantenendo i dati che non sono errati
 - mostrare il successo di un'operazione eseguita (es: quando si invia una richiesta di accredito)
 - quando l'admin fa login avvisarlo delle richieste di accredito presenti 
 (pallino rosso vicino richieste di accredito)
