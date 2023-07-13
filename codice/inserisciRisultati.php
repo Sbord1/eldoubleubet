@@ -278,9 +278,9 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
 						<td>$squadraCasaValue - $squadraTrasfertaValue</td>
 						<td>
                             <form method=\"post\" action=\"aggiuntaRisultato.php\"> 
-                            <input type=\"text\" name=\"risultato1\" value=\"1\" minlength=\"1\" maxlength=\"2\" size=\"1\">
+                            <input type=\"text\" name=\"risultato1\" minlength=\"1\" maxlength=\"2\" size=\"1\">
                             -
-                            <input type=\"text\" name=\"risultato2\" value=\"2\" minlength=\"1\" maxlength=\"2\" size=\"1\">
+                            <input type=\"text\" name=\"risultato2\" minlength=\"1\" maxlength=\"2\" size=\"1\">
                             <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">Inserisci</button>
                             <input type=\"hidden\" name=\"category\" value=\"calcio\">
                             <input type=\"hidden\" name=\"idPartita\" value=\"$idPartitaValue\">
@@ -376,9 +376,9 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
                     <td>$squadraCasaValue - $squadraTrasfertaValue</td>
                     <td>
                         <form method=\"post\" action=\"aggiuntaRisultato.php\"> 
-                        <input type=\"text\" name=\"risultato1\" value=\"29\" minlength=\"2\" maxlength=\"3\" size=\"3\">
+                        <input type=\"text\" name=\"risultato1\" minlength=\"2\" maxlength=\"3\" size=\"3\">
                         -
-                        <input type=\"text\" name=\"risultato2\" value=\"45\" minlength=\"2\" maxlength=\"3\" size=\"3\">
+                        <input type=\"text\" name=\"risultato2\" minlength=\"2\" maxlength=\"3\" size=\"3\">
                         <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">Inserisci</button>
                         <input type=\"hidden\" name=\"category\" value=\"basket\">
                         <input type=\"hidden\" name=\"idPartita\" value=\"$idPartitaValue\">
@@ -474,9 +474,9 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
                     <td>$giocatoreCasaValue - $giocatoreTrasfertaValue</td>
                     <td>
                         <form method=\"post\" action=\"aggiuntaRisultato.php\"> 
-                        <input type=\"text\" name=\"risultato1\" value=\"1\" minlength=\"1\" maxlength=\"1\" size=\"1\">
+                        <input type=\"text\" name=\"risultato1\" minlength=\"1\" maxlength=\"1\" size=\"1\">
                         -
-                        <input type=\"text\" name=\"risultato2\" value=\"3\" minlength=\"1\" maxlength=\"1\" size=\"1\">
+                        <input type=\"text\" name=\"risultato2\" minlength=\"1\" maxlength=\"1\" size=\"1\">
                         <button type=\"submit\" name=\"submit\" value=\"submit\" class=\"link-button\">Inserisci</button>
                         <input type=\"hidden\" name=\"category\" value=\"tennis\">
                         <input type=\"hidden\" name=\"idPartita\" value=\"$idPartitaValue\">
@@ -578,7 +578,8 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
                         <br>
                         <br>
 
-                        <select name=\"cavallo1posto\">
+                        <select name=\"cavallo1posto\" required>
+                        <option></option>
                         <option value=\"1\">cavallo #1</option>
                         <option value=\"2\">cavallo #2</option>
                         <option value=\"3\">cavallo #3</option>
@@ -589,7 +590,8 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
                         <option value=\"8\">cavallo #8</option>
                         </select>
                         -
-                        <select name=\"cavallo2posto\">
+                        <select name=\"cavallo2posto\" required>
+                        <option></option>
                         <option value=\"1\">cavallo #1</option>
                         <option value=\"2\">cavallo #2</option>
                         <option value=\"3\">cavallo #3</option>
@@ -600,7 +602,8 @@ foreach ( file("fileXML/scommesseDisponibili/calcio.xml") as $node ) {
                         <option value=\"8\">cavallo #8</option>
                         </select>
                         -
-                        <select name=\"cavallo3posto\">
+                        <select name=\"cavallo3posto\" required>
+                        <option></option>
                         <option value=\"1\">cavallo #1</option>
                         <option value=\"2\">cavallo #2</option>
                         <option value=\"3\">cavallo #3</option>
