@@ -61,6 +61,8 @@ else {
         |
         <li><a href="proposteScommessa.php">Proponi scommessa</a></li>
         |
+        <li><a href="#">Proposte inviate</a></li>
+        |
         <li><a href="chat.php">Chat</a></li>
         |
         <li><a href="forum.php">Forum</a></li>
@@ -93,6 +95,8 @@ else {
         <li><a href="riepilogoGestore.php">Riepilogo</a></li>
         |
         <li><a href="inserisciRisultati.php">Inserisci risultati</a></li>
+        |
+        <li><a href="chat.php">Chat</a></li>
       </ul>
     </nav>
 
@@ -101,6 +105,7 @@ else {
     
         // Utente amministratore loggato
         case "admin":
+
 ?>
 
     <nav>
@@ -113,17 +118,23 @@ else {
         |
         <li><a href="ippica.php">Ippica</a></li>
         |
-        <li><a href="richiesteAccredito.php">Richieste accredito</a></li>
+        <li>
+          <a href="richiesteAccredito.php">
+            Richieste accredito
+          </a>
+        </li>
         |
         <li><a href="approvaScommessa.php">Approva scommesse</a></li>
         |
 	<li><a href="proposteScommessa.php">Inserimento scommessa</a></li>
         |
-        <li><a href="scommesseEliminate.php">Scommesse eliminate</a></li>
+        <li><a href="scommesseEliminate.php">Eliminazioni</a></li>
         |
-        <li><a href="inserisciRisultati.php">Inserisci risultati</a></li>
+        <li><a href="inserisciRisultati.php">Risultati</a></li>
         |
         <li><a href="listaUtenti.php">Account</a></li>
+        |
+        <li><a href="chat.php">Chat</a></li>
       </ul>
     </nav>
 
