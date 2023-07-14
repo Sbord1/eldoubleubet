@@ -3,9 +3,6 @@
 	error_reporting(E_ALL);
 
 	session_start();
-	
-
-	print_r($_SESSION);
 ?>
 
 <?xml version="1.0" encoding="UTF-8"?>
