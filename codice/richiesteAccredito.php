@@ -1,6 +1,7 @@
 <?php
 
 	session_start();
+	$_SESSION['richieste'] = "no";	
 
 	if (isset($_POST['accetta']) || (isset($_POST['rifiuta']))){
 		
@@ -65,6 +66,7 @@
   				if(isset($_POST['accetta'])){ //accetta la richiesta e aggiorna credito utente
   					$parent= $id->parentNode->setAttribute("status", "accettata");
   					
+  					
   					require_once("./connection.php");
 					
 					//aggiorno credito utente
@@ -106,6 +108,7 @@
   				else if(isset($_POST['rifiuta'])){ //rifiuta la richiesta
   					$parent= $id->parentNode->setAttribute("status", "rifiutata");
   					
+  					
   					//invio comunicazione
 					$newRecord = $doc2->createElement("message");
 					$newId = $doc2->createElement("id", $last_id);
@@ -128,7 +131,7 @@
 
   				}
   			}
-  				
+  		
 		} //fine foreach
 		
 		
