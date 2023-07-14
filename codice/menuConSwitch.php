@@ -2,8 +2,8 @@
 	<head>
 		<style>
 			#circle {
-				width: 16px;
-  				height: 16px;
+				width: 10px;
+  				height: 10px;
   				background:red;
   				border-radius:50%;
  			}		
