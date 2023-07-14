@@ -75,7 +75,7 @@ else {
         |
         <li><a href="proposteScommessa.php">Proponi scommessa</a></li>
         |
-        <li><a href="#">Proposte inviate</a></li>
+        <li><a href="proposteInviate.php">Proposte inviate</a></li>
         |
         <li><a href="chat.php">Chat</a></li>
         |
