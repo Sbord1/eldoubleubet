@@ -1,4 +1,5 @@
 [done] correggere la form per la registrazione mantenendo i dati che non sono errati
+    (ho modificato anche come viene visualizzato l'errore del codiceFiscale e dell'username duplicati)
 
 [done] mostrare il successo di un'operazione eseguita (es: quando si invia una richiesta di accredito)
 (per ora l'ho fatto solo in conto.php, non so se ci sono altri script in cui farlo)
