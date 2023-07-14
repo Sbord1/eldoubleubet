@@ -4,7 +4,7 @@
 [done] mostrare il successo di un'operazione eseguita (es: quando si invia una richiesta di accredito)
 (per ora l'ho fatto solo in conto.php, non so se ci sono altri script in cui farlo)
 
-- quando l'admin fa login avvisarlo delle richieste di accredito presenti 
+[done] quando l'admin fa login avvisarlo delle richieste di accredito presenti 
 (pallino rosso vicino richieste di accredito)
 
 [done] modificare lo script per l'alert 18+
