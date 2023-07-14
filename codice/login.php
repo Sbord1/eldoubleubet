@@ -46,6 +46,36 @@
         // Utilizziamo la query per estrarre il valore di tipologia
         $_SESSION['tipologia']=$row['tipologia'];
         $_SESSION['warning'] = 1;
+					      
+        ///////////////////////////////////////////////////////
+		//controllo per la notifica sulle richieste di accredito
+		//apro il file xml dedicato alle richieste di accredito
+		$xmlString="";
+		$xml_file_name = 'fileXML/richiesteAccredito/richiesteAccredito.xml';
+	
+		foreach ( file("$xml_file_name") as $node ) {
+			$xmlString .= trim($node);
+		}
+		$doc = new DOMdocument();
+		$doc->loadXML($xmlString);
+	   if (!$doc->loadXML($xmlString)) {
+			die ("Error mentre si andava parsando il documento\n");
+		}
+		$richiesteAccredito = $doc->documentElement; //root
+		
+		//Ottengo lista di nodi per richiesteAccredito
+		$idList = $doc->getElementsByTagName("id");
+		//se ci sono richieste di accredito apparirà un simbolo per notificare
+		foreach($idList as $id) {
+			$parent = $id->parentNode->getAttribute("status");
+			if ($parent=="in-sospeso"){
+				$_SESSION['richieste'] = "si";
+				}
+			}	
+		if(!isset($_SESSION['richieste'])){
+		 	$_SESSION['richieste'] = "no";
+		 }
+		        
         // N.B. userId, userName, password, sommeSpese e tipologia sono tutte colonne della tabella VOuser creata nel file mysql.VO1.php
         // --> per questo motivo l'array $row ha questi indici.
         // Ridirezionamento alla pagina iniziale index.php
