@@ -9,7 +9,7 @@
 
 [done] modificare lo script per l'alert 18+
 
-[done] aggiungere la visualizzazione delle proposte da parte dell'utente
+[done] aggiungere la visualizzazione delle proposte da parte dell'utente "proposteInviate.php"
 
 [done] aggiungere la chat per admin/gestore
 
