@@ -267,6 +267,23 @@
 
 	<body >
 	<header>
+		<?php 
+		// Se non e' stato fatto il login compare il bottone per farlo e anche il bottone per registrarsi
+		if(!isset($_SESSION['userName'])){
+		
+		echo "<div style=\"float: right;\">";
+		echo "<a href=\"loginPage.html\" class=\"login-btn\">Login</a>";
+		echo "<a href=\"registrazione.php\" class=\"register-btn\">Registrati</a>";
+		echo "</div>";
+				
+		}
+		// Se e' stato fatto il login compare il bottone per fare il logout
+		else{
+		echo "<div style=\"float: right;\">";
+		echo "<a href=\"logout.php\" class=\"register-btn\">Logout</a>";
+		echo "</div>";
+		}
+		?>
             <div>
                 <table style="margin-left: auto; margin-right: auto;">
                     <tbody>
