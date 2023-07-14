@@ -7,7 +7,7 @@
 - quando l'admin fa login avvisarlo delle richieste di accredito presenti 
 (pallino rosso vicino richieste di accredito)
 
-- modificare lo script per l'alert 18+
+[done] modificare lo script per l'alert 18+
 
 - aggiungere la visualizzazione delle proposte da parte dell'utente
   (ho inserito la voce nel menù dell'utente, bisogna fare un nuovo script per leggere e mostrare tutte le proposte inviate da quell'utente)
