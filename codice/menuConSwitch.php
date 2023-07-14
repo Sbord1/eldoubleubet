@@ -1,5 +1,19 @@
-<?php
+<html>
+	<head>
+		<style>
+			#circle {
+				width: 16px;
+  				height: 16px;
+  				background:red;
+  				border-radius:50%;
+ 			}		
+		</style>
+	</head>
 
+
+<?php
+					
+  					
 // Controllo tipologia: se non e' settata allora il login non e' stato effettuato
 if (!isset($_SESSION['tipologia'])) { //no login
     
@@ -86,7 +100,14 @@ else {
         |
         <li><a href="ippica.php">Ippica</a></li>
         |
-        <li><a href="richiesteAccredito.php">Richieste accredito</a></li>
+        <li>
+         <?php 
+          	if (isset($_SESSION['richieste']) && $_SESSION['richieste']=="si"){
+          		echo "<div id=\"circle\"></div>";
+          		}
+          ?>
+        <a href="richiesteAccredito.php">Richieste accredito</a>
+        </li>
         |
         <li><a href="approvaScommessa.php">Approva scommesse</a></li>
         |
@@ -119,9 +140,13 @@ else {
         <li><a href="ippica.php">Ippica</a></li>
         |
         <li>
-          <a href="richiesteAccredito.php">
-            Richieste accredito
-          </a>
+        <?php 
+          	if (isset($_SESSION['richieste']) && $_SESSION['richieste']=="si"){
+          		echo "<div id=\"circle\"></div>";
+          		}
+          	?>
+          <a href="richiesteAccredito.php">Richieste accredito</a>
+          
         </li>
         |
         <li><a href="approvaScommessa.php">Approva scommesse</a></li>
@@ -150,3 +175,4 @@ else {
     } // chiude lo switch
 } // chiude l'else
 ?>
+</html>
