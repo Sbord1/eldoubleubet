@@ -3,6 +3,9 @@
 	error_reporting(E_ALL);
 
 	session_start();
+	
+
+	print_r($_SESSION);
 ?>
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -206,10 +209,18 @@
   <footer>
     <p style="color: white;">&copy; 2023 Eldoubleubet. Tutti i diritti riservati.</p>
   </footer>
-
-  <script type="text/javascript">
-      alert("You must be 18 years old or over to start betting!");
-  </script>
-
+  
+  <?php
+ 
+	if (isset($_SESSION['warning']) && $_SESSION['warning'] == 1){
+  		
+  		echo("
+        	<script type=\"text/javascript\">
+      			alert(\"You must be 18 years old or over to start betting!\");
+  			</script>"
+  			);
+  		$_SESSION['warning'] = 0;
+		}
+	?>
 </body>
 </html>
