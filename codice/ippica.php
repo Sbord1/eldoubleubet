@@ -899,6 +899,9 @@ foreach ( file("fileXML/scommesseDisponibili/ippica.xml") as $node ) {
 
 
 ?> 	
+<h3 style="text-align: center;">
+            <a href="inizio.php" alt="Home">Homepage</a>
+        </h3>
 
 <footer style="background-color: lightgrey; text-align: center; height: 60px; padding: 20px;">
 <p style="color: black">
