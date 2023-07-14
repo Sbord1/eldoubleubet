@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['richiestaPropostaInviata'] = 0;
 if (!isset($_SESSION['accessoPermesso'])) header('Location: loginPage.html');
 ?>
 
@@ -7,7 +8,7 @@ if (!isset($_SESSION['accessoPermesso'])) header('Location: loginPage.html');
 	
 // Se richiedo di ricaricare inserisco la richiesta all'interno del file xml dedicato
 	if (isset($_POST['invio'])){
-	
+		$_SESSION['richiestaPropostaInviata'] = 1;
 		
 		$xmlString="";
 		# Name of the output file
@@ -218,6 +219,11 @@ if (!isset($_SESSION['accessoPermesso'])) header('Location: loginPage.html');
             </tbody>
         </table>
     </div>
+    <?php
+            if($_SESSION['richiestaPropostaInviata']==1) {
+                echo "<h2 style=\"text-align: center; color: red;\">Proposta inviata!</h2>";
+            }
+        ?>
 
     <hr />
 
