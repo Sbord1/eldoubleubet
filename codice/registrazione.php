@@ -4,8 +4,10 @@
 	
     $_SESSION['telefonoErrato'] = 0;
     $_SESSION['codiceFiscaleErrato'] = 0;
+    $_SESSION['usernameErrato'] = 0;
     $_SESSION['utenteInserito'] = 0;
-
+	
+	
 	if (isset($_POST['invio']) && $_POST['invio']=="Aggiungi" && $_POST['nome'] && $_POST['password']) {
 
         $dataNascita = strtotime($_POST['dataNascita']);		
@@ -54,13 +56,34 @@
             // Il risultato della query va in $resultQ
             try{
                 $resultQ = mysqli_query($mysqliConnection, $sql);
-                $_SESSION['utenteInserito'] = 1;
+            	$_SESSION['utenteInserito']=1;
+                
             }
                 catch (mysqli_sql_exception $e){
                     $error = $e->getMessage();
-                    echo ("<dialog open> $error </dialog>");
-                    }
-                
+                    $codiceFiscale = $_POST['codiceFiscale'];
+                    $errorCodiceFiscale = "Duplicate entry '$codiceFiscale' for key 'codiceFiscale'";
+                    $username = $_POST['username'];
+                    $errorUsername = "Duplicate entry '$username' for key 'username'";
+                    
+                   	if ($error == $errorUsername){
+                    	 $_SESSION['usernameErrato'] = 1;
+                    	?>
+                   		<script>
+                			alert("Questo username appartiene ad un altro utente!");
+            			</script>
+            			<?php
+                    } // fine if
+                    else if ($error == $errorCodiceFiscale){
+                   	 	$_SESSION['codiceFiscaleErrato'] = 1;
+                   		?>
+                   		<script>
+                			alert("Questo codice fiscale appartiene ad un altro utente!");
+            			</script>
+            			<?php
+                    } // fine else
+                } // fine catch
+       
             $_POST['invio']="j";
 		}
 
@@ -191,7 +214,7 @@
             <p style="text-align: center;">
                 Telefono: <input type="text" size="30" name="telefono"
                 value="<?php 
-                if(isset($_POST['telefono']) && $_SESSION['utenteInserito']==0) {
+                if(isset($_POST['telefono']) && $_SESSION['utenteInserito']==0 && $_SESSION['telefonoErrato']==0) {
                     echo $_POST['telefono'];
                 }
                 else {
@@ -222,7 +245,7 @@
             <p style="text-align: center;">
                 Codice Fiscale: <input type="text" size="30" name="codiceFiscale"
                 value="<?php 
-                if(isset($_POST['codiceFiscale']) && $_SESSION['utenteInserito']==0) {
+                if(isset($_POST['codiceFiscale']) && $_SESSION['utenteInserito']==0 && $_SESSION['codiceFiscaleErrato']==0) {
                     echo $_POST['codiceFiscale'];
                 }
                 else {
@@ -235,7 +258,7 @@
             <p style="text-align: center;">
                 Username: <input type="text" name="username"
                 value="<?php 
-                if(isset($_POST['username']) && $_SESSION['utenteInserito']==0) {
+                if(isset($_POST['username']) && $_SESSION['utenteInserito']==0 && $_SESSION['usernameErrato']==0) {
                     echo $_POST['username'];
                 }
                 else {
