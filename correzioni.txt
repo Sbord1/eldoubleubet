@@ -9,8 +9,7 @@
 
 [done] modificare lo script per l'alert 18+
 
-[ci sto lavorando] aggiungere la visualizzazione delle proposte da parte dell'utente
-  (ho inserito la voce nel menù dell'utente, bisogna fare un nuovo script per leggere e mostrare tutte le proposte inviate da quell'utente)
+[done] aggiungere la visualizzazione delle proposte da parte dell'utente
 
 [done] aggiungere la chat per admin/gestore
 
