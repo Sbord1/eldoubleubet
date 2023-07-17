@@ -87,7 +87,7 @@
 					$newId = $doc2->createElement("id", $last_id);
 					$newSender = $doc2->createElement("sender", $_SESSION['userName']);
 					$newReceiver = $doc2->createElement("receiver", $_POST['username']);
-					$newText = $doc2->createElement("text","Richiesta ricarica accettata");
+					$newText = $doc2->createElement("text","Richiesta ricarica accettata $_POST[somma] euro");
 					$newData = $doc2->createElement("data", $date);
 					$newOra = $doc2->createElement("ora", $time);
 
