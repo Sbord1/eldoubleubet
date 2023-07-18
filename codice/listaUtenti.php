@@ -113,6 +113,7 @@
                 background-color: #333333;
                 padding: 10px;
             }
+    
 			nav ul {
 			list-style-type: none;
 			margin: 0;
@@ -134,6 +135,19 @@
 			
 			nav ul li a:hover {
 			background-color: #666666;
+			}
+
+			.register-btn {
+				display: inline-block;
+				margin-left: 5px;
+				padding: 5px 10px;
+				background-color: #007bff;
+				color: #ffffff;
+				border-radius: 4px;
+			}
+
+			.register-btn:hover {
+				background-color: #0056b3;
 			}
         </style> 
     </head>
