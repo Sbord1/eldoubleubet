@@ -238,7 +238,7 @@
 			//ciclo per ottenere info su tutte le proposte di una stessa categoria
 			for ($i=0; $i<$lunghezza; $i++) {
 
-				$proposteScommessa = $proposteScommessaCalcio->item($i); //Ë uno dei record
+				$proposteScommessa = $proposteScommessaCalcio->item($i); //ï¿½ uno dei record
 	
 				$id = $proposteScommessa->firstChild; //id primo child
 				$idNumber = $id->textContent;
@@ -353,7 +353,7 @@
 			//ciclo per ottenere info su tutte le proposte di una stessa categoria
 			for ($i=0; $i<$lunghezza; $i++) {
 
-				$proposteScommessa = $proposteScommessaBasket->item($i); //Ë uno dei record
+				$proposteScommessa = $proposteScommessaBasket->item($i); //ï¿½ uno dei record
 	
 				$id = $proposteScommessa->firstChild; 
 				$idNumber = $id->textContent;
@@ -438,14 +438,13 @@
 								<td class=\"head\"> Nome Evento </td>
 								<td class=\"head\"> Quota 1 </td>
 								<td class=\"head\"> Quota 2 </td>
-								<td class=\"head\"> Utente </td>
 							</tr>\n";
 
 
 			//ciclo per ottenere info su tutte le proposte di una stessa categoria
 			for ($i=0; $i<$lunghezza; $i++) {
 
-				$proposteScommessa = $proposteScommessaTennis->item($i); //Ë uno dei record
+				$proposteScommessa = $proposteScommessaTennis->item($i); //ï¿½ uno dei record
 	 
 	
 				$id = $proposteScommessa->firstChild; 
@@ -539,7 +538,7 @@
 			//ciclo per ottenere info su tutte le proposte di una stessa categoria
 			for ($i=0; $i<$lunghezza; $i++) {
 
-				$proposteScommessa = $proposteScommessaIppica->item($i); //Ë uno dei record
+				$proposteScommessa = $proposteScommessaIppica->item($i); //ï¿½ uno dei record
 	
 	
 				$id = $proposteScommessa->firstChild; 
