@@ -1,8 +1,6 @@
 [done] correggere la form per la registrazione mantenendo i dati che non sono errati
-    (ho modificato anche come viene visualizzato l'errore del codiceFiscale e dell'username duplicati)
 
 [done] mostrare il successo di un'operazione eseguita (es: quando si invia una richiesta di accredito)
-(per ora l'ho fatto solo in conto.php, fatto anche in tutti i proposteScommessa.php)
 
 [done] quando l'admin fa login avvisarlo delle richieste di accredito presenti 
 (pallino rosso vicino richieste di accredito)
